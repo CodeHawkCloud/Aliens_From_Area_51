@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff8300"
-    tools:context=".StocksDelete">
+    tools:context=".StocksView">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView4"
         android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -19,6 +19,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stocksc"
+        app:srcCompat="@drawable/stocksb"
         android:contentDescription="@string/todo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
