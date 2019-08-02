@@ -5,23 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff8300"
-    tools:context=".AddStocks">
+    tools:context=".updateStocks">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView4"
         android:layout_width="245dp"
         android:layout_height="111dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="558dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="515dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/a"
+        app:srcCompat="@drawable/d"
         android:contentDescription="@string/todo" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
