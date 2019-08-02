@@ -38,4 +38,5 @@
         app:srcCompat="@drawable/expenses_view"
         tools:layout_editor_absoluteX="207dp"
         tools:layout_editor_absoluteY="467dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
