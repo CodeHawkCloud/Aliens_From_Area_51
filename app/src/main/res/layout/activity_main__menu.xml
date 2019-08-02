@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main_Menu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.60"
+            android:background="#FF8300">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="276dp"
+                    android:layout_height="174dp"
+                    android:contentDescription="@string/logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.496"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.268"
+                    app:srcCompat="@drawable/FoxLogo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.40"
+            android:background="#FFAB00">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button_inventory_main"
+                    android:layout_width="412dp"
+                    android:layout_height="88dp"
+                    android:background="#FFD2A4"
+                    android:text="@string/inventory"
+                    android:textColor="#A75600"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button20" />
+
+                <Button
+                    android:id="@+id/button20"
+                    android:layout_width="412dp"
+                    android:layout_height="88dp"
+                    android:background="#FFD2A4"
+                    android:text="@string/sales"
+                    android:textColor="#A75600"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/button_inventory_main"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button10" />
+
+                <Button
+                    android:id="@+id/button21"
+                    android:layout_width="413dp"
+                    android:layout_height="88dp"
+                    android:background="#FFD2A4"
+                    android:text="@string/my_business"
+                    android:textColor="#A75600"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button22"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/button22"
+                    android:layout_width="412dp"
+                    android:layout_height="88dp"
+                    android:background="#FFD2A4"
+                    android:text="@string/forum"
+                    android:textColor="#A75600"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/button21"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button_inventory_main" />
+
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="411dp"
+                    android:layout_height="88dp"
+                    android:background="#FFD2A4"
+                    android:text="@string/expenditure"
+                    android:textColor="#A75600"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/button20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
