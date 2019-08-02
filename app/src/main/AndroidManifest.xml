@@ -9,12 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ExpensesUpdate"></activity>
-        <activity android:name=".ExpensesView" />
-        <activity android:name=".ExpensesDelete" />
-        <activity android:name=".Expenses_Update" />
-        <activity android:name=".ExpensesAdd" />
-        <activity android:name=".StocksDelete" />
+        <activity android:name=".StocksDelete"></activity>
         <activity android:name=".updateStocks" />
         <activity android:name=".SalesCrudMenu" />
         <activity android:name=".Main_Menu" />
