@@ -4,6 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF8300"
     tools:context=".ExpensesCrudMenu">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="207dp"
+        android:layout_height="260dp"
+        app:srcCompat="@drawable/expenses_add"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="207"
+        android:layout_height="260"
+        app:srcCompat="@drawable/expenses_delete"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="207"
+        android:layout_height="260"
+        app:srcCompat="@drawable/expenses_update"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="207"
+        android:layout_height="260"
+        app:srcCompat="@drawable/expenses_view"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="467dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
