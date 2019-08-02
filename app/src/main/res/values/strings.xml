@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">FoxFireKeep</string>
+    <string name="store">STORE</string>
+    <string name="stock">STOCK</string>
+    <string name="expenses">EXPENSES</string>
+    <string name="forum">FORUM</string>
+    <string name="todo">TODO</string>
 </resources>

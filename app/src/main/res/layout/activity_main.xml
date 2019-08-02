@@ -5,4 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF8300"
-    tools:context=".MainActivity" />
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="418dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="266dp"
+        android:text="@string/store"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="418dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="266dp"
+        android:text="@string/stock"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="418dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="266dp"
+        android:text="@string/expenses"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="418dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="266dp"
+        android:text="@string/forum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="184dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="139dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="130dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/th9L3P1QQ1"
+        android:contentDescription="@string/todo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
