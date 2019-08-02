@@ -11,32 +11,44 @@
         android:id="@+id/imageView3"
         android:layout_width="207dp"
         android:layout_height="260dp"
-        app:srcCompat="@drawable/expenses_add"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="288dp" />
+        android:layout_marginTop="288dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/expenses_add" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="207"
-        android:layout_height="260"
-        app:srcCompat="@drawable/expenses_delete"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="288dp" />
+        android:layout_width="207dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="288dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/expenses_delete" />
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="207"
-        android:layout_height="260"
-        app:srcCompat="@drawable/expenses_update"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="467dp" />
+        android:layout_width="207dp"
+        android:layout_height="260dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/expenses_update" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="207"
-        android:layout_height="260"
-        app:srcCompat="@drawable/expenses_view"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="467dp" />
+        android:layout_width="207dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/expenses_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
