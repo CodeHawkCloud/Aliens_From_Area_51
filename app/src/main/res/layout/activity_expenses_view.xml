@@ -56,7 +56,7 @@
                     android:layout_weight="1"
                     android:background="#CCCC00"
                     android:gravity="center"
-                    android:text="@string/expenses_id"
+                    android:text="@string/id"
                     android:textStyle="bold" />
 
                 <TextView
@@ -65,7 +65,7 @@
                     android:layout_weight="1"
                     android:background="#CCCC00"
                     android:gravity="center"
-                    android:text="@string/expenses_type"
+                    android:text="@string/expense_type"
                     android:textStyle="bold" />
 
                 <TextView
@@ -74,7 +74,7 @@
                     android:layout_weight="1"
                     android:background="#CCCC00"
                     android:gravity="center"
-                    android:text="@string/expenses_date"
+                    android:text="@string/date"
                     android:textStyle="bold" />
 
                 <TextView
@@ -83,7 +83,7 @@
                     android:layout_weight="1"
                     android:background="#CCCC00"
                     android:gravity="center"
-                    android:text="@string/expenses_type"
+                    android:text="@string/amt"
                     android:textStyle="bold" />
 
             </TableRow>
