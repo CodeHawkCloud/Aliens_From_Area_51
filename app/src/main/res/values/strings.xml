@@ -16,7 +16,7 @@
     <string name="quanity">Quanity</string>
     <string name="supplier">Supplier</string>
     <string name="reorder_quantity">Reorder Quantity</string>
-    <string name="submit">SUBMIT</string>
+    <string name="submit">Submit</string>
     <string name="insert">Insert</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
@@ -33,6 +33,14 @@
     <string name="button">Button</string>
     <string name="todo">TODO</string>
     <string name="salesInsertTop">Sales Insert Top</string>
+    <string name="brand">Brand Name</string>
+    <string name="price">Price</string>
+    <string name="salesUpdateTop">Sales Update Top</string>
+    <string name="id">ID</string>
+    <string name="id_delete">ID of the item to be deleted</string>
+    <string name="salesDeleteTop">Sales Delete Top</string>
+    <string name="salesViewTop">Sales View Top</string>
+    <string name="test">Test</string>
 
 
 </resources>

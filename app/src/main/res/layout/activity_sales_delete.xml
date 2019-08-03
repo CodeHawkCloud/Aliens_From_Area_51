@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SalesDelete">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.87"
+            android:background="#FFB970">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="76dp"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.111"
+                    app:srcCompat="@drawable/btnback" />
+
+                <ImageView
+                    android:id="@+id/imageView23"
+                    android:layout_width="326dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_marginBottom="5dp"
+                    android:contentDescription="@string/salesDeleteTop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView17"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/salesdeletetop" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13"
+            android:background="@drawable/crud_operation_background">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="337dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="276dp"
+                    android:text="@string/delete"
+                    android:textColor="#3F51B5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+                <EditText
+                    android:id="@+id/editText15"
+                    android:layout_width="337dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="11dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toTopOf="@+id/button2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="318dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="37dp"
+                    android:layout_marginTop="216dp"
+                    android:text="@string/id_delete"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/editText15"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
