@@ -11,10 +11,11 @@
         android:id="@+id/imageView"
         android:layout_width="815dp"
         android:layout_height="1031dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Main"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/Main" />
 </androidx.constraintlayout.widget.ConstraintLayout>
