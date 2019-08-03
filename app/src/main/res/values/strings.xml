@@ -17,6 +17,16 @@
     <string name="supplier">Supplier</string>
     <string name="reorder_quantity">Reorder Quantity</string>
     <string name="submit">SUBMIT</string>
+    <string name="insert">Insert</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="tableau">Tableau</string>
+    <string name="home">Home</string>
+    <string name="back">Back</string>
+    <string name="salesHLogo">Sales Horizontal Logo</string>
+    <string name="expensesHLogo">Expenses Horizontal Logo</string>
+    <string name="inventoryHLogo">Inventory Horizontal Logo</string>
+    <string name="forumHLogo">Forum Horizontal Logo</string>
 
 
 </resources>

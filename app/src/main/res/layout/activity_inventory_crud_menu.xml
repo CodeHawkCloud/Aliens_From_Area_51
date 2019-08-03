@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SalesCrudMenu">
+    tools:context=".inventoryCrudMenu">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,14 +44,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.6"
-            android:background="#FF8300" >
+            android:background="#FF8300">
 
             <ImageView
-                android:id="@+id/imageView16"
+                android:id="@+id/imageView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/salesHLogo"
-                app:srcCompat="@drawable/sales" />
+                android:contentDescription="@string/inventoryHLogo"
+                app:srcCompat="@drawable/invent" />
         </RelativeLayout>
 
         <RelativeLayout
