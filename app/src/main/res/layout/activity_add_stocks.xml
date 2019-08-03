@@ -8,8 +8,7 @@
     android:animateLayoutChanges="false"
     android:background="#ff8300"
     android:clickable="false"
-    android:clipChildren="false"
-    tools:context=".AddStocks">
+    android:clipChildren="false">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -59,7 +58,7 @@
         android:ems="10"
         android:hint="@string/quantity"
         android:inputType="number"
-        android:text="@string/quanity"
+        android:text="@string/quantity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
