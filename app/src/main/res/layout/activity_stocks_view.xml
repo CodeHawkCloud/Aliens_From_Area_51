@@ -53,7 +53,7 @@
             android:layout_weight="1"
             android:background="#CCCC00"
             android:gravity="center"
-            android:text="Item_Name"
+            android:text="Item "
             android:textStyle="bold" />
 
         <TextView
@@ -407,9 +407,21 @@
 
     </TableRow>
 
-
-
-
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="58dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="330dp"
+        android:layout_marginBottom="658dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/btnback" />
 
 
     /TableLayout>
