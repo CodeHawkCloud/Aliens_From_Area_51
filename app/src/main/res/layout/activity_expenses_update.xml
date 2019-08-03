@@ -9,9 +9,12 @@
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="408dp"
-        android:layout_height="419dp"
-        app:srcCompat="@drawable/expenses_update"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="-111dp" />
+        android:layout_width="420dp"
+        android:layout_height="236dp"
+        android:layout_marginBottom="495dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/expenses_update" />
 </androidx.constraintlayout.widget.ConstraintLayout>

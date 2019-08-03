@@ -6,6 +6,11 @@
     <string name="forum">Forum</string>
     <string name="my_business">My Business</string>
     <string name="logo">Logo</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
     <string name="item_name">Item Name</string>
     <string name="quantity">Quantity</string>
     <string name="quanity">Quanity</string>
@@ -23,7 +28,10 @@
     <string name="inventoryHLogo">Inventory Horizontal Logo</string>
     <string name="forumHLogo">Forum Horizontal Logo</string>
     <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
     <string name="button">Button</string>
+    <string name="todo">TODO</string>
     <string name="salesInsertTop">Sales Insert Top</string>
     <string name="brand">Brand Name</string>
     <string name="price">Price</string>
