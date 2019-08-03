@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff8300"
-    tools:context=".updateStocks">
+    >
 
     <ImageView
         android:id="@+id/imageView6"
@@ -26,7 +26,7 @@
         android:id="@+id/imageView8"
         android:layout_width="620dp"
         android:layout_height="807dp"
-        android:src="@drawable/stockUpdate"
+        android:src="@drawable/stockupdate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

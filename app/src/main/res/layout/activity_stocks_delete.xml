@@ -26,10 +26,10 @@
         android:id="@+id/imageView17"
         android:layout_width="616dp"
         android:layout_height="860dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stockDelete"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/stockdelete" />
 </androidx.constraintlayout.widget.ConstraintLayout>
