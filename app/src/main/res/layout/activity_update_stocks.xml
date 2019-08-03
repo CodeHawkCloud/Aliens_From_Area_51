@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="245dp"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="179dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="93dp"
@@ -19,5 +19,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="620dp"
+        android:layout_height="807dp"
+        android:src="@drawable/stockUpdate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
