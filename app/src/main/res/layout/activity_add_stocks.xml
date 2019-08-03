@@ -10,133 +10,133 @@
     android:clickable="false"
     android:clipChildren="false">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="245dp"
-        android:layout_height="111dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="558dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/stocksa" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="127dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="386dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/item_name"
-        android:inputType="textPersonName"
-        android:text="@string/item_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:targetApi="o" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.87"
+            android:background="#FFB970">
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="316dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/quantity"
-        android:inputType="number"
-        android:text="@string/quantity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.0"
-        tools:targetApi="o" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="246dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/supplier"
-        android:inputType="textPersonName"
-        android:text="@string/supplier"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
-        app:layout_constraintVertical_bias="0.0"
-        tools:targetApi="o" />
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="95dp"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="7dp"
+                    android:src="@drawable/btnback"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
 
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="176dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/reorder_quantity"
-        android:inputType="number"
-        android:text="@string/reorder_quantity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6"
-        app:layout_constraintVertical_bias="1.0"
-        tools:targetApi="o" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="75dp"
-        android:background="#00FAF3F3"
-        android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="188dp"
-        android:src="@drawable/btnback"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="260dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/item_name"
+                    android:inputType="textPersonName"
+                    android:text="@string/item_name"
+                    app:layout_constraintBottom_toTopOf="@+id/editText7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.268"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="o" />
+
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="260dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/quantity"
+                    android:inputType="number"
+                    android:text="@string/quantity"
+                    app:layout_constraintBottom_toTopOf="@+id/editText13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText7"
+                    tools:targetApi="o" />
+
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="260dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/supplier"
+                    android:inputType="textPersonName"
+                    android:text="@string/supplier"
+                    app:layout_constraintBottom_toTopOf="@+id/editText6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText4"
+                    tools:targetApi="o" />
+
+                <EditText
+                    android:id="@+id/editText13"
+                    android:layout_width="260dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/reorder_quantity"
+                    android:inputType="number"
+                    android:text="@string/reorder_quantity"
+                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText6"
+                    tools:targetApi="o" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="256dp"
+                    android:layout_marginTop="53dp"
+                    android:layout_marginEnd="67dp"
+                    android:layout_marginBottom="75dp"
+                    android:background="#00FAF3F3"
+                    android:text="@string/submit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText7" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
