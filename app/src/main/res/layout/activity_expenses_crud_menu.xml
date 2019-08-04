@@ -23,7 +23,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView14"
+                    android:id="@+id/home"
                     android:layout_width="136dp"
                     android:layout_height="71dp"
                     android:layout_marginStart="8dp"

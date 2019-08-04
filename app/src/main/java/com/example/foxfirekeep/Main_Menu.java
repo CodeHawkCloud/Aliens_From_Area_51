@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Main_Menu extends AppCompatActivity {
-
+    private Button b1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__menu);
 
-        Button b1 = (Button)findViewById(R.id.buttonExpen);
+
+        b1 = (Button)findViewById(R.id.buttonExpen);
         Button b2 = (Button)findViewById(R.id.buttonSale);
         Button b3 = (Button)findViewById(R.id.button_inventory_main);
         Button b4 = (Button)findViewById(R.id.buttonForum);
