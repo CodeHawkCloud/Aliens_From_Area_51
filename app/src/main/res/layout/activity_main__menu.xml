@@ -51,7 +51,7 @@
                 <Button
                     android:id="@+id/button_inventory_main"
                     android:layout_width="412dp"
-                    android:layout_height="88dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="8dp"
                     android:background="#FFD2A4"
                     android:text="@string/inventory"
@@ -66,7 +66,7 @@
                 <Button
                     android:id="@+id/button20"
                     android:layout_width="412dp"
-                    android:layout_height="88dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="8dp"
                     android:background="#FFD2A4"
                     android:text="@string/sales"
@@ -81,7 +81,7 @@
                 <Button
                     android:id="@+id/button21"
                     android:layout_width="414dp"
-                    android:layout_height="72dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="8dp"
                     android:background="#FFD2A4"
                     android:text="@string/my_business"
@@ -96,7 +96,7 @@
                 <Button
                     android:id="@+id/button22"
                     android:layout_width="412dp"
-                    android:layout_height="88dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="8dp"
                     android:background="#FFD2A4"
                     android:text="@string/forum"
@@ -111,7 +111,7 @@
                 <Button
                     android:id="@+id/button10"
                     android:layout_width="411dp"
-                    android:layout_height="77dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="8dp"
                     android:background="#FFD2A4"
                     android:text="@string/expenditure"
