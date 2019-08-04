@@ -57,14 +57,14 @@
                     android:text="@string/inventory"
                     android:textColor="#A75600"
                     android:textSize="14sp"
-                    app:layout_constraintBottom_toTopOf="@+id/button22"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonForum"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button20" />
+                    app:layout_constraintTop_toBottomOf="@+id/buttonSale" />
 
                 <Button
-                    android:id="@+id/button20"
+                    android:id="@+id/buttonSale"
                     android:layout_width="412dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="8dp"
@@ -76,10 +76,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button10" />
+                    app:layout_constraintTop_toBottomOf="@+id/buttonExpen" />
 
                 <Button
-                    android:id="@+id/button21"
+                    android:id="@+id/buttonBusi"
                     android:layout_width="414dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="8dp"
@@ -91,10 +91,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button22" />
+                    app:layout_constraintTop_toBottomOf="@+id/buttonForum" />
 
                 <Button
-                    android:id="@+id/button22"
+                    android:id="@+id/buttonForum"
                     android:layout_width="412dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="8dp"
@@ -102,14 +102,14 @@
                     android:text="@string/forum"
                     android:textColor="#A75600"
                     android:textSize="14sp"
-                    app:layout_constraintBottom_toTopOf="@+id/button21"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonBusi"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button_inventory_main" />
 
                 <Button
-                    android:id="@+id/button10"
+                    android:id="@+id/buttonExpen"
                     android:layout_width="411dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="8dp"
@@ -117,7 +117,7 @@
                     android:text="@string/expenditure"
                     android:textColor="#A75600"
                     android:textSize="14sp"
-                    app:layout_constraintBottom_toTopOf="@+id/button20"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonSale"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
