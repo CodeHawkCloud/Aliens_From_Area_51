@@ -41,6 +41,7 @@
                     android:id="@+id/imageView19"
                     android:layout_width="313dp"
                     android:layout_height="90dp"
+                    android:contentDescription="@string/stockUpdateTop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView17"
