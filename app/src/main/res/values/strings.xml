@@ -51,6 +51,11 @@
     <string name="expensesDeleteTop">Expenses Delete Top</string>
     <string name="expensesUpdateTop">Expenses Update Top</string>
     <string name="expensesInsertTop">Expenses Insert Top</string>
+    <string name="userName">User Name</string>
+    <string name="role">Role</string>
+    <string name="comment">Comment</string>
+    <string name="forumViewTop">Forum View Top</string>
+    <string name="forumTop">Forum Top</string>
 
 
 </resources>
