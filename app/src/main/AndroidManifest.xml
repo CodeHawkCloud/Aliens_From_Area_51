@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SalesView"></activity>
+        <activity android:name=".MyBusiness"></activity>
+        <activity android:name=".SalesView" />
         <activity android:name=".SalesDelete" />
         <activity android:name=".SalesUpdate" />
         <activity android:name=".SalesInsert" />
         <activity android:name=".ForumCrudMenu" />
         <activity android:name=".inventoryCrudMenu" />
         <activity android:name=".StocksDelete" />
-        <activity android:name=".updateStocks" />
         <activity android:name=".SalesCrudMenu" />
         <activity android:name=".Main_Menu" />
         <activity android:name=".MainActivity">

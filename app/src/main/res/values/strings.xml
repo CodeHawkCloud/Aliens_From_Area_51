@@ -37,6 +37,12 @@
     <string name="expense_type">Expenditure type</string>
     <string name="date">Date</string>
     <string name="amt">Amount</string>
+    <string name="tot_sales">Total Sales</string>
+    <string name="tot_expenditure">Total Expenditure</string>
+    <string name="tot_stock">Total Stock Value</string>
+    <string name="tot_comments">Total comments</string>
+    <string name="reset">Reset</string>
+    <string name="businessHLogo">My Businesss Horizontal Logo</string>
 
 
 </resources>
