@@ -109,6 +109,7 @@
                     android:id="@+id/button10"
                     android:layout_width="411dp"
                     android:layout_height="88dp"
+                    android:layout_marginTop="8dp"
                     android:background="#FFD2A4"
                     android:text="@string/expenditure"
                     android:textColor="#A75600"
