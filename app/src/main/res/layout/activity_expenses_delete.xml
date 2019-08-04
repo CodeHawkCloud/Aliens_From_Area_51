@@ -30,10 +30,25 @@
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/back"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView28"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.111"
                     app:srcCompat="@drawable/btnback" />
+
+                <ImageView
+                    android:id="@+id/imageView28"
+                    android:layout_width="323dp"
+                    android:layout_height="87dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/expensesDeleteTop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView17"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/expensesdelete" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>

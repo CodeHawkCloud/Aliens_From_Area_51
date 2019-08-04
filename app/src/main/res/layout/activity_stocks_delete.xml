@@ -31,10 +31,22 @@
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/back"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView12"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.111"
                     app:srcCompat="@drawable/btnback" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="325dp"
+                    android:layout_height="89dp"
+                    android:contentDescription="@string/stockDeleteTop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView17"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/stocksdelete" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
@@ -85,7 +97,7 @@
                     android:layout_marginTop="216dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:text="@string/id_delete_stock"
+                    android:text="@string/name_delete_stock"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@+id/editText15"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -33,7 +33,7 @@
     <string name="salesViewTop">Sales View Top</string>
     <string name="test">Test</string>
     <string name="id_delete_expenses">ID of the expenditute  to be deleted</string>
-    <string name="id_delete_stock">ID of the inventory to be deleted</string>
+    <string name="name_delete_stock">Name of the inventory to be deleted</string>
     <string name="expense_type">Expenditure type</string>
     <string name="date">Date</string>
     <string name="amt">Amount</string>
@@ -43,6 +43,14 @@
     <string name="tot_comments">Total comments</string>
     <string name="reset">Reset</string>
     <string name="businessHLogo">My Businesss Horizontal Logo</string>
+    <string name="stocksInsertTop">Stock Insert Top</string>
+    <string name="stockUpdateTop">Stock Update Top</string>
+    <string name="stockDeleteTop">Stock Delete Top</string>
+    <string name="stockViewTop">Stock View Top</string>
+    <string name="expensesViewTop">Expenses View Top</string>
+    <string name="expensesDeleteTop">Expenses Delete Top</string>
+    <string name="expensesUpdateTop">Expenses Update Top</string>
+    <string name="expensesInsertTop">Expenses Insert Top</string>
 
 
 </resources>
