@@ -48,7 +48,7 @@ public class Main_Menu extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it4 = new Intent(Main_Menu.this,ForumCrudMenu.class);
+                Intent it4 = new Intent(Main_Menu.this,Forum_IUD.class);
                 startActivity(it4);
             }
         });

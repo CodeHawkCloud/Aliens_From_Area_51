@@ -18,8 +18,12 @@
         <activity android:name=".inventoryCrudMenu" />
         <activity android:name=".StocksDelete" />
         <activity android:name=".SalesCrudMenu" />
+        <activity android:name=".Forum_IUD"/>
         <activity android:name=".Main_Menu" />
         <activity android:name=".MainActivity">
+
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
