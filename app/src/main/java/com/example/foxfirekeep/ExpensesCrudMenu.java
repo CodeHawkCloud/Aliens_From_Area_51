@@ -19,11 +19,11 @@ public class ExpensesCrudMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expenses_crud_menu);
 
-        home1 = (ImageView)findViewById(R.id.home);
-        in = (ImageView)findViewById(R.id.imageView18);
-        up = (ImageView)findViewById(R.id.imageView25);
-        del = (ImageView)findViewById(R.id.imageView22);
-        vi = (ImageView)findViewById(R.id.imageView24);
+        home1 = (ImageView)findViewById(R.id.btnHome);
+        in = (ImageView)findViewById(R.id.btnInsrt);
+        up = (ImageView)findViewById(R.id.btnUpd);
+        del = (ImageView)findViewById(R.id.btnDel);
+        vi = (ImageView)findViewById(R.id.btnViw);
 
         home1.setOnClickListener(new View.OnClickListener() {
             @Override

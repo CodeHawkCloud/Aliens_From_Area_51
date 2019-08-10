@@ -23,7 +23,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/home"
+                    android:id="@+id/btnHome"
                     android:layout_width="136dp"
                     android:layout_height="71dp"
                     android:layout_marginStart="8dp"
@@ -73,11 +73,11 @@
                     android:textColor="#FFFFFF"
                     android:textColorLink="@color/colorAccent"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/imageView22"
+                    app:layout_constraintBottom_toTopOf="@+id/btnDel"
                     app:layout_constraintEnd_toStartOf="@+id/textView"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView18" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnInsrt" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -90,7 +90,7 @@
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView24" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnViw" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -103,15 +103,15 @@
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnDel" />
 
                 <ImageView
-                    android:id="@+id/imageView18"
+                    android:id="@+id/btnInsrt"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:contentDescription="@string/insert"
                     app:layout_constraintBottom_toTopOf="@+id/textView2"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView25"
+                    app:layout_constraintEnd_toStartOf="@+id/btnUpd"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintHorizontal_chainStyle="spread"
                     app:layout_constraintStart_toStartOf="parent"
@@ -119,38 +119,38 @@
                     app:srcCompat="@drawable/plus" />
 
                 <ImageView
-                    android:id="@+id/imageView22"
+                    android:id="@+id/btnDel"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:contentDescription="@string/delete"
                     app:layout_constraintBottom_toTopOf="@+id/textView4"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView24"
+                    app:layout_constraintEnd_toStartOf="@+id/btnViw"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView2"
                     app:srcCompat="@drawable/delete" />
 
                 <ImageView
-                    android:id="@+id/imageView24"
+                    android:id="@+id/btnViw"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:contentDescription="@string/update"
                     app:layout_constraintBottom_toTopOf="@+id/textView3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageView22"
+                    app:layout_constraintStart_toEndOf="@+id/btnDel"
                     app:layout_constraintTop_toBottomOf="@+id/textView"
                     app:srcCompat="@drawable/view" />
 
                 <ImageView
-                    android:id="@+id/imageView25"
+                    android:id="@+id/btnUpd"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:contentDescription="@string/tableau"
                     app:layout_constraintBottom_toTopOf="@+id/textView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageView18"
+                    app:layout_constraintStart_toEndOf="@+id/btnInsrt"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/update" />
 
@@ -162,11 +162,11 @@
                     android:textColor="#FFFFFF"
                     android:textColorLink="@color/colorAccent"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/imageView24"
+                    app:layout_constraintBottom_toTopOf="@+id/btnViw"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnUpd" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

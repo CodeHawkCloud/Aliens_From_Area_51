@@ -15,7 +15,7 @@ public class MyBusiness extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_business);
 
-        home1 = (ImageView)findViewById(R.id.home);
+        home1 = (ImageView)findViewById(R.id.btnHome);
 
         home1.setOnClickListener(new View.OnClickListener() {
             @Override
