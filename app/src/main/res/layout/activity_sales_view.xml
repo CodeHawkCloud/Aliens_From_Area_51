@@ -23,7 +23,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView17"
+                    android:id="@+id/btnBack"
                     android:layout_width="76dp"
                     android:layout_height="62dp"
                     android:layout_marginTop="16dp"
@@ -45,7 +45,7 @@
                     android:contentDescription="@string/salesViewTop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView17"
+                    app:layout_constraintStart_toEndOf="@+id/btnBack"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/salesviewtop" />
 

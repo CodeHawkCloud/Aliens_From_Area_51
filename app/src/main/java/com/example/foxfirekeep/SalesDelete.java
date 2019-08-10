@@ -15,7 +15,7 @@ public class SalesDelete extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sales_delete);
 
-        back = (ImageView)findViewById(R.id.imageView17);
+        back = (ImageView)findViewById(R.id.btnBack);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

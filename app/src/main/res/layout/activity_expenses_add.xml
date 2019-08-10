@@ -24,7 +24,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView17"
+                    android:id="@+id/btnBack"
                     android:layout_width="76dp"
                     android:layout_height="62dp"
                     android:layout_marginStart="24dp"
@@ -48,7 +48,7 @@
                     android:contentDescription="@string/expensesInsertTop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView17"
+                    app:layout_constraintStart_toEndOf="@+id/btnBack"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/expenseinsert" />
 
@@ -75,7 +75,7 @@
                     android:layout_marginEnd="8dp"
                     android:text="@string/id"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/editText"
+                    app:layout_constraintBottom_toTopOf="@+id/salInsName"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.077"
                     app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +93,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.133"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText" />
+                    app:layout_constraintTop_toBottomOf="@+id/salInsName" />
 
                 <TextView
                     android:id="@+id/textView9"
@@ -107,7 +107,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.085"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText2" />
+                    app:layout_constraintTop_toBottomOf="@+id/salInsBname" />
 
                 <TextView
                     android:id="@+id/textView10"
@@ -121,10 +121,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.094"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText14" />
+                    app:layout_constraintTop_toBottomOf="@+id/salInsPr" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btnSalUpd"
                     android:layout_width="337dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -134,10 +134,10 @@
                     android:textColor="#3F51B5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText15" />
+                    app:layout_constraintTop_toBottomOf="@+id/salInsQn" />
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/salInsName"
                     android:layout_width="337dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -151,7 +151,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/salInsBname"
                     android:layout_width="337dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -165,7 +165,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
                 <EditText
-                    android:id="@+id/editText14"
+                    android:id="@+id/salInsPr"
                     android:layout_width="337dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -179,7 +179,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
                 <EditText
-                    android:id="@+id/editText15"
+                    android:id="@+id/salInsQn"
                     android:layout_width="337dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -187,7 +187,7 @@
                     android:layout_marginBottom="47dp"
                     android:ems="10"
                     android:inputType="number"
-                    app:layout_constraintBottom_toTopOf="@+id/button2"
+                    app:layout_constraintBottom_toTopOf="@+id/btnSalUpd"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView10" />
