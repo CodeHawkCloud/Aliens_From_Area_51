@@ -73,7 +73,7 @@
                     android:textColorLink="@color/colorAccent"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@+id/btnDel"
-                    app:layout_constraintEnd_toStartOf="@+id/textView"
+                    app:layout_constraintEnd_toStartOf="@+id/frmTvCmnt"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btnInsrt" />
@@ -141,7 +141,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btnDel"
-                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/frmTvCmnt"
                     app:srcCompat="@drawable/view" />
 
                 <ImageView
@@ -150,7 +150,7 @@
                     android:layout_height="100dp"
                     android:clickable="true"
                     android:contentDescription="@string/tableau"
-                    app:layout_constraintBottom_toTopOf="@+id/textView"
+                    app:layout_constraintBottom_toTopOf="@+id/frmTvCmnt"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btnInsrt"
@@ -158,7 +158,7 @@
                     app:srcCompat="@drawable/update" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/frmTvCmnt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/update"

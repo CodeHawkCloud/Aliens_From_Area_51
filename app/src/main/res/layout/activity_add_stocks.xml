@@ -26,7 +26,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/btnBack"
                     android:layout_width="95dp"
                     android:layout_height="72dp"
                     android:layout_marginStart="16dp"
@@ -50,7 +50,7 @@
                     android:contentDescription="@string/stocksInsertTop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    app:layout_constraintStart_toEndOf="@+id/btnBack"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/stockinsert" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -66,7 +66,7 @@
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:id="@+id/editText4"
+                    android:id="@+id/stkInsIname"
                     android:layout_width="260dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="50dp"
@@ -76,7 +76,7 @@
                     android:hint="@string/item_name"
                     android:inputType="textPersonName"
                     android:text="@string/item_name"
-                    app:layout_constraintBottom_toTopOf="@+id/editText7"
+                    app:layout_constraintBottom_toTopOf="@+id/stckInsSup"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.268"
                     app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,7 @@
                     tools:targetApi="o" />
 
                 <EditText
-                    android:id="@+id/editText6"
+                    android:id="@+id/stkInsQua"
                     android:layout_width="260dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -94,15 +94,15 @@
                     android:hint="@string/quantity"
                     android:inputType="number"
                     android:text="@string/quantity"
-                    app:layout_constraintBottom_toTopOf="@+id/editText13"
+                    app:layout_constraintBottom_toTopOf="@+id/stckInsRequa"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText7"
+                    app:layout_constraintTop_toBottomOf="@+id/stckInsSup"
                     tools:targetApi="o" />
 
                 <EditText
-                    android:id="@+id/editText7"
+                    android:id="@+id/stckInsSup"
                     android:layout_width="260dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -112,15 +112,15 @@
                     android:hint="@string/supplier"
                     android:inputType="textPersonName"
                     android:text="@string/supplier"
-                    app:layout_constraintBottom_toTopOf="@+id/editText6"
+                    app:layout_constraintBottom_toTopOf="@+id/stkInsQua"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText4"
+                    app:layout_constraintTop_toBottomOf="@+id/stkInsIname"
                     tools:targetApi="o" />
 
                 <EditText
-                    android:id="@+id/editText13"
+                    android:id="@+id/stckInsRequa"
                     android:layout_width="260dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -130,15 +130,15 @@
                     android:hint="@string/reorder_quantity"
                     android:inputType="number"
                     android:text="@string/reorder_quantity"
-                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintBottom_toTopOf="@+id/btnStkIns"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText6"
+                    app:layout_constraintTop_toBottomOf="@+id/stkInsQua"
                     tools:targetApi="o" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnStkIns"
                     android:layout_width="247dp"
                     android:layout_height="49dp"
                     android:layout_marginStart="8dp"

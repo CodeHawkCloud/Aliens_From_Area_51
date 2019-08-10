@@ -15,7 +15,7 @@ public class Forum_View extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum__view);
 
-        back = (ImageView)findViewById(R.id.imageView4);
+        back = (ImageView)findViewById(R.id.btnBack);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -14,7 +14,7 @@ public class Forum_IUD extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum__iud);
 
-        back = (ImageView)findViewById(R.id.imageView10);
+        back = (ImageView)findViewById(R.id.btnBack);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

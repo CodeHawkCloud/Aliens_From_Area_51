@@ -24,7 +24,7 @@
                 android:background="#FBB970">
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/btnBack"
                     android:layout_width="92dp"
                     android:layout_height="65dp"
                     android:layout_marginStart="24dp"
@@ -46,7 +46,7 @@
                     android:layout_marginEnd="5dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView10"
+                    app:layout_constraintStart_toEndOf="@+id/btnBack"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/forumtop" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -63,7 +63,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/frmTvId"
                     android:layout_width="100dp"
                     android:layout_height="51dp"
                     android:layout_marginStart="24dp"
@@ -71,12 +71,12 @@
                     android:text="@string/id"
                     android:textColor="@color/colorAccent"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView13"
+                    app:layout_constraintBottom_toTopOf="@+id/frmTvUsrname"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editText9"
+                    android:id="@+id/frmId"
                     android:layout_width="220dp"
                     android:layout_height="51dp"
                     android:layout_marginEnd="16dp"
@@ -85,11 +85,11 @@
                     android:inputType="textPersonName"
                     android:text=" IT18122136"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                    app:layout_constraintBottom_toBottomOf="@+id/frmTvId"
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/frmTvUsrname"
                     android:layout_width="132dp"
                     android:layout_height="54dp"
                     android:layout_marginStart="24dp"
@@ -97,12 +97,12 @@
                     android:text="@string/userName"
                     android:textColor="@color/colorAccent"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView14"
+                    app:layout_constraintBottom_toTopOf="@+id/frmtvRole"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                    app:layout_constraintTop_toBottomOf="@+id/frmTvId" />
 
                 <EditText
-                    android:id="@+id/editText10"
+                    android:id="@+id/frmUsrname"
                     android:layout_width="220dp"
                     android:layout_height="46dp"
                     android:layout_marginEnd="16dp"
@@ -111,11 +111,11 @@
                     android:inputType="textPersonName"
                     android:text="Corre"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                    app:layout_constraintBottom_toBottomOf="@+id/frmTvUsrname"
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/frmtvRole"
                     android:layout_width="90dp"
                     android:layout_height="41dp"
                     android:layout_marginStart="24dp"
@@ -123,12 +123,12 @@
                     android:text="@string/role"
                     android:textColor="@color/colorAccent"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView"
+                    app:layout_constraintBottom_toTopOf="@+id/frmTvCmnt"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                    app:layout_constraintTop_toBottomOf="@+id/frmTvUsrname" />
 
                 <EditText
-                    android:id="@+id/editText11"
+                    android:id="@+id/frmRole"
                     android:layout_width="217dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="16dp"
@@ -136,11 +136,11 @@
                     android:inputType="textPersonName"
                     android:text=" CEO"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                    app:layout_constraintBottom_toBottomOf="@+id/frmtvRole"
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/frmTvCmnt"
                     android:layout_width="119dp"
                     android:layout_height="47dp"
                     android:layout_marginStart="24dp"
@@ -149,12 +149,12 @@
                     android:text=" Comment"
                     android:textColor="@color/colorAccent"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/imageButton"
+                    app:layout_constraintBottom_toTopOf="@+id/btnFrmSub"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                    app:layout_constraintTop_toBottomOf="@+id/frmtvRole" />
 
                 <EditText
-                    android:id="@+id/editText8"
+                    android:id="@+id/frmComnt"
                     android:layout_width="216dp"
                     android:layout_height="53dp"
                     android:layout_marginEnd="16dp"
@@ -165,48 +165,48 @@
                     android:inputType="textMultiLine"
                     android:text="stock full"
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintBottom_toBottomOf="@+id/frmTvCmnt"
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/btnFrmSub"
                     android:layout_width="70dp"
                     android:layout_height="63dp"
                     android:layout_marginBottom="64dp"
                     android:background="@android:color/holo_blue_dark"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                    app:layout_constraintEnd_toStartOf="@+id/btnFrmEdit"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:srcCompat="@android:drawable/ic_menu_save" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/btnFrmEdit"
                     android:layout_width="71dp"
                     android:layout_height="60dp"
                     android:layout_marginBottom="68dp"
                     android:background="@android:color/holo_purple"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+                    app:layout_constraintEnd_toStartOf="@+id/btnFrmdel"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton"
+                    app:layout_constraintStart_toEndOf="@+id/btnFrmSub"
                     app:srcCompat="@android:drawable/ic_menu_edit" />
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/btnFrmdel"
                     android:layout_width="75dp"
                     android:layout_height="62dp"
 
                     android:layout_marginBottom="64dp"
                     android:background="@android:color/holo_red_dark"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+                    app:layout_constraintEnd_toStartOf="@+id/btnFrmViw"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton2"
+                    app:layout_constraintStart_toEndOf="@+id/btnFrmEdit"
                     app:srcCompat="@android:drawable/ic_menu_delete" />
 
                 <ImageButton
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/btnFrmViw"
                     android:layout_width="65dp"
                     android:layout_height="61dp"
                     android:layout_marginBottom="68dp"
@@ -214,7 +214,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton3"
+                    app:layout_constraintStart_toEndOf="@+id/btnFrmdel"
                     app:srcCompat="@android:drawable/ic_menu_view" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>

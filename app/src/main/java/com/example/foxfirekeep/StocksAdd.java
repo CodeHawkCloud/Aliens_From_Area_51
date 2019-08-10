@@ -15,7 +15,7 @@ public class StocksAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_stocks);
 
-        back = (ImageView)findViewById(R.id.imageView3);
+        back = (ImageView)findViewById(R.id.btnBack);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
