@@ -19,6 +19,15 @@
         <activity android:name=".StocksDelete" />
         <activity android:name=".SalesCrudMenu" />
         <activity android:name=".Forum_IUD"/>
+        <activity android:name=".Forum_View"/>
+        <activity android:name=".ExpensesAdd"/>
+        <activity android:name=".ExpensesCrudMenu"/>
+        <activity android:name=".ExpensesDelete"/>
+        <activity android:name=".ExpensesUpdate"/>
+        <activity android:name=".ExpensesView"/>
+        <activity android:name=".StocksAdd"/>
+        <activity android:name=".StocksUpdate"/>
+        <activity android:name=".StocksView"/>
         <activity android:name=".Main_Menu" />
         <activity android:name=".MainActivity">
 
