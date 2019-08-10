@@ -15,7 +15,7 @@ public class ExpensesAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expenses_add);
 
-        back = (ImageView)findViewById(R.id.imageView17);
+        back = (ImageView)findViewById(R.id.btnBack);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
