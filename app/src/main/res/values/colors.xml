@@ -4,5 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#0D0904</color>
 
+    <color name="crud_start_color">#FAA54b</color>
+    <color name="crud_end_color">#FF8301</color>
 
+    <color name="color_primary_light">#FFB970</color>
+    <color name="color_primary_dark">#FF8300</color>
+    <color name="color_primary_darker">#D96F00</color>
+
+    <color name="color_secondary">#FFAB00</color>
 </resources>

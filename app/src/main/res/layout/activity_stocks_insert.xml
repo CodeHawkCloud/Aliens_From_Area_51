@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF8300"
-    android:orientation="vertical"
-    tools:context=".ExpensesUpdate" >
+    android:alwaysDrawnWithCache="false"
+    android:animateLayoutChanges="false"
+    android:background="#ff8300"
+    android:clickable="false"
+    android:clipChildren="false"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,31 +23,32 @@
 
             <ImageView
                 android:id="@+id/button_back"
-                android:layout_width="76dp"
-                android:layout_height="62dp"
+                android:layout_width="95dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="7dp"
                 android:contentDescription="@string/back"
+                android:src="@drawable/btnback"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView29"
+                app:layout_constraintEnd_toStartOf="@+id/imageView9"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.111"
-                app:srcCompat="@drawable/btnback" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView29"
-                android:layout_width="319dp"
-                android:layout_height="87dp"
+                android:id="@+id/imageView9"
+                android:layout_width="296dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:contentDescription="@string/expensesUpdateTop"
+                android:layout_marginBottom="1dp"
+                android:contentDescription="@string/stocksInsertTop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/button_back"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/expenseupdate" />
-
+                app:srcCompat="@drawable/stockinsert" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
@@ -60,77 +64,76 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/text_expenses_update_id"
+                android:id="@+id/text_stocks_insert_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="73dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/id"
+                android:text="@string/item_name"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/edit_expenses_update_id"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.077"
+                app:layout_constraintHorizontal_bias="0.104"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_expenses_update_type"
+                android:id="@+id/text_stocks_insert_supplier"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/expense_type"
+                android:text="@string/supplier"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.093"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_stocks_insert_name" />
+
+            <TextView
+                android:id="@+id/text_stocks_insert_reorder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/reorder_quantity"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.133"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_expenses_update_id" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_stocks_insert_supplier" />
 
             <TextView
-                android:id="@+id/text_expenses_update_date"
+                android:id="@+id/text_stocks_insert_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/date"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.085"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_expenses_update_type" />
-
-            <TextView
-                android:id="@+id/text_expenses_update_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="8dp"
-                android:text="@string/amt"
+                android:text="@string/quantity"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.094"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_expenses_update_date" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_stocks_insert_reorder" />
 
             <Button
-                android:id="@+id/button_expenses_update_update"
+                android:id="@+id/button_stocks_insert_submit"
                 android:layout_width="337dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="47dp"
+                android:layout_marginTop="36dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/update"
+                android:text="@string/submit"
                 android:textColor="#3F51B5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_expenses_update_amount" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_stocks_insert_quantity" />
 
             <EditText
-                android:id="@+id/edit_expenses_update_id"
+                android:id="@+id/edit_stocks_insert_name"
                 android:layout_width="337dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -138,13 +141,13 @@
                 android:layout_marginBottom="25dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                app:layout_constraintBottom_toTopOf="@+id/text_expenses_update_type"
+                app:layout_constraintBottom_toTopOf="@+id/text_stocks_insert_supplier"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_expenses_update_id" />
+                app:layout_constraintTop_toBottomOf="@+id/text_stocks_insert_name" />
 
             <EditText
-                android:id="@+id/edit_expenses_update_type"
+                android:id="@+id/edit_stocks_insert_supplier"
                 android:layout_width="337dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -152,13 +155,13 @@
                 android:layout_marginBottom="24dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                app:layout_constraintBottom_toTopOf="@+id/text_expenses_update_date"
+                app:layout_constraintBottom_toTopOf="@+id/text_stocks_insert_reorder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_expenses_update_type" />
+                app:layout_constraintTop_toBottomOf="@+id/text_stocks_insert_supplier" />
 
             <EditText
-                android:id="@+id/edit_expenses_update_date"
+                android:id="@+id/edit_stocks_insert_reorder"
                 android:layout_width="337dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -166,13 +169,13 @@
                 android:layout_marginBottom="24dp"
                 android:ems="10"
                 android:inputType="number"
-                app:layout_constraintBottom_toTopOf="@+id/text_expenses_update_amount"
+                app:layout_constraintBottom_toTopOf="@+id/text_stocks_insert_quantity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_expenses_update_date" />
+                app:layout_constraintTop_toBottomOf="@+id/text_stocks_insert_reorder" />
 
             <EditText
-                android:id="@+id/edit_expenses_update_amount"
+                android:id="@+id/edit_stocks_insert_quantity"
                 android:layout_width="337dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -180,11 +183,13 @@
                 android:layout_marginBottom="47dp"
                 android:ems="10"
                 android:inputType="number"
-                app:layout_constraintBottom_toTopOf="@+id/button_expenses_update_update"
+                app:layout_constraintBottom_toTopOf="@+id/button_stocks_insert_submit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_expenses_update_amount" />
+                app:layout_constraintTop_toBottomOf="@+id/text_stocks_insert_quantity" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
+
 
 </LinearLayout>

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF8300"
-    tools:context=".MainActivity" >
+    android:background="@color/color_primary_dark"
+    tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_main_logo"
         android:layout_width="278dp"
         android:layout_height="240dp"
         android:layout_marginStart="8dp"

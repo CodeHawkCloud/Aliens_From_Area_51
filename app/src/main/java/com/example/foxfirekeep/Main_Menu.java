@@ -12,16 +12,16 @@ public class Main_Menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main__menu);
+        setContentView(R.layout.activity_main_menu);
 
 
-        Button b1 = (Button)findViewById(R.id.buttonExpen);
-        Button b2 = (Button)findViewById(R.id.buttonSale);
-        Button b3 = (Button)findViewById(R.id.button_inventory_main);
-        Button b4 = (Button)findViewById(R.id.buttonForum);
-        Button b5 = (Button)findViewById(R.id.buttonBusi);
+        Button expenditureButton = (Button)findViewById(R.id.button_mainmenu_expenditure);
+        Button salesButton = (Button)findViewById(R.id.button_mainmenu_sales);
+        Button stocksButton = (Button)findViewById(R.id.button_mainmenu_stocks);
+        Button forumButton = (Button)findViewById(R.id.button_mainmenu_forum);
+        Button mybusinessButton = (Button)findViewById(R.id.button_mainmenu_mybusiness);
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        expenditureButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it1 = new Intent(Main_Menu.this,ExpensesCrudMenu.class);
@@ -29,7 +29,7 @@ public class Main_Menu extends AppCompatActivity {
             }
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
+        salesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it2 = new Intent(Main_Menu.this,SalesCrudMenu.class);
@@ -37,7 +37,7 @@ public class Main_Menu extends AppCompatActivity {
             }
         });
 
-        b3.setOnClickListener(new View.OnClickListener() {
+        stocksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it3 = new Intent(Main_Menu.this,inventoryCrudMenu.class);
@@ -45,7 +45,7 @@ public class Main_Menu extends AppCompatActivity {
             }
         });
 
-        b4.setOnClickListener(new View.OnClickListener() {
+        forumButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it4 = new Intent(Main_Menu.this,Forum_IUD.class);
@@ -53,7 +53,7 @@ public class Main_Menu extends AppCompatActivity {
             }
         });
 
-        b5.setOnClickListener(new View.OnClickListener() {
+        mybusinessButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it5 = new Intent(Main_Menu.this,MyBusiness.class);

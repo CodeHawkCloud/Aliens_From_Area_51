@@ -13,9 +13,9 @@ public class StocksUpdate extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_stocks);
+        setContentView(R.layout.activity_stocks_update);
 
-        back = (ImageView)findViewById(R.id.btnBack);
+        back = (ImageView)findViewById(R.id.button_back);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main_Menu">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.60"
+        android:background="@color/color_primary_dark">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_mainmenu_logo"
+                android:layout_width="276dp"
+                android:layout_height="174dp"
+                android:contentDescription="@string/logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.495"
+                app:srcCompat="@drawable/foxlogo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.40"
+        android:background="@color/color_secondary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button_mainmenu_stocks"
+                android:layout_width="412dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:background="#FFD2A4"
+                android:text="@string/inventory"
+                android:textColor="#A75600"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_mainmenu_forum"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_mainmenu_sales" />
+
+            <Button
+                android:id="@+id/button_mainmenu_sales"
+                android:layout_width="412dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:background="#FFD2A4"
+                android:text="@string/sales"
+                android:textColor="#A75600"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_mainmenu_stocks"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_mainmenu_expenditure" />
+
+            <Button
+                android:id="@+id/button_mainmenu_mybusiness"
+                android:layout_width="414dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:background="#FFD2A4"
+                android:text="@string/my_business"
+                android:textColor="#A75600"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_mainmenu_forum" />
+
+            <Button
+                android:id="@+id/button_mainmenu_forum"
+                android:layout_width="412dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:background="#FFD2A4"
+                android:text="@string/forum"
+                android:textColor="#A75600"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_mainmenu_mybusiness"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_mainmenu_stocks" />
+
+            <Button
+                android:id="@+id/button_mainmenu_expenditure"
+                android:layout_width="411dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:background="#FFD2A4"
+                android:text="@string/expenditure"
+                android:textColor="#A75600"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_mainmenu_sales"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+</LinearLayout>

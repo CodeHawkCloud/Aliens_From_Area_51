@@ -1,178 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ForumCrudMenu">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_weight="0.9"
+        android:background="@color/color_primary_light">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.9"
-            android:background="#FFB970">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/btnHome"
-                    android:layout_width="136dp"
-                    android:layout_height="71dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:contentDescription="@string/home"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.666"
-                    app:srcCompat="@drawable/home" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.6"
-            android:background="#FF8300">
+            android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView15"
+                android:id="@+id/button_home"
+                android:layout_width="136dp"
+                android:layout_height="71dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666"
+                app:srcCompat="@drawable/home" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        android:background="@color/color_primary_dark">
+
+        <ImageView
+            android:id="@+id/image_forum_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/forumHLogo"
+            app:srcCompat="@drawable/forum" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.55"
+        android:background="@color/color_primary_darker">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_crud_insert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/forumHLogo"
-                app:srcCompat="@drawable/forum" />
-        </RelativeLayout>
+                android:text="@string/insert"
+                android:textColor="#FFFFFF"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_crud_delete"
+                app:layout_constraintEnd_toStartOf="@+id/text_crud_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_crud_insert" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.55">
+            <TextView
+                android:id="@+id/text_crud_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="80dp"
+                android:text="@string/tableau"
+                android:textColor="#FFFFFF"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_crud_view" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#D96F00">
+            <TextView
+                android:id="@+id/text_crud_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="84dp"
+                android:text="@string/delete"
+                android:textColor="#FFFFFF"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_crud_delete" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/insert"
-                    android:textColor="#FFFFFF"
-                    android:textColorLink="@color/colorAccent"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/btnDel"
-                    app:layout_constraintEnd_toStartOf="@+id/frmTvCmnt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnInsrt" />
+            <ImageView
+                android:id="@+id/button_crud_insert"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/insert"
+                app:layout_constraintBottom_toTopOf="@+id/text_crud_insert"
+                app:layout_constraintEnd_toStartOf="@+id/button_crud_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/plus" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="80dp"
-                    android:text="@string/tableau"
-                    android:textColor="#FFFFFF"
-                    android:textColorLink="@color/colorAccent"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnViw" />
+            <ImageView
+                android:id="@+id/button_crud_delete"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/delete"
+                app:layout_constraintBottom_toTopOf="@+id/text_crud_delete"
+                app:layout_constraintEnd_toStartOf="@+id/button_crud_view"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_crud_insert"
+                app:srcCompat="@drawable/delete" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="84dp"
-                    android:text="@string/delete"
-                    android:textColor="#FFFFFF"
-                    android:textColorLink="@color/colorAccent"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnDel" />
+            <ImageView
+                android:id="@+id/button_crud_view"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/update"
+                app:layout_constraintBottom_toTopOf="@+id/text_crud_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button_crud_delete"
+                app:layout_constraintTop_toBottomOf="@+id/text_crud_update"
+                app:srcCompat="@drawable/view" />
 
-                <ImageView
-                    android:id="@+id/btnInsrt"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:clickable="true"
-                    android:contentDescription="@string/insert"
-                    app:layout_constraintBottom_toTopOf="@+id/textView2"
-                    app:layout_constraintEnd_toStartOf="@+id/btnUpd"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintHorizontal_chainStyle="spread"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/plus" />
+            <ImageView
+                android:id="@+id/button_crud_update"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/tableau"
+                app:layout_constraintBottom_toTopOf="@+id/text_crud_update"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button_crud_insert"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/update" />
 
-                <ImageView
-                    android:id="@+id/btnDel"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:clickable="true"
-                    android:contentDescription="@string/delete"
-                    app:layout_constraintBottom_toTopOf="@+id/textView4"
-                    app:layout_constraintEnd_toStartOf="@+id/btnViw"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2"
-                    app:srcCompat="@drawable/delete" />
+            <TextView
+                android:id="@+id/text_crud_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/update"
+                android:textColor="#FFFFFF"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_crud_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/text_crud_insert"
+                app:layout_constraintTop_toBottomOf="@+id/button_crud_update" />
 
-                <ImageView
-                    android:id="@+id/btnViw"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:clickable="true"
-                    android:contentDescription="@string/update"
-                    app:layout_constraintBottom_toTopOf="@+id/textView3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btnDel"
-                    app:layout_constraintTop_toBottomOf="@+id/frmTvCmnt"
-                    app:srcCompat="@drawable/view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <ImageView
-                    android:id="@+id/btnUpd"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:clickable="true"
-                    android:contentDescription="@string/tableau"
-                    app:layout_constraintBottom_toTopOf="@+id/frmTvCmnt"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btnInsrt"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/update" />
+    </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/frmTvCmnt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/update"
-                    android:textColor="#FFFFFF"
-                    android:textColorLink="@color/colorAccent"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/btnViw"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/btnUpd" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </RelativeLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

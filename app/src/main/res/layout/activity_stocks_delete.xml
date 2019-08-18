@@ -1,111 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff8300"
+    android:orientation="vertical"
     tools:context=".StocksDelete">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_weight="0.87"
+        android:background="@color/color_primary_light">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.87"
-            android:background="#FFB970">
+            android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/button_back"
+                android:layout_width="76dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.111"
+                app:srcCompat="@drawable/btnback" />
 
-                <ImageView
-                    android:id="@+id/btnBack"
-                    android:layout_width="76dp"
-                    android:layout_height="62dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:contentDescription="@string/back"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView12"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.111"
-                    app:srcCompat="@drawable/btnback" />
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="325dp"
+                android:layout_height="89dp"
+                android:contentDescription="@string/stockDeleteTop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/stocksdelete" />
 
-                <ImageView
-                    android:id="@+id/imageView12"
-                    android:layout_width="325dp"
-                    android:layout_height="89dp"
-                    android:contentDescription="@string/stockDeleteTop"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/btnBack"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/stocksdelete" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.13"
+        android:background="@drawable/crud_operation_background">
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.13"
-            android:background="@drawable/crud_operation_background">
+            android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <Button
+                android:id="@+id/button_stocks_delete_delete"
+                android:layout_width="337dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/delete"
+                android:textColor="#3F51B5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_stocks_delete_name" />
 
-                <Button
-                    android:id="@+id/btnSalUpd"
-                    android:layout_width="337dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/delete"
-                    android:textColor="#3F51B5"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/salInsQn" />
+            <EditText
+                android:id="@+id/edit_stocks_delete_name"
+                android:layout_width="337dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="11dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/button_stocks_delete_delete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_stocks_delete_name" />
 
-                <EditText
-                    android:id="@+id/salInsQn"
-                    android:layout_width="337dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="11dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintBottom_toTopOf="@+id/btnSalUpd"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            <TextView
+                android:id="@+id/text_stocks_delete_name"
+                android:layout_width="336dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="216dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="@string/name_delete_stock"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_stocks_delete_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="336dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="37dp"
-                    android:layout_marginTop="216dp"
-                    android:layout_marginEnd="8dp"
-                    android:gravity="center"
-                    android:text="@string/name_delete_stock"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/salInsQn"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </RelativeLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

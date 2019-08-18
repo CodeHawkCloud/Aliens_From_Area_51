@@ -1,180 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MyBusiness">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_weight="0.9"
+        android:background="@color/color_primary_light">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.9"
-            android:background="#FFB970">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="87dp"
-                    android:layout_height="75dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:contentDescription="@string/home"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/home" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.6"
-            android:background="#FF8300">
+            android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/buton_home"
+                android:layout_width="87dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/home" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        android:background="@color/color_primary_dark">
+
+        <ImageView
+            android:id="@+id/image_mybusiness_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/businessHLogo"
+            app:srcCompat="@drawable/bus" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.55"
+        android:background="@drawable/crud_operation_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_mybusiness_res_totsales"
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="38dp"
+                android:gravity="end"
+                android:text="@string/test"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_mybusiness_res_totexpen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_mybusiness_res_totexpen"
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="38dp"
+                android:gravity="end"
+                android:text="@string/test"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_mybusiness_res_totstocks"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_mybusiness_res_totsales" />
+
+            <TextView
+                android:id="@+id/text_mybusiness_res_totstocks"
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="38dp"
+                android:gravity="end"
+                android:text="@string/test"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_mybusiness_res_totcoms"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_mybusiness_res_totexpen" />
+
+            <TextView
+                android:id="@+id/text_mybusiness_res_totcoms"
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="38dp"
+                android:gravity="end"
+                android:text="@string/test"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_mybusiness_reset"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_mybusiness_res_totstocks" />
+
+            <TextView
+                android:id="@+id/text_mybusiness_totsales"
+                android:layout_width="123dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="36dp"
+                android:text="@string/tot_sales"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_mybusiness_totexpen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_mybusiness_totexpen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/businessHLogo"
-                app:srcCompat="@drawable/bus" />
-        </RelativeLayout>
+                android:layout_marginStart="36dp"
+                android:text="@string/tot_expenditure"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_mybusiness_totstocks"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_mybusiness_totsales" />
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.55"
-            android:background="@drawable/crud_operation_background">
+            <TextView
+                android:id="@+id/text_mybusiness_totstocks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:text="@string/tot_stock"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_mybusiness_totcoms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_mybusiness_totexpen" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/text_mybusiness_totcoms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:text="@string/tot_comments"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_mybusiness_reset"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_mybusiness_totstocks" />
 
-                <TextView
-                    android:id="@+id/textView27"
-                    android:layout_width="120dp"
-                    android:layout_height="33dp"
-                    android:layout_marginEnd="38dp"
-                    android:gravity="end"
-                    android:text="@string/test"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView25"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/button_mybusiness_reset"
+                android:layout_width="343dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="34dp"
+                android:layout_marginEnd="34dp"
+                android:text="@string/reset"
+                android:textColor="#3F51B5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_mybusiness_totcoms" />
 
-                <TextView
-                    android:id="@+id/textView25"
-                    android:layout_width="120dp"
-                    android:layout_height="33dp"
-                    android:layout_marginEnd="38dp"
-                    android:gravity="end"
-                    android:text="@string/test"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView26"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/textView26"
-                    android:layout_width="120dp"
-                    android:layout_height="33dp"
-                    android:layout_marginEnd="38dp"
-                    android:gravity="end"
-                    android:text="@string/test"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView24"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView25" />
-
-                <TextView
-                    android:id="@+id/textView24"
-                    android:layout_width="120dp"
-                    android:layout_height="33dp"
-                    android:layout_marginEnd="38dp"
-                    android:gravity="end"
-                    android:text="@string/test"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/button4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView26" />
-
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="123dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="36dp"
-                    android:text="@string/tot_sales"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView17"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:text="@string/tot_expenditure"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView22"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:text="@string/tot_stock"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView23"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-                <TextView
-                    android:id="@+id/textView23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:text="@string/tot_comments"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@+id/button4"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="343dp"
-                    android:layout_height="46dp"
-                    android:layout_marginStart="34dp"
-                    android:layout_marginEnd="34dp"
-                    android:text="@string/reset"
-                    android:textColor="#3F51B5"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView23" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </RelativeLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
