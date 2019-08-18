@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyBusiness"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MyBusiness" />
         <activity android:name=".SalesView" />
         <activity android:name=".SalesDelete" />
         <activity android:name=".SalesUpdate" />
@@ -28,8 +29,8 @@
         <activity android:name=".StocksAdd"/>
         <activity android:name=".StocksUpdate"/>
         <activity android:name=".StocksView"/>
-        <activity android:name=".Main_Menu" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Main_Menu" >
+
 
 
 
