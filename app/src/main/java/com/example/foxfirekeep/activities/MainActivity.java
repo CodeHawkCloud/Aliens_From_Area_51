@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.foxfirekeep.R;
+import com.example.foxfirekeep.activities.R;
 
 public class MainActivity extends AppCompatActivity {
 
