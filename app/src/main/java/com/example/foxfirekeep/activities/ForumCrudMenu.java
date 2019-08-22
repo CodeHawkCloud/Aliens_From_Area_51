@@ -1,4 +1,4 @@
-package com.example.foxfirekeep;
+package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,18 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class inventoryCrudMenu extends AppCompatActivity {
+import com.example.foxfirekeep.R;
 
-     private ImageView home1;
-     private ImageView in;
-     private ImageView up;
-     private ImageView del;
-     private ImageView vi;
+public class ForumCrudMenu extends AppCompatActivity {
+
+    private ImageView home1;
+    private ImageView in;
+    private ImageView up;
+    private ImageView del;
+    private ImageView vi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventory_crud_menu);
+        setContentView(R.layout.activity_forum_crud_menu);
 
         home1 = (ImageView)findViewById(R.id.button_home);
         in = (ImageView)findViewById(R.id.button_crud_insert);
@@ -29,7 +31,7 @@ public class inventoryCrudMenu extends AppCompatActivity {
         home1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it1 = new Intent(inventoryCrudMenu.this,Main_Menu.class);
+                Intent it1 = new Intent(ForumCrudMenu.this,Main_Menu.class);
                 startActivity(it1);
             }
         });
@@ -37,7 +39,7 @@ public class inventoryCrudMenu extends AppCompatActivity {
         in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it2 = new Intent(inventoryCrudMenu.this,StocksAdd.class);
+                Intent it2 = new Intent(ForumCrudMenu.this,Forum_IUD.class);
                 startActivity(it2);
             }
         });
@@ -45,7 +47,7 @@ public class inventoryCrudMenu extends AppCompatActivity {
         up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it3 = new Intent(inventoryCrudMenu.this,StocksUpdate.class);
+                Intent it3 = new Intent(ForumCrudMenu.this,Forum_IUD.class);
                 startActivity(it3);
             }
         });
@@ -53,7 +55,7 @@ public class inventoryCrudMenu extends AppCompatActivity {
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it4 = new Intent(inventoryCrudMenu.this,StocksDelete.class);
+                Intent it4 = new Intent(ForumCrudMenu.this,Forum_IUD.class);
                 startActivity(it4);
             }
         });
@@ -61,9 +63,10 @@ public class inventoryCrudMenu extends AppCompatActivity {
         vi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it5 = new Intent(inventoryCrudMenu.this,StocksView.class);
+                Intent it5 = new Intent(ForumCrudMenu.this,Forum_View.class);
                 startActivity(it5);
             }
         });
+
     }
 }

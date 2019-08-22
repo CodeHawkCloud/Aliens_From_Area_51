@@ -1,4 +1,4 @@
-package com.example.foxfirekeep;
+package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class ExpensesCrudMenu extends AppCompatActivity {
+import com.example.foxfirekeep.R;
+
+public class SalesCrudMenu extends AppCompatActivity {
     private ImageView home1;
     private ImageView in;
     private ImageView up;
@@ -17,7 +19,7 @@ public class ExpensesCrudMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expenses_crud_menu);
+        setContentView(R.layout.activity_sales_crud_menu);
 
         home1 = (ImageView)findViewById(R.id.button_home);
         in = (ImageView)findViewById(R.id.button_crud_insert);
@@ -28,7 +30,7 @@ public class ExpensesCrudMenu extends AppCompatActivity {
         home1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it1 = new Intent(ExpensesCrudMenu.this,Main_Menu.class);
+                Intent it1 = new Intent(SalesCrudMenu.this,Main_Menu.class);
                 startActivity(it1);
             }
         });
@@ -36,7 +38,7 @@ public class ExpensesCrudMenu extends AppCompatActivity {
         in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it2 = new Intent(ExpensesCrudMenu.this,ExpensesAdd.class);
+                Intent it2 = new Intent(SalesCrudMenu.this,SalesInsert.class);
                 startActivity(it2);
             }
         });
@@ -44,7 +46,7 @@ public class ExpensesCrudMenu extends AppCompatActivity {
         up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it3 = new Intent(ExpensesCrudMenu.this,ExpensesUpdate.class);
+                Intent it3 = new Intent(SalesCrudMenu.this,SalesUpdate.class);
                 startActivity(it3);
             }
         });
@@ -52,7 +54,7 @@ public class ExpensesCrudMenu extends AppCompatActivity {
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it4 = new Intent(ExpensesCrudMenu.this,ExpensesDelete.class);
+                Intent it4 = new Intent(SalesCrudMenu.this,SalesDelete.class);
                 startActivity(it4);
             }
         });
@@ -60,7 +62,7 @@ public class ExpensesCrudMenu extends AppCompatActivity {
         vi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it5 = new Intent(ExpensesCrudMenu.this,ExpensesView.class);
+                Intent it5 = new Intent(SalesCrudMenu.this,SalesView.class);
                 startActivity(it5);
             }
         });

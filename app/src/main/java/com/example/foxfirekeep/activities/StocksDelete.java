@@ -1,4 +1,4 @@
-package com.example.foxfirekeep;
+package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,20 +7,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class ExpensesAdd extends AppCompatActivity {
+import com.example.foxfirekeep.R;
+
+public class StocksDelete extends AppCompatActivity {
     private ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expenses_insert);
+        setContentView(R.layout.activity_stocks_delete);
 
         back = (ImageView)findViewById(R.id.button_back);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it1 = new Intent(ExpensesAdd.this,ExpensesCrudMenu.class);
+                Intent it1 = new Intent(StocksDelete.this,inventoryCrudMenu.class);
                 startActivity(it1);
             }
         });

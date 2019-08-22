@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FF8300"
     android:orientation="vertical"
-    tools:context=".ExpensesUpdate">
+    tools:context=".activities.ExpensesUpdate">
 
     <RelativeLayout
         android:layout_width="match_parent"
