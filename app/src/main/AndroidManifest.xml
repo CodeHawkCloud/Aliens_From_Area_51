@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.foxfirekeep">
+    package="com.example.foxfirekeep.activities">
 
     <application
         android:allowBackup="true"
@@ -10,32 +10,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MyBusiness" />
-        <activity android:name=".activities.SalesView" />
-        <activity android:name=".activities.SalesDelete" />
-        <activity android:name=".activities.SalesUpdate" />
-        <activity android:name=".activities.SalesInsert" />
-        <activity android:name=".activities.ForumCrudMenu" />
-        <activity android:name=".activities.inventoryCrudMenu" />
-        <activity android:name=".activities.StocksDelete" />
-        <activity android:name=".activities.SalesCrudMenu" />
-        <activity android:name=".activities.Forum_IUD"/>
-        <activity android:name=".activities.Forum_View"/>
-        <activity android:name=".activities.ExpensesAdd"/>
-        <activity android:name=".activities.ExpensesCrudMenu"/>
-        <activity android:name=".activities.ExpensesDelete"/>
-        <activity android:name=".activities.ExpensesUpdate"/>
-        <activity android:name=".activities.ExpensesView"/>
-        <activity android:name=".activities.StocksAdd"/>
-        <activity android:name=".activities.StocksUpdate"/>
-        <activity android:name=".activities.StocksView"/>
-        <activity android:name=".activities.Main_Menu" />
+        <activity android:name=".MyBusiness" />
+        <activity android:name=".SalesView" />
+        <activity android:name=".SalesDelete" />
+        <activity android:name=".SalesUpdate" />
+        <activity android:name=".SalesInsert" />
+        <activity android:name=".ForumCrudMenu" />
+        <activity android:name=".inventoryCrudMenu" />
+        <activity android:name=".StocksDelete" />
+        <activity android:name=".SalesCrudMenu" />
+        <activity android:name=".Forum_IUD"/>
+        <activity android:name=".Forum_View"/>
+        <activity android:name=".ExpensesAdd"/>
+        <activity android:name=".ExpensesCrudMenu"/>
+        <activity android:name=".ExpensesDelete"/>
+        <activity android:name=".ExpensesUpdate"/>
+        <activity android:name=".ExpensesView"/>
+        <activity android:name=".StocksAdd"/>
+        <activity android:name=".StocksUpdate"/>
+        <activity android:name=".StocksView"/>
+        <activity android:name=".Main_Menu" />
 
 
     </application>
