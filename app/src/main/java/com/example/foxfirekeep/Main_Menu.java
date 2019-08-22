@@ -48,7 +48,7 @@ public class Main_Menu extends AppCompatActivity {
         forumButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it4 = new Intent(Main_Menu.this,Forum_IUD.class);
+                Intent it4 = new Intent(Main_Menu.this,ForumCrudMenu.class);
                 startActivity(it4);
             }
         });
