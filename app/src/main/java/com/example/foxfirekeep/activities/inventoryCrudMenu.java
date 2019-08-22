@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.foxfirekeep.R;
+import com.example.foxfirekeep.activities.R;
 
 public class inventoryCrudMenu extends AppCompatActivity {
 
