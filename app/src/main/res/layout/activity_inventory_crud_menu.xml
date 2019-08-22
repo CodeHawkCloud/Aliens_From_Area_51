@@ -64,13 +64,12 @@
                 android:id="@+id/text_crud_insert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="96dp"
                 android:text="@string/insert"
                 android:textColor="#FFFFFF"
                 android:textColorLink="@color/colorAccent"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/button_crud_delete"
-                app:layout_constraintEnd_toStartOf="@+id/text_crud_update"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button_crud_insert" />
 
@@ -78,7 +77,7 @@
                 android:id="@+id/text_crud_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="80dp"
+                android:layout_marginEnd="81dp"
                 android:text="@string/tableau"
                 android:textColor="#FFFFFF"
                 android:textColorLink="@color/colorAccent"
@@ -91,7 +90,7 @@
                 android:id="@+id/text_crud_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="84dp"
+                android:layout_marginStart="90dp"
                 android:text="@string/delete"
                 android:textColor="#FFFFFF"
                 android:textColorLink="@color/colorAccent"
@@ -102,8 +101,8 @@
 
             <ImageView
                 android:id="@+id/button_crud_insert"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="@string/insert"
                 app:layout_constraintBottom_toTopOf="@+id/text_crud_insert"
                 app:layout_constraintEnd_toStartOf="@+id/button_crud_update"
@@ -115,8 +114,8 @@
 
             <ImageView
                 android:id="@+id/button_crud_delete"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="@string/delete"
                 app:layout_constraintBottom_toTopOf="@+id/text_crud_delete"
                 app:layout_constraintEnd_toStartOf="@+id/button_crud_view"
@@ -127,8 +126,8 @@
 
             <ImageView
                 android:id="@+id/button_crud_view"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="@string/update"
                 app:layout_constraintBottom_toTopOf="@+id/text_crud_view"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -139,8 +138,8 @@
 
             <ImageView
                 android:id="@+id/button_crud_update"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="@string/tableau"
                 app:layout_constraintBottom_toTopOf="@+id/text_crud_update"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -153,14 +152,13 @@
                 android:id="@+id/text_crud_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="85dp"
                 android:text="@string/update"
                 android:textColor="#FFFFFF"
                 android:textColorLink="@color/colorAccent"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/button_crud_view"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/text_crud_insert"
                 app:layout_constraintTop_toBottomOf="@+id/button_crud_update" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
