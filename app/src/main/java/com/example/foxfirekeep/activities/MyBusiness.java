@@ -10,14 +10,14 @@ import android.widget.ImageView;
 import com.example.foxfirekeep.activities.R;
 
 public class MyBusiness extends AppCompatActivity {
-    private ImageView home1;
+     ImageView home1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_business);
 
-        home1 = (ImageView)findViewById(R.id.button_home);
+        home1 = (ImageView)findViewById(R.id.buton_home);
 
         home1.setOnClickListener(new View.OnClickListener() {
             @Override
