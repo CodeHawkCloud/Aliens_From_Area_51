@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.SalesDelete">
+    tools:context=".SalesDelete">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -88,6 +88,7 @@
                 android:layout_marginBottom="40dp"
                 android:ems="10"
                 android:inputType="number"
+                android:enabled="false"
                 app:layout_constraintBottom_toTopOf="@+id/button_sales_delete_delete"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

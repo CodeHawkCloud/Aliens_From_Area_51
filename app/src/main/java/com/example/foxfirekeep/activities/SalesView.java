@@ -6,8 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.database.DBHandler;
+
+import java.util.List;
 
 public class SalesView extends AppCompatActivity {
     private ImageView back;
@@ -26,5 +30,6 @@ public class SalesView extends AppCompatActivity {
                 startActivity(it1);
             }
         });
+
     }
 }

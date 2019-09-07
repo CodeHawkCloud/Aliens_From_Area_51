@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.SalesInsert">
+    tools:context=".SalesInsert">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -125,10 +125,12 @@
                 android:text="@string/submit"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
+                android:enabled="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_sales_insert_quantity" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_sales_insert_quantity"
+                />
 
             <EditText
                 android:id="@+id/edit_sales_insert_item"

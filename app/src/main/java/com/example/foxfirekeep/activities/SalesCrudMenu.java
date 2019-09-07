@@ -6,15 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.database.DBHandler;
+
+import java.util.List;
 
 public class SalesCrudMenu extends AppCompatActivity {
-    private ImageView home1;
-    private ImageView in;
-    private ImageView up;
-    private ImageView del;
-    private ImageView vi;
+    ImageView home1;
+    ImageView in;
+    ImageView up;
+    ImageView del;
+    ImageView vi;
+    DBHandler dbhandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +67,22 @@ public class SalesCrudMenu extends AppCompatActivity {
         vi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it5 = new Intent(SalesCrudMenu.this,SalesView.class);
-                startActivity(it5);
+
+                List list = dbhandler.readAllSales();
+
+                //Toast creation
+                Toast t;
+
+                //check if there  is data to be viewed, if yes go to the view activity else display toast
+                if(!list.isEmpty()){
+                    Intent it5 = new Intent(SalesCrudMenu.this,SalesView.class);
+                    startActivity(it5);
+                }
+                else{
+                    t = Toast.makeText(getApplicationContext(),"No sales to  viewed!", Toast.LENGTH_LONG);
+                    t.show();
+                }
+
             }
         });
     }

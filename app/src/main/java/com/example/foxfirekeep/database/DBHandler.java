@@ -1,5 +1,7 @@
 package com.example.foxfirekeep.database;
 
+import com.example.foxfirekeep.models.Sales;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -67,7 +69,7 @@ public class DBHandler extends SQLiteOpenHelper {
     /*Sql methods of the sales component [START]*/
 
     //addSale() method to add a sale
-    public void addSale(String pItemName, String pBrand, int pPrice, int pQuantity){
+    public boolean addSale(String pItemName, String pBrand, int pPrice, int pQuantity){
 
         //get write mode
         SQLiteDatabase db = getWritableDatabase();
@@ -83,6 +85,12 @@ public class DBHandler extends SQLiteOpenHelper {
         //returns the primary key after a successful insertion
         long newID = db.insert(DatabaseMaster.Sales.TABLE_NAME,null,values);
 
+        if(newID == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     //readAllSales() method to get all the sales
@@ -115,19 +123,16 @@ public class DBHandler extends SQLiteOpenHelper {
         List salesList = new ArrayList();
 
         while(cursor.moveToNext()){
+
             int cId = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Sales._ID));
             String cItemName = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Sales.COLUMN_NAME_ITEM));
             String cBrand = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Sales.COLUMN_NAME_BRAND));
             int cPrice = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Sales.COLUMN_NAME_PRICE));
             int cQuantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Sales.COLUMN_NAME_QUANTITY));
 
-            //add the retrieved sales information into the list
-            salesList.add(cId);
-            salesList.add(cItemName);
-            salesList.add(cBrand);
-            salesList.add(cPrice);
-            salesList.add(cQuantity);
-
+            //add the retrieved sales information into the product class using the overloaded constructor
+            Sales sales = new Sales(cId, cItemName, cBrand, cPrice, cQuantity);
+            salesList.add(sales);
         }
 
         cursor.close();
@@ -136,7 +141,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //updateSales() method to update the sales
-    public void updateSales(int pId,String pItemName, String pBrand, int pPrice, int pQuantity){
+    public boolean updateSales(int pId,String pItemName, String pBrand, int pPrice, int pQuantity){
 
         //get readable mode
         SQLiteDatabase db = getReadableDatabase();
@@ -159,10 +164,17 @@ public class DBHandler extends SQLiteOpenHelper {
                                 selection,
                                 selectionArg
                 );
+
+        if(success == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     //deleteSale() method to delete the sale
-    public void deleteSale(int pId){
+    public boolean deleteSale(int pId){
 
         //get readable mode
         SQLiteDatabase db = getReadableDatabase();
@@ -178,6 +190,13 @@ public class DBHandler extends SQLiteOpenHelper {
                                 selection,
                                 selectionArg
                 );
+
+        if(success == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     /*Sql methods of the sales component [END]*/
