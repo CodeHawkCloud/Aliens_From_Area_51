@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#ff8300"
     android:orientation="vertical"
-    tools:context=".activities.StocksView">
+    tools:context=".StocksView">
 
     <RelativeLayout
         android:layout_width="match_parent"

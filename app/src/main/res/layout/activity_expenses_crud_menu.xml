@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FF8300"
     android:orientation="vertical"
-    tools:context=".activities.ExpensesCrudMenu">
+    tools:context=".ExpensesCrudMenu">
 
     <RelativeLayout
         android:layout_width="match_parent"
