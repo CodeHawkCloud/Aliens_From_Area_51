@@ -1,6 +1,7 @@
 package com.example.foxfirekeep.database;
 
 import com.example.foxfirekeep.models.Sales;
+import com.example.foxfirekeep.models.Stock;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -46,6 +47,15 @@ public class DBHandler extends SQLiteOpenHelper {
         /*-----------------------------------------------------------------------------------------*/
 
         //Stock table creation [START]
+
+        String STOCK_TABLE_CREATE = "CREATE TABLE " + DatabaseMaster.Stock.TABLE_NAME + " (" +
+                DatabaseMaster.Stock._ID + " INTEGER PRIMARY KEY," +
+                DatabaseMaster.Stock.COLUMN_NAME_ITEM + " TEXT," +
+                DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER + " TEXT," +
+                DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY + " INTEGER," +
+                DatabaseMaster.Stock.COLUMN_NAME_QUANTITY + " INTEGER)";
+        //execution of the sql statement
+        db.execSQL(STOCK_TABLE_CREATE);
 
         //Stock table creation [END]
 
@@ -235,28 +245,139 @@ public class DBHandler extends SQLiteOpenHelper {
     /*Sql methods of the stock component [START]*/
 
     //addStock() method to add a stock
-    public void addStock(){
 
-    }
+
+
+        public boolean addStock(String pItemName, String pSupplier, int pReorder_Quantity, int pQuantity){
+
+            //get write mode
+            SQLiteDatabase db = getWritableDatabase();
+
+            //creation of a map of values
+            ContentValues values = new ContentValues();
+
+            values.put(DatabaseMaster.Stock.COLUMN_NAME_ITEM,pItemName);
+            values.put(DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER ,pSupplier);
+            values.put(DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY,pReorder_Quantity);
+            values.put(DatabaseMaster.Stock.COLUMN_NAME_QUANTITY,pQuantity);
+
+            //returns the primary key after a successful insertion
+            long newID = db.insert(DatabaseMaster.Sales.TABLE_NAME,null,values);
+
+            if(newID == -1){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+
 
     //readAllStocks() method to get all the stocks
-    public List readAlSstocks() {
+    public List readAllStock(){
 
-        /*erase this..used to avoid the return error*/
-        List l1 =new ArrayList<>();
-        return l1;
+        //get readable mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        //projection
+        String[] projection = {DatabaseMaster.Stock._ID,
+                DatabaseMaster.Stock.COLUMN_NAME_ITEM,
+                DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER,
+                DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY,
+                DatabaseMaster.Stock.COLUMN_NAME_QUANTITY
+        };
+
+        //database query which returns a cursor object
+        Cursor cursor = db.query(
+                DatabaseMaster.Stock.TABLE_NAME,
+                projection,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        //list declarations
+        List stockList = new ArrayList();
+
+        while(cursor.moveToNext()){
+
+            int cId = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock._ID));
+            String cItemName = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock.COLUMN_NAME_ITEM));
+            String cSupplier = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER));
+            int cReorder_Quantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY));
+            int cQuantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock.COLUMN_NAME_QUANTITY));
+
+            //add the retrieved sales information into the product class using the overloaded constructor
+           Stock stock = new Stock(cId, cItemName, cSupplier, cReorder_Quantity, cQuantity);
+            stockList.add(stock);
+        }
+
+        cursor.close();
+
+        return stockList;
     }
 
     //updateExpenditure() method to update the expenditure
-    public void updatestock(){
+    public boolean updateStock(int pId,String pItemName, String pSupplier, int pReorder_Quantity, int pQuantity){
 
+        //get readable mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        //creation of a map of values to have the new values
+        ContentValues values = new ContentValues();
+
+        values.put(DatabaseMaster.Stock.COLUMN_NAME_ITEM,pItemName);
+        values.put(DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER,pSupplier);
+        values.put(DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY,pReorder_Quantity);
+        values.put(DatabaseMaster.Stock.COLUMN_NAME_QUANTITY,pQuantity);
+
+        //selection
+        String selection = DatabaseMaster.Stock._ID + " LIKE ?";
+        String[] selectionArg = {String.valueOf(pId)};
+
+        //db query to update
+        int success = db.update(DatabaseMaster.Stock.TABLE_NAME,
+                values,
+                selection,
+                selectionArg
+        );
+
+        if(success == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
-
     //deleteStock() method to delete the stock
-    public void deleteStock(){
+    public boolean deleteStock(int pId){
 
+        //get readable mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        //selection
+        String selection = DatabaseMaster.Stock.TABLE_NAME + " LIKE ?";
+
+        //Argument
+        String[] selectionArg = {String.valueOf(pId)};
+
+        //query to delete a sale
+        int success = db.delete(DatabaseMaster.Stock.TABLE_NAME,
+                selection,
+                selectionArg
+        );
+
+        if(success == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
-
     /*Sql methods of the stock component [END]*/
 
     /*-----------------------------------------------------------------------------------------*/
