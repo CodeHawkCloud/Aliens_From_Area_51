@@ -8,7 +8,7 @@ public class Expenses {
     private Date date;
     private double amount;
 
-    public Expenses(int expenses_id, String type, Date date, double amount) {
+    public Expenses(String type, Date date, double amount) {
 
         this.type = type;
         this.date = date;
