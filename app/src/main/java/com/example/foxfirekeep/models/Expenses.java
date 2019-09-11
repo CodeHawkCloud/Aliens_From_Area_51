@@ -8,9 +8,9 @@ public class Expenses {
     private Date date;
     private double amount;
 
-    public Expenses(int expenses_id, String e_type, Date date, double amount) {
+    public Expenses(int expenses_id, String type, Date date, double amount) {
 
-        this.type = e_type;
+        this.type = type;
         this.date = date;
         this.amount = amount;
     }
@@ -24,7 +24,7 @@ public class Expenses {
         return amount;
     }
 
-    public String getE_type() {
+    public String getType() {
         return type;
     }
 
