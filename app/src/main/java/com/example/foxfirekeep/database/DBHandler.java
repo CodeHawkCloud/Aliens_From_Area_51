@@ -41,7 +41,13 @@ public class DBHandler extends SQLiteOpenHelper {
         /*-----------------------------------------------------------------------------------------*/
 
         //Expenditure table creation [START]
-
+        String Expenses_TABLE_CREATION = "CREATE TABLE " + DatabaseMaster.Expenses.TABLE_NAME + " (" +
+                DatabaseMaster.Expenses._ID + " INTEGER PRIMARY KEY, " +
+                DatabaseMaster.Expenses.COLUMN_NAME_TYPE + " TEXT," +
+                DatabaseMaster.Expenses.COLUMN_NAME_DATE + " TEXT," +
+                DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT + " DOUBLE)";
+        //Execution of SQL statement
+        db.execSQL(Expenses_TABLE_CREATION);
         //Expenditure table  creation [END]
 
         /*-----------------------------------------------------------------------------------------*/

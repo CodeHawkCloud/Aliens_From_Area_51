@@ -28,7 +28,7 @@ public class DatabaseMaster {
     //inner class-Expenses table
     public static class Expenses implements BaseColumns{
         public static final String TABLE_NAME = "expenses";
-        public static final String COLUMN_NAME_ETYPE = "e_type";
+        public static final String COLUMN_NAME_TYPE = "type";
         public static final String COLUMN_NAME_DATE = "date";
         public static final String COLUMN_NAME_AMOUNT = "amount";
     }
