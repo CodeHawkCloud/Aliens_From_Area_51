@@ -1,7 +1,8 @@
 package com.example.foxfirekeep.database;
 
 import com.example.foxfirekeep.models.Sales;
-import com.example.foxfirekeep.models.Stock;
+import com.example.foxfirekeep.models.Stocks;
+
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -54,14 +55,14 @@ public class DBHandler extends SQLiteOpenHelper {
 
         //Stock table creation [START]
 
-        String STOCK_TABLE_CREATE = "CREATE TABLE " + DatabaseMaster.Stock.TABLE_NAME + " (" +
-                DatabaseMaster.Stock._ID + " INTEGER PRIMARY KEY," +
-                DatabaseMaster.Stock.COLUMN_NAME_ITEM + " TEXT," +
-                DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER + " TEXT," +
-                DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY + " INTEGER," +
-                DatabaseMaster.Stock.COLUMN_NAME_QUANTITY + " INTEGER)";
+        String STOCKS_TABLE_CREATE = "CREATE TABLE " + DatabaseMaster.Stocks.TABLE_NAME + " (" +
+                DatabaseMaster.Stocks._ID + " INTEGER PRIMARY KEY," +
+                DatabaseMaster.Stocks.COLUMN_NAME_ITEM + " TEXT," +
+                DatabaseMaster.Stocks.COLUMN_NAME_SUPPLIER + " TEXT," +
+                DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY + " INTEGER," +
+                DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY + " INTEGER)";
         //execution of the sql statement
-        db.execSQL(STOCK_TABLE_CREATE);
+        db.execSQL(STOCKS_TABLE_CREATE);
 
         //Stock table creation [END]
 
@@ -254,7 +255,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
 
-        public boolean addStock(String pItemName, String pSupplier, int pReorder_Quantity, int pQuantity){
+        public boolean addStocks(String pItemName, String pSupplier, int pReorder_Quantity, int pQuantity){
 
             //get write mode
             SQLiteDatabase db = getWritableDatabase();
@@ -262,13 +263,13 @@ public class DBHandler extends SQLiteOpenHelper {
             //creation of a map of values
             ContentValues values = new ContentValues();
 
-            values.put(DatabaseMaster.Stock.COLUMN_NAME_ITEM,pItemName);
-            values.put(DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER ,pSupplier);
-            values.put(DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY,pReorder_Quantity);
-            values.put(DatabaseMaster.Stock.COLUMN_NAME_QUANTITY,pQuantity);
+            values.put(DatabaseMaster.Stocks.COLUMN_NAME_ITEM,pItemName);
+            values.put(DatabaseMaster.Stocks.COLUMN_NAME_SUPPLIER ,pSupplier);
+            values.put(DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY,pReorder_Quantity);
+            values.put(DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY,pQuantity);
 
             //returns the primary key after a successful insertion
-            long newID = db.insert(DatabaseMaster.Sales.TABLE_NAME,null,values);
+            long newID = db.insert(DatabaseMaster.Stocks.TABLE_NAME,null,values);
 
             if(newID == -1){
                 return false;
@@ -281,22 +282,22 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     //readAllStocks() method to get all the stocks
-    public List readAllStock(){
+    public List readAllStocks(){
 
         //get readable mode
         SQLiteDatabase db = getReadableDatabase();
 
         //projection
-        String[] projection = {DatabaseMaster.Stock._ID,
-                DatabaseMaster.Stock.COLUMN_NAME_ITEM,
-                DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER,
-                DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY,
-                DatabaseMaster.Stock.COLUMN_NAME_QUANTITY
+        String[] projection = {DatabaseMaster.Stocks._ID,
+                DatabaseMaster.Stocks.COLUMN_NAME_ITEM,
+                DatabaseMaster.Stocks.COLUMN_NAME_SUPPLIER,
+                DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY,
+                DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY
         };
 
         //database query which returns a cursor object
         Cursor cursor = db.query(
-                DatabaseMaster.Stock.TABLE_NAME,
+                DatabaseMaster.Stocks.TABLE_NAME,
                 projection,
                 null,
                 null,
@@ -311,15 +312,15 @@ public class DBHandler extends SQLiteOpenHelper {
 
         while(cursor.moveToNext()){
 
-            int cId = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock._ID));
-            String cItemName = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock.COLUMN_NAME_ITEM));
-            String cSupplier = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER));
-            int cReorder_Quantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY));
-            int cQuantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stock.COLUMN_NAME_QUANTITY));
+            int cId = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stocks._ID));
+            String cItemName = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Stocks.COLUMN_NAME_ITEM));
+            String cSupplier = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Stocks.COLUMN_NAME_SUPPLIER));
+            int cReorder_Quantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY));
+            int cQuantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY));
 
             //add the retrieved sales information into the product class using the overloaded constructor
-           Stock stock = new Stock(cId, cItemName, cSupplier, cReorder_Quantity, cQuantity);
-            stockList.add(stock);
+           Stocks stocks = new Stocks(cId, cItemName, cSupplier, cReorder_Quantity, cQuantity);
+            stockList.add(stocks);
         }
 
         cursor.close();
@@ -333,20 +334,20 @@ public class DBHandler extends SQLiteOpenHelper {
         //get readable mode
         SQLiteDatabase db = getReadableDatabase();
 
-        //creation of a map of values to have the new values
+        //creation of a map of values to have the new valuess
         ContentValues values = new ContentValues();
 
-        values.put(DatabaseMaster.Stock.COLUMN_NAME_ITEM,pItemName);
-        values.put(DatabaseMaster.Stock.COLUMN_NAME_SUPPLIER,pSupplier);
-        values.put(DatabaseMaster.Stock.COLUMN_NAME_REORDERQUANTITY,pReorder_Quantity);
-        values.put(DatabaseMaster.Stock.COLUMN_NAME_QUANTITY,pQuantity);
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_ITEM,pItemName);
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_SUPPLIER,pSupplier);
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY,pReorder_Quantity);
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY,pQuantity);
 
         //selection
-        String selection = DatabaseMaster.Stock._ID + " LIKE ?";
+        String selection = DatabaseMaster.Stocks._ID + " LIKE ?";
         String[] selectionArg = {String.valueOf(pId)};
 
         //db query to update
-        int success = db.update(DatabaseMaster.Stock.TABLE_NAME,
+        int success = db.update(DatabaseMaster.Stocks.TABLE_NAME,
                 values,
                 selection,
                 selectionArg
@@ -359,20 +360,20 @@ public class DBHandler extends SQLiteOpenHelper {
             return true;
         }
     }
-    //deleteStock() method to delete the stock
-    public boolean deleteStock(int pId){
+    //deleteStocks() method to delete the stock
+    public boolean deleteStocks(int pId){
 
         //get readable mode
         SQLiteDatabase db = getReadableDatabase();
 
         //selection
-        String selection = DatabaseMaster.Stock.TABLE_NAME + " LIKE ?";
+        String selection = DatabaseMaster.Stocks.TABLE_NAME + " LIKE ?";
 
         //Argument
         String[] selectionArg = {String.valueOf(pId)};
 
         //query to delete a sale
-        int success = db.delete(DatabaseMaster.Stock.TABLE_NAME,
+        int success = db.delete(DatabaseMaster.Stocks.TABLE_NAME,
                 selection,
                 selectionArg
         );

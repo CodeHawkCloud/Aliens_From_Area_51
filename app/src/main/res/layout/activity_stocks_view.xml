@@ -48,358 +48,48 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.13"
-        android:background="@drawable/crud_operation_background">
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+
+        <TextView
+            android:id="@+id/text_stocks_view_col_name_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="@string/id" />
+
+        <TextView
+            android:id="@+id/text_stocks_view_col_name_item"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="22.5"
+            android:text="@string/item_name" />
+
+        <TextView
+            android:id="@+id/text_stocks_view_col_name_supplier"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="22.5"
+            android:text="@string/brand" />
+
+        <TextView
+            android:id="@+id/text_stocks_view_col_name_reorder_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:text="@string/price" />
+
+        <TextView
+            android:id="@+id/text_stocks_view_col_name_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:text="@string/quantity" />
+    </LinearLayout>
 
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#CCCC00"
-                android:gravity="center"
-                android:text="@string/item_name"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#CCCC00"
-                android:gravity="center"
-                android:text="@string/quantity"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#CCCC00"
-                android:gravity="center"
-                android:text="@string/supplier"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#CCCC00"
-                android:gravity="center"
-                android:text="@string/reorder_quantity"
-                android:textStyle="bold" />
-
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:gravity="center"
-                android:text=""
-                android:textStyle="bold" />
-
-
-        </TableRow>
-
-
-    </TableLayout><![CDATA[
-
-
-
-
-
-
-
-
-
-
-    /TableLayout>
-
-
-
-
-
-]]>
 </LinearLayout>

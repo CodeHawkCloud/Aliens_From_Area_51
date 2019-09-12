@@ -17,8 +17,8 @@ public class DatabaseMaster {
     }
 
     //inner class-Stock table
-    public static class Stock implements BaseColumns{
-        public static final String TABLE_NAME = "stock";
+    public static class Stocks implements BaseColumns{
+        public static final String TABLE_NAME = "stocks";
         public static final String COLUMN_NAME_ITEM = "item";
         public static final String COLUMN_NAME_SUPPLIER = "supplier";
         public static final String COLUMN_NAME_REORDERQUANTITY = "reorder_quantity";
