@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import com.example.foxfirekeep.models.Expenses;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 //import com.example.foxfirekeep.activities.R;
@@ -21,6 +23,8 @@ public class ExpensesAdd extends AppCompatActivity {
     EditText typeInput;
     EditText dateInput;
     EditText amountInput;
+
+    Button addExpenseButton;
 
     Expenses expense ;
     private ImageView back;
@@ -43,11 +47,16 @@ public class ExpensesAdd extends AppCompatActivity {
         typeInput = (EditText) findViewById(R.id.edit_expenses_insert_type);
         dateInput = (EditText) findViewById(R.id.edit_expenses_insert_date);
         amountInput = (EditText) findViewById(R.id.edit_expenses_insert_amount);
+
+        addExpenseButton = (Button)findViewById(R.id.button_expenses_insert_submit);
     }
 
     public void onClick(View view){
-       // type = findViewById(R.id.edit_expenses_insert_type).;
-    }
+        type = typeInput.getText().toString();
+        //Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
+        String sdate = dateInput.getText().toString();
+        //date = new SimpleDateFormat("dd/MM/yyyy").parse(sdate);
+     }
 
     public void addExpense(){
         expense = new Expenses(this.type,this.date,this.amount);
