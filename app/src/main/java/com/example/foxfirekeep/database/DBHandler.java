@@ -225,7 +225,22 @@ public class DBHandler extends SQLiteOpenHelper {
 
     //addExpenditure() method to add an expenditure
     public boolean addExpenditure(String type, String month,Double amount){
-        return false;
+        SQLiteDatabase db = getWritableDatabase();
+
+        //creation of a map of values
+        ContentValues values = new ContentValues();
+        values.put(DatabaseMaster.Expenses.COLUMN_NAME_TYPE,type);
+        values.put(DatabaseMaster.Expenses.COLUMN_NAME_MONTH,month);
+        values.put(DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT,month);
+
+        //returns the primary key after a successful insertion
+        long ID = db.insert(DatabaseMaster.Expenses.TABLE_NAME,null,values);
+
+        //return whether new entry entered successfully or not
+        if (ID == -1)
+            return false;
+        else
+            return true;
     }
 
     //readAllExpenditure() method to get all the expenses
