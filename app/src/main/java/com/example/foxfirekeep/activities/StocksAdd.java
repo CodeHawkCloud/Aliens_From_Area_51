@@ -77,7 +77,7 @@ public class StocksAdd extends AppCompatActivity {
         Toast t;
 
         //check if the insertion was successful
-        if(dbhandler.addSale(onStocksInsertItem,onStocksInsertSupplier,onStocksInsertReorderQuantity,onStocksInsertQuantity)){
+        if(dbhandler.addStocks(onStocksInsertItem,onStocksInsertSupplier,onStocksInsertReorderQuantity,onStocksInsertQuantity)){
             //Toast message if insertion is successful
             t = Toast.makeText(getApplicationContext(),"Stocks has been added to FoxFire!", Toast.LENGTH_LONG);
             t.show();

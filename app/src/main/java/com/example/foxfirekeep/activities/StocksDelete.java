@@ -65,7 +65,7 @@ public class StocksDelete extends AppCompatActivity {
         Toast t;
 
         //check if the insertion was successful
-        if(dbhandler.deleteSale(onStocksDeleteId)){
+        if(dbhandler.deleteStocks(onStocksDeleteId)){
             //Toast message if deletion is successful
             t = Toast.makeText(getApplicationContext(),"Stock has been deleted from FoxFire!", Toast.LENGTH_LONG);
             t.show();

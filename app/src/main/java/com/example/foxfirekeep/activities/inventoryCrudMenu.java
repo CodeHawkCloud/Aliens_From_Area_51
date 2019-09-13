@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
 import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Stocks;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class inventoryCrudMenu extends AppCompatActivity {
      private ImageView del;
      private ImageView vi;
     DBHandler dbhandler;
+    List<Stocks> listStocks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,16 +67,18 @@ public class inventoryCrudMenu extends AppCompatActivity {
             }
         });
 
+        dbhandler = new DBHandler(this);
+
         vi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                List list = dbhandler.readAllStocks();
+                listStocks = dbhandler.readAllStocks();
 
                 //Toast creation
                 Toast t;
 
                 //check if there  is data to be viewed, if yes go to the view activity else display toast
-                if(!list.isEmpty()){
+                if(!listStocks.isEmpty()){
                     Intent it5 = new Intent(inventoryCrudMenu.this,StocksView.class);
                     startActivity(it5);
                 }

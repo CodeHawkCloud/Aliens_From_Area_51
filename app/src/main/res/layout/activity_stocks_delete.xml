@@ -103,7 +103,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="45dp"
                 android:gravity="center"
-                android:text="@string/name_delete_stock"
+                android:text="@string/id_delete_stock"
                 android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/edit_stocks_delete_name"
