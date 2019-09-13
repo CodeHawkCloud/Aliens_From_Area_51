@@ -60,11 +60,11 @@
                 android:id="@+id/text_stocks_update_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="124dp"
                 android:layout_marginEnd="256dp"
                 android:text="@string/item_name"
                 android:textColor="@color/colorAccent"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/edit_stocks_update_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,6 +124,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_stocks_update_quantity" />
 
@@ -176,8 +177,40 @@
                 android:inputType="number"
                 app:layout_constraintBottom_toTopOf="@+id/button_stocks_update_update"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_stocks_update_quantity" />
+
+            <TextView
+                android:id="@+id/text_stocks_update_id"
+                android:layout_width="80dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginEnd="293dp"
+                android:layout_marginBottom="11dp"
+                android:text="@string/id"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_stocks_update_id"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edit_stocks_update_id"
+                android:layout_width="209dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="164dp"
+                android:layout_marginBottom="14dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/text_stocks_update_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_stocks_update_id" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>

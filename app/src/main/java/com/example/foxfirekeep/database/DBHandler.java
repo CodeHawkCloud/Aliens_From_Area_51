@@ -385,6 +385,40 @@ public class DBHandler extends SQLiteOpenHelper {
         return stockList;
     }
 
+    //updateStocks() method to update the stocks
+    public boolean updateStocks(int pId,String pItemName, String pSupplier, int pReorder_Quantity, int pQuantity){
+
+        //get readable mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        //creation of a map of values to have the new values
+        ContentValues values = new ContentValues();
+
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_ITEM,pItemName);
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_SUPPLIER,pSupplier);
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY,pReorder_Quantity);
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY,pQuantity);
+
+        //selection
+        String selection = DatabaseMaster.Stocks._ID + " LIKE ?";
+        String[] selectionArg = new String[] {String.valueOf(pId)};
+
+        //db query to update
+        int success = db.update(DatabaseMaster.Stocks.TABLE_NAME,
+                values,
+                selection,
+                selectionArg
+        );
+
+        if(success == 0){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
 
     //deleteStocks() method to delete the stock
     public boolean deleteStocks(int pId){
