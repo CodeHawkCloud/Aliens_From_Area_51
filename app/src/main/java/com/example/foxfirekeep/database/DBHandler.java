@@ -329,7 +329,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //updateExpenditure() method to update the expenditure
-    public boolean updateStock(int pId,String pItemName, String pSupplier, int pReorder_Quantity, int pQuantity){
+    public boolean updateStocks(int pId,String pItemName, String pSupplier, int pReorderQuantity, int pQuantity){
 
         //get readable mode
         SQLiteDatabase db = getReadableDatabase();
@@ -339,7 +339,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         values.put(DatabaseMaster.Stocks.COLUMN_NAME_ITEM,pItemName);
         values.put(DatabaseMaster.Stocks.COLUMN_NAME_SUPPLIER,pSupplier);
-        values.put(DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY,pReorder_Quantity);
+        values.put(DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY,pReorderQuantity);
         values.put(DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY,pQuantity);
 
         //selection

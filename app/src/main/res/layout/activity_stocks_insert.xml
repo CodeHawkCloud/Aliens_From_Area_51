@@ -146,7 +146,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/text_stocks_insert_supplier"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_stocks_insert_name" />
+                app:layout_constraintTop_toBottomOf="@+id/text_stocks_insert_item" />
 
             <EditText
                 android:id="@+id/edit_stocks_insert_supplier"
