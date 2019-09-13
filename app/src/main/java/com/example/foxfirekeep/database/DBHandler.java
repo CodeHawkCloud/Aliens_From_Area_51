@@ -362,7 +362,7 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         //selection
-        String selection = DatabaseMaster.Stocks.TABLE_NAME + " LIKE ?";
+        String selection = DatabaseMaster.Stocks._ID + " LIKE ?";
 
         //Argument
         String[] selectionArg = {String.valueOf(pId)};
@@ -414,7 +414,7 @@ public class DBHandler extends SQLiteOpenHelper {
     /*-----------------------------------------------------------------------------------------*/
 
     /*Sql methods of the business component [START]*/
-
+    
     /*Sql methods of the business component [END]*/
 
     /*-----------------------------------------------------------------------------------------*/
