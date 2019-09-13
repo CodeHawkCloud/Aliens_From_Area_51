@@ -1,5 +1,6 @@
 package com.example.foxfirekeep.database;
 
+import com.example.foxfirekeep.models.Expenses;
 import com.example.foxfirekeep.models.Sales;
 import com.example.foxfirekeep.models.Stocks;
 
@@ -245,10 +246,40 @@ public class DBHandler extends SQLiteOpenHelper {
 
     //readAllExpenditure() method to get all the expenses
     public List readAllExpenditure() {
+        SQLiteDatabase db = getReadableDatabase();
 
-        /*erase this..used to avoid the return error*/
-        List l1 =new ArrayList<>();
-        return l1;
+        String [] projection = {DatabaseMaster.Expenses._ID,
+                                DatabaseMaster.Expenses.COLUMN_NAME_TYPE,
+                                DatabaseMaster.Expenses.COLUMN_NAME_MONTH,
+                                DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT
+        };
+
+        Cursor cursor = db.query(
+                DatabaseMaster.Expenses.TABLE_NAME,
+                projection,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        List<Expenses> expensesList = new ArrayList<>();
+
+        while(cursor.moveToNext()){
+            int cId = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Expenses._ID));
+            String cType = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Expenses.COLUMN_NAME_TYPE));
+            String cMonth = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Expenses.COLUMN_NAME_MONTH));
+            int cAmount = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT));
+
+            Expenses expense = new Expenses(cId,cType,cMonth,cAmount);
+            expensesList.add(expense);
+        }
+
+        cursor.close();
+
+        return  expensesList;
     }
 
     //updateExpenditure() method to update the expenditure

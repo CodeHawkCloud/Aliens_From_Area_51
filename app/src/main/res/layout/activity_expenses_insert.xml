@@ -84,7 +84,7 @@
                 android:text="@string/month"
                 android:textColor="@color/colorAccent"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/edit_expenses_insert_date"
+                app:layout_constraintBottom_toTopOf="@+id/edit_expenses_insert_month"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +102,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/edit_expenses_insert_amount"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_expenses_insert_date" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_expenses_insert_month" />
 
             <Button
                 android:id="@+id/button_expenses_insert_submit"
@@ -137,13 +137,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/text_expenses_insert_type" />
 
             <EditText
-                android:id="@+id/edit_expenses_insert_date"
+                android:id="@+id/edit_expenses_insert_month"
                 android:layout_width="337dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="37dp"
                 android:layout_marginEnd="37dp"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 app:layout_constraintBottom_toTopOf="@+id/text_expenses_insert_amount"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

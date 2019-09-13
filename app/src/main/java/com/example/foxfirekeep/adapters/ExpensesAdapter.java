@@ -13,45 +13,40 @@ import com.example.foxfirekeep.models.Expenses;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpensesAdapter extends ArrayAdapter {
+public class ExpensesAdapter extends ArrayAdapter<Expenses> {
 
-    List l3 = new ArrayList<>();
+    private static final String TAG = "expensesListAdapter";
+    private Context exContext;
+    int exResources;
 
-    public ExpensesAdapter(Context context, int resource) {
-        super(context, resource);
-    }
-
-    public void add(Expenses object) {
-        l3.add(object);
-        super.add(object);
-    }
-
-    @Override
-    public int getCount() {
-        return l3.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return l3.get(position);
+    public ExpensesAdapter(Context context,int resource,List<Expenses> objects){
+        super(context, resource, objects);
+        exContext = context;
+        exResources = resource;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        View row = convertView;
-        ExpensesHolder expensesHolder = new ExpensesHolder();
+        int id = getItem(position).getId();
+        String type = getItem(position).getType();
+        String month = getItem(position).getMonth();
+        int amount = getItem(position).getAmount();
 
-        if(row == null){
-            LayoutInflater lf = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = lf.inflate(R.layout.activity_expenses_view,parent,false);
+        Expenses expenses = new Expenses(id,type,month,amount);
 
-            //expensesHolder.expenses_holder_id =
-        }
-        return row;
-    }
+        LayoutInflater layoutInflater = LayoutInflater.from(exContext);
+        convertView = layoutInflater.inflate(exResources,parent,false);
 
+        TextView tvID = (TextView)convertView.findViewById(R.id.adapter_expenses_view_id);
+        TextView tvType = (TextView)convertView.findViewById(R.id.adapter_expenses_view_type);
+        TextView tvMonth = (TextView)convertView.findViewById(R.id.adapter_expenses_view_month);
+        TextView tvAmount = (TextView)convertView.findViewById(R.id.adapter_expenses_view_amount);
 
-    static class ExpensesHolder{
-        TextView expenses_holder_id, expenses_holder_type, expenses_holder_month, expenses_holder_amount;
+        tvID.setText(String.valueOf(id));
+        tvType.setText(type);
+        tvMonth.setText(month);
+        tvAmount.setText(String.valueOf(amount));
+
+        return convertView;
     }
 }

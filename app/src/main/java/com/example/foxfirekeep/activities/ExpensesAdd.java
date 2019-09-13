@@ -13,10 +13,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.foxfirekeep.database.DBHandler;
-import com.example.foxfirekeep.models.Expenses;
-
-
-import com.example.foxfirekeep.activities.R;
 
 public class ExpensesAdd extends AppCompatActivity {
     EditText typeInput,amountInput,monthInput;
@@ -45,7 +41,7 @@ public class ExpensesAdd extends AppCompatActivity {
 
         //getting values entered
         typeInput = findViewById(R.id.edit_expenses_insert_type);
-        monthInput = findViewById(R.id.edit_expenses_insert_date);
+        monthInput = findViewById(R.id.edit_expenses_insert_month);
         amountInput = findViewById(R.id.edit_expenses_insert_amount);
 
         //assigning insert button
