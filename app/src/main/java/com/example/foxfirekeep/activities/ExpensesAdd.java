@@ -16,7 +16,7 @@ import com.example.foxfirekeep.database.DBHandler;
 import com.example.foxfirekeep.models.Expenses;
 
 
-//import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.activities.R;
 
 public class ExpensesAdd extends AppCompatActivity {
     EditText typeInput,amountInput,monthInput;

@@ -45,7 +45,7 @@ public class ExpensesAdapter extends ArrayAdapter {
             LayoutInflater lf = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = lf.inflate(R.layout.activity_expenses_view,parent,false);
 
-
+            //expensesHolder.expenses_holder_id =
         }
         return row;
     }
