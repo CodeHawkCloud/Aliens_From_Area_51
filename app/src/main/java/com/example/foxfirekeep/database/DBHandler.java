@@ -47,7 +47,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 DatabaseMaster.Expenses._ID + " INTEGER PRIMARY KEY, " +
                 DatabaseMaster.Expenses.COLUMN_NAME_TYPE + " TEXT," +
                 DatabaseMaster.Expenses.COLUMN_NAME_MONTH + " TEXT," +
-                DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT + " DOUBLE)";
+                DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT + " INTEGER)";
         //Execution of SQL statement
         db.execSQL(Expenses_TABLE_CREATION);
         //Expenditure table  creation [END]
@@ -224,14 +224,14 @@ public class DBHandler extends SQLiteOpenHelper {
     /*Sql methods of the expenditure component [START]*/
 
     //addExpenditure() method to add an expenditure
-    public boolean addExpenditure(String type, String month,Double amount){
+    public boolean addExpenditure(String type, String month,int amount){
         SQLiteDatabase db = getWritableDatabase();
 
         //creation of a map of values
         ContentValues values = new ContentValues();
         values.put(DatabaseMaster.Expenses.COLUMN_NAME_TYPE,type);
         values.put(DatabaseMaster.Expenses.COLUMN_NAME_MONTH,month);
-        values.put(DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT,month);
+        values.put(DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT,amount);
 
         //returns the primary key after a successful insertion
         long ID = db.insert(DatabaseMaster.Expenses.TABLE_NAME,null,values);
@@ -257,8 +257,19 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //deleteExpenditure() method to delete the expenditure
-    public void deleteExpenditure(){
+    public boolean deleteExpenditure(int eId){
+        SQLiteDatabase db = getReadableDatabase();
 
+        String selection = DatabaseMaster.Expenses._ID + " LIKE ?";
+
+        String[] selectionArg = new String[]{String.valueOf(eId)};
+
+        int success = db.delete(DatabaseMaster.Expenses.TABLE_NAME,selection,selectionArg);
+
+        if(success == 0 )
+            return false;
+        else
+            return true;
     }
 
     /*Sql methods of the expenditure component [END]*/

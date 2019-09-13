@@ -1,15 +1,14 @@
 package com.example.foxfirekeep.models;
 
-import java.util.Date;
 
 public class Expenses {
 
     private String type;
     private String month;
 
-    private double amount;
+    private int amount;
 
-    public Expenses(String type, String month, double amount) {
+    public Expenses(String type, String month, int amount) {
 
         this.type = type;
         this.month = month;
@@ -20,7 +19,7 @@ public class Expenses {
         return month;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 

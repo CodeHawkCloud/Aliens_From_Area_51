@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,17 +19,9 @@ import com.example.foxfirekeep.models.Expenses;
 //import com.example.foxfirekeep.activities.R;
 
 public class ExpensesAdd extends AppCompatActivity {
-    String type;
-    String month;
-    double amount;
-
-    EditText typeInput;
-    EditText monthInput;
-    EditText amountInput;
-
+    EditText typeInput,amountInput,monthInput;
     Button addExpenseButton;
 
-    Expenses expense = new Expenses(type,month,amount);
     private ImageView back;
 
     @Override
@@ -35,6 +29,7 @@ public class ExpensesAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expenses_insert);
 
+        /*---------------back button [START]---------------*/
         back = (ImageView)findViewById(R.id.button_back);
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -44,25 +39,34 @@ public class ExpensesAdd extends AppCompatActivity {
                 startActivity(it1);
             }
         });
+        /*---------------back button [END]-----------------*/
 
-        typeInput = (EditText) findViewById(R.id.edit_expenses_insert_type);
-        monthInput = (EditText) findViewById(R.id.edit_expenses_insert_date);
-        amountInput = (EditText) findViewById(R.id.edit_expenses_insert_amount);
 
+        /*---------------insert operation 1st part [START]---------------*/
+
+        //getting values entered
+        typeInput = findViewById(R.id.edit_expenses_insert_type);
+        monthInput = findViewById(R.id.edit_expenses_insert_date);
+        amountInput = findViewById(R.id.edit_expenses_insert_amount);
+
+        //assigning insert button
         addExpenseButton = (Button)findViewById(R.id.button_expenses_insert_submit);
 
-        addExpenseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onClick(view);
-            }
-        });
+        //calling the TextWatcher function to each field
+        typeInput.addTextChangedListener(insertExpensesTextWatcher);
+        monthInput.addTextChangedListener(insertExpensesTextWatcher);
+        amountInput.addTextChangedListener(insertExpensesTextWatcher);
+
+        /*---------------insert operation 1st part [END]-----------------*/
     }
 
+    /*---------------insert operation 2nd part [START]-----------------*/
+
     public void onClick(View view){
-        type = typeInput.getText().toString();
-        month = monthInput.getText().toString();
-        amount = Double.parseDouble(amountInput.getText().toString());
+        String type = typeInput.getText().toString();
+        String month = monthInput.getText().toString();
+        int amount = Integer.parseInt(amountInput.getText().toString());
+
 
         DBHandler dbHandler = new DBHandler(this);
 
@@ -77,5 +81,29 @@ public class ExpensesAdd extends AppCompatActivity {
             toast.show();
         }
 
-     }
+     };
+
+    /*---------------insert operation 2nd part [END]-----------------*/
+
+    private TextWatcher insertExpensesTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String onExpenseType = typeInput.getText().toString().trim();
+            String onExpenseMonth = monthInput.getText().toString().trim();
+            String onExpenseAmount = amountInput.getText().toString().trim();
+
+            addExpenseButton.setEnabled(!onExpenseType.isEmpty() && !onExpenseMonth.isEmpty() && !onExpenseAmount.isEmpty());
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
 }
