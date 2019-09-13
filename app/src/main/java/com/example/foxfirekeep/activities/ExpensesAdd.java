@@ -21,8 +21,7 @@ import com.example.foxfirekeep.activities.R;
 public class ExpensesAdd extends AppCompatActivity {
     EditText typeInput,amountInput,monthInput;
     Button addExpenseButton;
-
-    private ImageView back;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
