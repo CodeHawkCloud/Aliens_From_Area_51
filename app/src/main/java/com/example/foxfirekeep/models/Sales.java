@@ -25,7 +25,6 @@ public class Sales {
         return salesItem;
     }
 
-
     public String getSalesBrand() {
         return salesBrand;
     }

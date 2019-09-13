@@ -138,7 +138,7 @@ public class DBHandler extends SQLiteOpenHelper {
         );
 
         //list declarations
-        List salesList = new ArrayList();
+        List<Sales> salesList = new ArrayList<>();
 
         while(cursor.moveToNext()){
 

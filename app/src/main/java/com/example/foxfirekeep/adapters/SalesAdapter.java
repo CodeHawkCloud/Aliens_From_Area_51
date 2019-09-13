@@ -13,64 +13,45 @@ import com.example.foxfirekeep.models.Sales;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SalesAdapter extends ArrayAdapter{
+public class SalesAdapter extends ArrayAdapter<Sales>{
 
-    //list variable l1 declared
-    List l1 = new ArrayList<>();
+     private static final String TAG = "salesListAdapter";
+     private Context saContext;
+     int saResource;
 
-    //constructor
-    public SalesAdapter(Context context, int resource) {
-        super(context, resource);
-    }
-
-    public void add(Sales object) {
-        l1.add(object);
-        super.add(object);
-    }
-
-    @Override
-    public int getCount() {
-        return l1.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return l1.get(position);
+    public SalesAdapter(Context context, int resource, List<Sales> objects) {
+        super(context, resource, objects);
+        saContext = context;
+        saResource = resource;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View row = convertView;
-        SalesHolder salesHolder = new SalesHolder();
+        int id = getItem(position).getSales_id();
+        String item = getItem(position).getSalesItem();
+        String brand = getItem(position).getSalesBrand();
+        int price = getItem(position).getSalesPrice();
+        int quantity = getItem(position).getSalesQuantity();
 
-        if(row == null) {
-            LayoutInflater lf = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = lf.inflate(R.layout.activity_sales_view, parent, false);
+        Sales sales = new Sales(id,item,brand,price,quantity);
 
-            salesHolder.sales_holder_id = (TextView)row.findViewById(R.id.text_sales_view_col_name_id);
-            salesHolder.sales_holder_item = (TextView)row.findViewById(R.id.text_sales_view_col_name_item);
-            salesHolder.sales_holder_brand = (TextView)row.findViewById(R.id.text_sales_view_col_name_brand);
-            salesHolder.sales_holder_price = (TextView)row.findViewById(R.id.text_sales_view_col_name_price);
-            salesHolder.sales_holder_quantity = (TextView)row.findViewById(R.id.text_sales_view_col_name_quantity);
-            row.setTag(salesHolder);
-        }
-        else{
-            salesHolder = (SalesHolder) row.getTag();
-        }
+        LayoutInflater layoutInflater = LayoutInflater.from(saContext);
+        convertView = layoutInflater.inflate(saResource,parent,false);
 
-        Sales sales = (Sales)getItem(position);
-        salesHolder.sales_holder_id.setText(Integer.toString(sales.getSales_id()));
-        salesHolder.sales_holder_item.setText(sales.getSalesItem().toString());
-        salesHolder.sales_holder_brand.setText(sales.getSalesBrand().toString());
-        salesHolder.sales_holder_price.setText(Integer.toString(sales.getSalesPrice()));
-        salesHolder.sales_holder_quantity.setText(Integer.toString(sales.getSalesQuantity()));
+        TextView tvId = (TextView)convertView.findViewById(R.id.adapter_sales_view_id);
+        TextView tvItem = (TextView)convertView.findViewById(R.id.adapter_sales_view_item);
+        TextView tvBrand = (TextView)convertView.findViewById(R.id.adapter_sales_view_brand);
+        TextView tvPrice = (TextView)convertView.findViewById(R.id.adapter_sales_view_price);
+        TextView tvQuantity = (TextView)convertView.findViewById(R.id.adapter_sales_view_quantity);
 
-        return row;
-    }
+        tvId.setText(String.valueOf(id));
+        tvItem.setText(item);
+        tvBrand.setText(brand);
+        tvPrice.setText(String.valueOf(price));
+        tvQuantity.setText(String.valueOf(quantity));
 
+        return convertView;
 
-    static class SalesHolder{
-        TextView sales_holder_id, sales_holder_item, sales_holder_brand, sales_holder_price, sales_holder_quantity;
     }
 }

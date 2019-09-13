@@ -5,16 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.adapters.SalesAdapter;
 import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Sales;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SalesView extends AppCompatActivity {
-    private ImageView back;
+   ImageView back;
+    DBHandler dbHandler;
+    List<Sales> salesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +37,17 @@ public class SalesView extends AppCompatActivity {
                 startActivity(it1);
             }
         });
+
+        ListView listView = (ListView)findViewById(R.id.sales_list_view);
+
+        dbHandler = new DBHandler(this);
+
+        salesList = dbHandler.readAllSales();
+
+        SalesAdapter salesAdapter = new SalesAdapter(this,R.layout.adpater_sales_view,salesList);
+        listView.setAdapter(salesAdapter);
+
+
 
     }
 }

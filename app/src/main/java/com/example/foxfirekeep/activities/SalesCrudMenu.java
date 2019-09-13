@@ -10,7 +10,9 @@ import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
 import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Sales;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SalesCrudMenu extends AppCompatActivity {
@@ -20,6 +22,7 @@ public class SalesCrudMenu extends AppCompatActivity {
     ImageView del;
     ImageView vi;
     DBHandler dbhandler;
+    List<Sales> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class SalesCrudMenu extends AppCompatActivity {
         up = (ImageView)findViewById(R.id.button_crud_update);
         del = (ImageView)findViewById(R.id.button_crud_delete);
         vi = (ImageView)findViewById(R.id.button_crud_view);
+
+        dbhandler = new DBHandler(this);
 
         home1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +73,7 @@ public class SalesCrudMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                List list = dbhandler.readAllSales();
+                list = dbhandler.readAllSales();
 
                 //Toast creation
                 Toast t;

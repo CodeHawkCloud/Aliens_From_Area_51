@@ -47,48 +47,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/sales_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.13"
-        android:orientation="horizontal"
-        android:weightSum="100">
-
-
-        <TextView
-            android:id="@+id/text_sales_view_col_name_id"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="15"
-            android:text="@string/id" />
-
-        <TextView
-            android:id="@+id/text_sales_view_col_name_item"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="22.5"
-            android:text="@string/item_name" />
-
-        <TextView
-            android:id="@+id/text_sales_view_col_name_brand"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="22.5"
-            android:text="@string/brand" />
-
-        <TextView
-            android:id="@+id/text_sales_view_col_name_price"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:text="@string/price" />
-
-        <TextView
-            android:id="@+id/text_sales_view_col_name_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:text="@string/quantity" />
-    </LinearLayout>
+        android:layout_weight="0.13" />
 
 </LinearLayout>
