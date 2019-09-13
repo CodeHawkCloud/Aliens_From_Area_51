@@ -48,7 +48,7 @@ public class StocksDelete extends AppCompatActivity {
         stocksDeleteButton = (Button)findViewById(R.id.button_stocks_delete_delete);
 
         //calling the TextWatcher function to the id field
-        eStocksDeleteId.addTextChangedListener(deleteStocksTextWatcher);
+        eStocksDeleteId.addTextChangedListener(deleteSalesTextWatcher);
 
         /*---------------insert crud operation 1st part [END]-----------------*/
     }
@@ -65,8 +65,8 @@ public class StocksDelete extends AppCompatActivity {
         Toast t;
 
         //check if the insertion was successful
-        if(dbhandler.deleteStocks(onStocksDeleteId)){
-            //Toast message if insertion is successful
+        if(dbhandler.deleteSale(onStocksDeleteId)){
+            //Toast message if deletion is successful
             t = Toast.makeText(getApplicationContext(),"Stock has been deleted from FoxFire!", Toast.LENGTH_LONG);
             t.show();
         }
@@ -80,7 +80,7 @@ public class StocksDelete extends AppCompatActivity {
     /*---------------insert crud operation 2nd part [END]-----------------*/
 
     //TextWatcher function
-    private TextWatcher deleteStocksTextWatcher = new TextWatcher() {
+    private TextWatcher deleteSalesTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -89,9 +89,9 @@ public class StocksDelete extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            int onStocksDeleteId = Integer.parseInt(eStocksDeleteId.getText().toString().trim());
+            String onSalesDeleteId = eStocksDeleteId.getText().toString().trim();
 
-            stocksDeleteButton.setEnabled(onStocksDeleteId >0);
+            stocksDeleteButton.setEnabled(!onSalesDeleteId.isEmpty());
         }
 
         @Override
