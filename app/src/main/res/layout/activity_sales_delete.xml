@@ -89,7 +89,7 @@
                 android:layout_marginBottom="40dp"
                 android:ems="10"
                 android:inputType="number"
-                android:enabled="false"
+                android:enabled="true"
                 app:layout_constraintBottom_toTopOf="@+id/button_sales_delete_delete"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
