@@ -36,6 +36,7 @@
     <string name="name_delete_stock">Name of the inventory to be deleted</string>
     <string name="expense_type">Expenditure type</string>
     <string name="date">Date</string>
+    <string name="month">Month</string>
     <string name="amt">Amount</string>
     <string name="tot_sales">Total Sales</string>
     <string name="tot_expenditure">Total Expenditure</string>
