@@ -174,7 +174,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         //selection
         String selection = DatabaseMaster.Sales._ID + " LIKE ?";
-        String[] selectionArg = {String.valueOf(pId)};
+        String[] selectionArg = new String[] {String.valueOf(pId)};
 
         //db query to update
         int success = db.update(DatabaseMaster.Sales.TABLE_NAME,
@@ -183,7 +183,7 @@ public class DBHandler extends SQLiteOpenHelper {
                                 selectionArg
                 );
 
-        if(success == -1){
+        if(success == 0){
             return false;
         }
         else{
