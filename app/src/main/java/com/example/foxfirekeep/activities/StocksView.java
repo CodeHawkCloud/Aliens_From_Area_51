@@ -44,7 +44,7 @@ public class StocksView extends AppCompatActivity {
 
         dbHandler = new DBHandler(this);
 
-        stockList = dbHandler.readAllSales();
+        stockList = dbHandler.readAllStocks();
 
         StocksAdapter stocksAdapter = new StocksAdapter(this,R.layout.adapter_stocks_view,stockList);
         listView.setAdapter(stocksAdapter);
