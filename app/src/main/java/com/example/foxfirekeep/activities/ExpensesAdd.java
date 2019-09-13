@@ -13,8 +13,6 @@ import android.widget.Toast;
 import com.example.foxfirekeep.database.DBHandler;
 import com.example.foxfirekeep.models.Expenses;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 //import com.example.foxfirekeep.activities.R;
 
@@ -29,7 +27,7 @@ public class ExpensesAdd extends AppCompatActivity {
 
     Button addExpenseButton;
 
-    Expenses expense ;
+    Expenses expense = new Expenses(type,month,amount);
     private ImageView back;
 
     @Override

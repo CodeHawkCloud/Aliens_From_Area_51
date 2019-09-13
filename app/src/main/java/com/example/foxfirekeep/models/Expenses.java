@@ -5,20 +5,20 @@ import java.util.Date;
 public class Expenses {
 
     private String type;
-    private Date date;
+    private String month;
+
     private double amount;
 
-    public Expenses(String type, Date date, double amount) {
+    public Expenses(String type, String month, double amount) {
 
         this.type = type;
-        this.date = date;
+        this.month = month;
         this.amount = amount;
     }
 
-    public Date getDate() {
-        return date;
+    public String getMonth() {
+        return month;
     }
-
 
     public double getAmount() {
         return amount;
