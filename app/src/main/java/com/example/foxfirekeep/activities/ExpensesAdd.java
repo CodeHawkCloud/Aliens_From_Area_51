@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.example.foxfirekeep.database.DBHandler;
 import com.example.foxfirekeep.models.Expenses;
 
 import java.text.SimpleDateFormat;
@@ -49,6 +52,13 @@ public class ExpensesAdd extends AppCompatActivity {
         amountInput = (EditText) findViewById(R.id.edit_expenses_insert_amount);
 
         addExpenseButton = (Button)findViewById(R.id.button_expenses_insert_submit);
+
+        addExpenseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClick(view);
+            }
+        });
     }
 
     public void onClick(View view){
@@ -56,6 +66,20 @@ public class ExpensesAdd extends AppCompatActivity {
         //Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
         String sdate = dateInput.getText().toString();
         //date = new SimpleDateFormat("dd/MM/yyyy").parse(sdate);
+
+        DBHandler dbHandler = new DBHandler(this);
+
+        Toast toast;
+
+        if (dbHandler.addExpenditure(type,date,amount)){
+            toast = Toast.makeText(getApplicationContext(),"New Expenditure Added", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        else{
+            toast = Toast.makeText(getApplicationContext(),"Expenditure has not been Added", Toast.LENGTH_LONG);
+            toast.show();
+        }
+
      }
 
     public void addExpense(){

@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DBHandler extends SQLiteOpenHelper {
@@ -223,8 +224,8 @@ public class DBHandler extends SQLiteOpenHelper {
     /*Sql methods of the expenditure component [START]*/
 
     //addExpenditure() method to add an expenditure
-    public void addExpenditure(){
-
+    public boolean addExpenditure(String type, Date date,Double amount){
+        return false;
     }
 
     //readAllExpenditure() method to get all the expenses
