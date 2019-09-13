@@ -99,13 +99,13 @@ public class SalesUpdate extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            int onSalesUpdateId = Integer.parseInt(eSalesUpdateId.getText().toString().trim());
+            String onSalesUpdateId = eSalesUpdateId.getText().toString().trim();
             String onSalesUpdateItem = eSalesUpdateItem.getText().toString().trim();
             String onSalesUpdateBrand = eSalesUpdateBrand.getText().toString().trim();
-            int onSalesUpdatePrice = Integer.parseInt(eSalesUpdatePrice.getText().toString().trim());
-            int onSalesUpdateQuantity = Integer.parseInt(eSalesUpdateQuantity.getText().toString().trim());
+            String onSalesUpdatePrice = eSalesUpdatePrice.getText().toString().trim();
+            String onSalesUpdateQuantity = eSalesUpdateQuantity.getText().toString().trim();
 
-            salesUpdateButton.setEnabled(onSalesUpdateId > 0 && !onSalesUpdateItem.isEmpty() && !onSalesUpdateBrand.isEmpty() && onSalesUpdatePrice>0 && onSalesUpdateQuantity >0);
+            salesUpdateButton.setEnabled(!onSalesUpdateId.isEmpty() && !onSalesUpdateItem.isEmpty() && !onSalesUpdateBrand.isEmpty() && !onSalesUpdatePrice.isEmpty() && !onSalesUpdateQuantity.isEmpty());
 
         }
 

@@ -103,10 +103,10 @@ public class SalesInsert extends AppCompatActivity {
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             String onSalesInsertItem = eSalesInsertItem.getText().toString().trim();
             String onSalesInsertBrand = eSalesInsertBrand.getText().toString().trim();
-            int onSalesInsertPrice = Integer.parseInt(eSalesInsertPrice.getText().toString().trim());
-            int onSalesInsertQuantity = Integer.parseInt(eSalesInsertQuantity.getText().toString().trim());
+            String onSalesInsertPrice = eSalesInsertPrice.getText().toString().trim();
+            String onSalesInsertQuantity = eSalesInsertQuantity.getText().toString().trim();
 
-            salesInsertButton.setEnabled(!onSalesInsertItem.isEmpty() && !onSalesInsertBrand.isEmpty() && onSalesInsertPrice>0 && onSalesInsertQuantity >0);
+            salesInsertButton.setEnabled(!onSalesInsertItem.isEmpty() && !onSalesInsertBrand.isEmpty() && !onSalesInsertPrice.isEmpty() && !onSalesInsertQuantity.isEmpty());
 
         }
 

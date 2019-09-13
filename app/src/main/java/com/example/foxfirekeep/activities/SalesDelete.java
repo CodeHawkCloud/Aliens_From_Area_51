@@ -89,9 +89,9 @@ public class SalesDelete extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            int onSalesDeleteId = Integer.parseInt(eSalesDeleteId.getText().toString().trim());
+            String onSalesDeleteId = eSalesDeleteId.getText().toString().trim();
 
-            salesDeleteButton.setEnabled(onSalesDeleteId >0);
+            salesDeleteButton.setEnabled(!onSalesDeleteId.isEmpty());
         }
 
         @Override
