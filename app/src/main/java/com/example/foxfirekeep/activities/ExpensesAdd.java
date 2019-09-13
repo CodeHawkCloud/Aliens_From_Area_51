@@ -20,11 +20,11 @@ import java.util.Date;
 
 public class ExpensesAdd extends AppCompatActivity {
     String type;
-    Date date;
+    String month;
     double amount;
 
     EditText typeInput;
-    EditText dateInput;
+    EditText monthInput;
     EditText amountInput;
 
     Button addExpenseButton;
@@ -48,7 +48,7 @@ public class ExpensesAdd extends AppCompatActivity {
         });
 
         typeInput = (EditText) findViewById(R.id.edit_expenses_insert_type);
-        dateInput = (EditText) findViewById(R.id.edit_expenses_insert_date);
+        monthInput = (EditText) findViewById(R.id.edit_expenses_insert_date);
         amountInput = (EditText) findViewById(R.id.edit_expenses_insert_amount);
 
         addExpenseButton = (Button)findViewById(R.id.button_expenses_insert_submit);
@@ -63,15 +63,14 @@ public class ExpensesAdd extends AppCompatActivity {
 
     public void onClick(View view){
         type = typeInput.getText().toString();
-        //Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
-        String sdate = dateInput.getText().toString();
-        //date = new SimpleDateFormat("dd/MM/yyyy").parse(sdate);
+        month = monthInput.getText().toString();
+        amount = Double.parseDouble(amountInput.getText().toString());
 
         DBHandler dbHandler = new DBHandler(this);
 
         Toast toast;
 
-        if (dbHandler.addExpenditure(type,date,amount)){
+        if (dbHandler.addExpenditure(type,month,amount)){
             toast = Toast.makeText(getApplicationContext(),"New Expenditure Added", Toast.LENGTH_LONG);
             toast.show();
         }
@@ -81,8 +80,4 @@ public class ExpensesAdd extends AppCompatActivity {
         }
 
      }
-
-    public void addExpense(){
-        expense = new Expenses(this.type,this.date,this.amount);
-    }
 }

@@ -46,7 +46,7 @@ public class DBHandler extends SQLiteOpenHelper {
         String Expenses_TABLE_CREATION = "CREATE TABLE " + DatabaseMaster.Expenses.TABLE_NAME + " (" +
                 DatabaseMaster.Expenses._ID + " INTEGER PRIMARY KEY, " +
                 DatabaseMaster.Expenses.COLUMN_NAME_TYPE + " TEXT," +
-                DatabaseMaster.Expenses.COLUMN_NAME_DATE + " TEXT," +
+                DatabaseMaster.Expenses.COLUMN_NAME_MONTH + " TEXT," +
                 DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT + " DOUBLE)";
         //Execution of SQL statement
         db.execSQL(Expenses_TABLE_CREATION);
@@ -224,7 +224,7 @@ public class DBHandler extends SQLiteOpenHelper {
     /*Sql methods of the expenditure component [START]*/
 
     //addExpenditure() method to add an expenditure
-    public boolean addExpenditure(String type, Date date,Double amount){
+    public boolean addExpenditure(String type, String month,Double amount){
         return false;
     }
 
