@@ -5,16 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.adapters.SalesAdapter;
+import com.example.foxfirekeep.adapters.StocksAdapter;
 import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Sales;
+import com.example.foxfirekeep.models.Stocks;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StocksView extends AppCompatActivity {
-    private ImageView back;
+    ImageView back;
+    DBHandler dbHandler;
+    List<Stocks> stockList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +39,17 @@ public class StocksView extends AppCompatActivity {
                 startActivity(it1);
             }
         });
+
+        ListView listView = (ListView)findViewById(R.id.stocks_list_view);
+
+        dbHandler = new DBHandler(this);
+
+        stockList = dbHandler.readAllSales();
+
+        StocksAdapter stocksAdapter = new StocksAdapter(this,R.layout.adapter_stocks_view,stockList);
+        listView.setAdapter(stocksAdapter);
+
+
 
     }
 }

@@ -22,74 +22,37 @@
                 android:id="@+id/button_back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="9dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:contentDescription="@string/back"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                app:layout_constraintEnd_toStartOf="@+id/image_stocks_logo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.384"
+                app:layout_constraintVertical_bias="0.285"
                 app:srcCompat="@drawable/btnback" />
 
             <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="286dp"
-                android:layout_height="70dp"
-                android:layout_marginEnd="32dp"
+                android:id="@+id/image_stocks_logo"
+                android:layout_width="337dp"
+                android:layout_height="93dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
                 android:contentDescription="@string/stockViewTop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/button_back"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/stockview" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/stocks_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.13"
-        android:orientation="horizontal"
-        android:weightSum="100">
+        android:layout_weight="0.13" />
 
-
-        <TextView
-            android:id="@+id/text_stocks_view_col_name_id"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:text="@string/id" />
-
-        <TextView
-            android:id="@+id/text_stocks_view_col_name_item"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="22.5"
-            android:text="@string/item_name" />
-
-        <TextView
-            android:id="@+id/text_stocks_view_col_name_supplier"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="22.5"
-            android:text="@string/brand" />
-
-        <TextView
-            android:id="@+id/text_stocks_view_col_name_reorder_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:text="@string/price" />
-
-        <TextView
-            android:id="@+id/text_stocks_view_col_name_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:text="@string/quantity" />
-    </LinearLayout>
 
 </LinearLayout>

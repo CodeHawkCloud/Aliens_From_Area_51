@@ -14,64 +14,45 @@ import com.example.foxfirekeep.models.Stocks;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StocksAdapter extends ArrayAdapter{
+public class StocksAdapter extends ArrayAdapter<Stocks>{
 
-    //list variable l1 declared
-    List l2 = new ArrayList<>();
+    private static final String TAG = "salesListAdapter";
+    private Context saContext;
+    int saResource;
 
-    //constructor
-    public StocksAdapter(Context context, int resource) {
-        super(context, resource);
-    }
-
-    public void add(Stocks object) {
-        l2.add(object);
-        super.add(object);
-    }
-
-    @Override
-    public int getCount() {
-        return l2.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return l2.get(position);
+    public StocksAdapter(Context context, int resource, List<Stocks> objects) {
+        super(context, resource, objects);
+        saContext = context;
+        saResource = resource;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View row = convertView;
-        StocksHolder stocksHolder = new StocksHolder();
+        int id = getItem(position).getStocks_id();
+        String item = getItem(position).getStocksItem();
+        String supplier = getItem(position).getStocksSupplier();
+        int reorder_quantity = getItem(position).getStocksReorderQuantity();
+        int quantity = getItem(position).getStocksQuantity();
 
-        if(row == null) {
-            LayoutInflater lf = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = lf.inflate(R.layout.activity_stocks_view, parent, false);
+        Stocks stocks = new Stocks(id,item,supplier ,reorder_quantity,quantity);
 
-            stocksHolder.stocks_holder_id = (TextView)row.findViewById(R.id.text_stocks_view_col_name_id);
-            stocksHolder.stocks_holder_item = (TextView)row.findViewById(R.id.text_stocks_view_col_name_item);
-            stocksHolder.stocks_holder_supplier= (TextView)row.findViewById(R.id.text_stocks_view_col_name_supplier);
-            stocksHolder.stocks_holder_reorder_quantity = (TextView)row.findViewById(R.id.text_stocks_view_col_name_reorder_quantity);
-            stocksHolder.stocks_holder_quantity = (TextView)row.findViewById(R.id.text_stocks_view_col_name_quantity);
-            row.setTag(stocksHolder);
-        }
-        else{
-            stocksHolder = (StocksHolder) row.getTag();
-        }
+        LayoutInflater layoutInflater = LayoutInflater.from(saContext);
+        convertView = layoutInflater.inflate(saResource,parent,false);
 
-        Stocks stocks = (Stocks)getItem(position);
-        stocksHolder.stocks_holder_id.setText(Integer.toString(stocks.getStocks_id()));
-        stocksHolder.stocks_holder_item.setText(stocks.getStocksItem().toString());
-        stocksHolder.stocks_holder_supplier.setText(stocks.getStocksSupplier().toString());
-        stocksHolder.stocks_holder_reorder_quantity.setText(Integer.toString(stocks.getStocksReorderQuantity()));
-        stocksHolder.stocks_holder_quantity.setText(Integer.toString(stocks.getStocksQuantity()));
+        TextView tvId = (TextView)convertView.findViewById(R.id.adapter_stocks_view_id);
+        TextView tvItem = (TextView)convertView.findViewById(R.id.adapter_stocks_view_item);
+        TextView tvBrand = (TextView)convertView.findViewById(R.id.adapter_stocks_view_supplier);
+        TextView tvPrice = (TextView)convertView.findViewById(R.id.adapter_stocks_view_reorder_quantity);
+        TextView tvQuantity = (TextView)convertView.findViewById(R.id.adapter_sales_view_quantity);
 
-        return row;
-    }
+        tvId.setText(String.valueOf(id));
+        tvItem.setText(item);
+        tvBrand.setText(supplier);
+        tvPrice.setText(String.valueOf(reorder_quantity));
+        tvQuantity.setText(String.valueOf(quantity));
 
+        return convertView;
 
-    static class StocksHolder{
-        TextView stocks_holder_id, stocks_holder_item, stocks_holder_supplier, stocks_holder_reorder_quantity, stocks_holder_quantity;
     }
 }

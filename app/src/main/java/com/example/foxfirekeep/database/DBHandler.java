@@ -252,9 +252,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //updateExpenditure() method to update the expenditure
-    public void updateExpenditure(){
 
-    }
 
     //deleteExpenditure() method to delete the expenditure
     public boolean deleteExpenditure(int eId){
@@ -335,7 +333,7 @@ public class DBHandler extends SQLiteOpenHelper {
         );
 
         //list declarations
-        List stockList = new ArrayList();
+        List<Stocks> stockList = new ArrayList<>();
 
         while(cursor.moveToNext()){
 
@@ -345,8 +343,9 @@ public class DBHandler extends SQLiteOpenHelper {
             int cReorder_Quantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY));
             int cQuantity = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY));
 
-            //add the retrieved sales information into the product class using the overloaded constructor
-           Stocks stocks = new Stocks(cId, cItemName, cSupplier, cReorder_Quantity, cQuantity);
+            //add the retrieved stocks information into the product class using the overloaded constructor
+            Stocks stocks = new Stocks(cId, cItemName, cSupplier, cReorder_Quantity, cQuantity);
+
             stockList.add(stocks);
         }
 
@@ -355,38 +354,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return stockList;
     }
 
-    //updateExpenditure() method to update the expenditure
-    public boolean updateStocks(int pId,String pItemName, String pSupplier, int pReorderQuantity, int pQuantity){
 
-        //get readable mode
-        SQLiteDatabase db = getReadableDatabase();
-
-        //creation of a map of values to have the new valuess
-        ContentValues values = new ContentValues();
-
-        values.put(DatabaseMaster.Stocks.COLUMN_NAME_ITEM,pItemName);
-        values.put(DatabaseMaster.Stocks.COLUMN_NAME_SUPPLIER,pSupplier);
-        values.put(DatabaseMaster.Stocks.COLUMN_NAME_REORDERQUANTITY,pReorderQuantity);
-        values.put(DatabaseMaster.Stocks.COLUMN_NAME_QUANTITY,pQuantity);
-
-        //selection
-        String selection = DatabaseMaster.Stocks._ID + " LIKE ?";
-        String[] selectionArg = {String.valueOf(pId)};
-
-        //db query to update
-        int success = db.update(DatabaseMaster.Stocks.TABLE_NAME,
-                values,
-                selection,
-                selectionArg
-        );
-
-        if(success == -1){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
     //deleteStocks() method to delete the stock
     public boolean deleteStocks(int pId){
 
