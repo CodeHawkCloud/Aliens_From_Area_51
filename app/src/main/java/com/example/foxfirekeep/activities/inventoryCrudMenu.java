@@ -51,13 +51,13 @@ public class inventoryCrudMenu extends AppCompatActivity {
             }
         });
 
-//        up.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent it3 = new Intent(inventoryCrudMenu.this,StocksUpdate.class);
-//                startActivity(it3);
-//            }
-//        });
+        up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it3 = new Intent(inventoryCrudMenu.this,StocksUpdate.class);
+                startActivity(it3);
+            }
+        });
 
         del.setOnClickListener(new View.OnClickListener() {
             @Override
