@@ -248,7 +248,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public List readAllExpenditure() {
         SQLiteDatabase db = getReadableDatabase();
 
-        String [] projection = {DatabaseMaster.Expenses._ID,
+        String[] projection = {DatabaseMaster.Expenses._ID,
                                 DatabaseMaster.Expenses.COLUMN_NAME_TYPE,
                                 DatabaseMaster.Expenses.COLUMN_NAME_MONTH,
                                 DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT
