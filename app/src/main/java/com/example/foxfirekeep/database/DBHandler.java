@@ -198,10 +198,10 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         //selection
-        String selection = DatabaseMaster.Sales.TABLE_NAME + " LIKE ?";
+        String selection = DatabaseMaster.Sales._ID + " LIKE ?";
 
         //Argument
-        String[] selectionArg = {String.valueOf(pId)};
+        String[] selectionArg = new String[]{String.valueOf(pId)};
 
         //query to delete a sale
         int success = db.delete(DatabaseMaster.Sales.TABLE_NAME,
@@ -209,7 +209,7 @@ public class DBHandler extends SQLiteOpenHelper {
                                 selectionArg
                 );
 
-        if(success == -1){
+        if(success == 0){
             return false;
         }
         else{
