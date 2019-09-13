@@ -103,10 +103,10 @@ public class StocksAdd extends AppCompatActivity {
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             String onStocksInsertItem = eStocksInsertItem.getText().toString().trim();
             String onSalesInsertSupplier = eStocksInsertSupplier.getText().toString().trim();
-            int onStocksInsertReorderQuantity = Integer.parseInt(eStocksInsertReorderQuantity.getText().toString().trim());
-            int onStocksInsertQuantity = Integer.parseInt(eStocksInsertQuantity.getText().toString().trim());
+            String onStocksInsertReorderQuantity = eStocksInsertReorderQuantity.getText().toString().trim();
+            String onStocksInsertQuantity = eStocksInsertQuantity.getText().toString().trim();
 
-            stocksInsertButton.setEnabled(!onStocksInsertItem.isEmpty() && !onSalesInsertSupplier.isEmpty() && onStocksInsertReorderQuantity>0 && onStocksInsertQuantity >0);
+            stocksInsertButton.setEnabled(!onStocksInsertItem.isEmpty() && !onSalesInsertSupplier.isEmpty() && !onStocksInsertReorderQuantity.isEmpty() && !onStocksInsertQuantity.isEmpty());
 
         }
 
