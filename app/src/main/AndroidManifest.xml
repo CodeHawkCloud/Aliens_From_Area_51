@@ -10,32 +10,53 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MyBusiness" />
-        <activity android:name=".SalesView" />
-        <activity android:name=".SalesDelete" />
-        <activity android:name=".SalesUpdate" />
-        <activity android:name=".SalesInsert" />
-        <activity android:name=".ForumCrudMenu" />
-        <activity android:name=".inventoryCrudMenu" />
-        <activity android:name=".StocksDelete" />
-        <activity android:name=".SalesCrudMenu" />
-        <activity android:name=".Forum_IUD"/>
-        <activity android:name=".Forum_View"/>
-        <activity android:name=".ExpensesAdd"/>
-        <activity android:name=".ExpensesCrudMenu"/>
-        <activity android:name=".ExpensesDelete"/>
-        <activity android:name=".ExpensesUpdate"/>
-        <activity android:name=".ExpensesView"/>
-        <activity android:name=".StocksAdd"/>
-        <activity android:name=".StocksUpdate"/>
-        <activity android:name=".StocksView"/>
-        <activity android:name=".Main_Menu" />
+        <activity android:name=".MyBusiness"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SalesView"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SalesDelete"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SalesUpdate"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SalesInsert"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ForumCrudMenu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".inventoryCrudMenu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StocksDelete"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SalesCrudMenu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Forum_IUD"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Forum_View"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ExpensesAdd"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ExpensesCrudMenu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ExpensesDelete"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ExpensesUpdate"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ExpensesView"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StocksAdd"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StocksUpdate"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StocksView"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main_Menu"
+            android:screenOrientation="portrait"/>
 
 
     </application>
