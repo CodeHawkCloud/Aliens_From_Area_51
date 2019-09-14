@@ -65,7 +65,7 @@ public class Forum_IUD extends AppCompatActivity {
         int onForumsInsertid= Integer.parseInt(eForumsInsertId.getText().toString());
         String onForumsInsertUsername =  eForumsInsertUsername.getText().toString();
         String onForumsInsertRole = eForumsInsertRole.getText().toString();
-        String onForumsInserComment = eForumsInsertRole.getText().toString();
+        String onForumsInserComment = eForumsInserComment.getText().toString();
 
         //DBHandler object created
         DBHandler dbhandler = new DBHandler(this);

@@ -6,11 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.adapters.forumsAdapter;
+import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Forums;
+
+import java.util.List;
 
 public class Forum_View extends AppCompatActivity {
-    private ImageView back;
+    ImageView back;
+    DBHandler dbHandler;
+    List<Forums> forumsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +34,15 @@ public class Forum_View extends AppCompatActivity {
                 startActivity(it1);
             }
         });
+
+        ListView listView = (ListView)findViewById(R.id.forum_list_view);
+
+        dbHandler = new DBHandler(this);
+
+        forumsList = dbHandler.readForum();
+
+        forumsAdapter forumsAdapter = new forumsAdapter(this, R.layout.adapter_forum_view,forumsList);
+        listView.setAdapter(forumsAdapter);
     }
 
     }

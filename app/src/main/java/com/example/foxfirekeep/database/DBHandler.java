@@ -511,9 +511,48 @@ public class DBHandler extends SQLiteOpenHelper {
     //readForum() method to get all the forum content
     public List readForum() {
 
-        /*erase this..used to avoid the return error*/
-        List l1 =new ArrayList<>();
-        return l1;
+        //get readable mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        //projection
+        String[] projection = {DatabaseMaster.Forums.COLUMN_NAME_ID,
+                DatabaseMaster.Forums.COLUMN_NAME_USERNAME,
+                DatabaseMaster.Forums.COLUMN_NAME_ROLE,
+                DatabaseMaster.Forums.COLUMN_NAME_COMMENT,
+        };
+
+        //database query which returns a cursor object
+        Cursor cursor = db.query(
+                DatabaseMaster.Forums.TABLE_NAME,
+                projection,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        //list declarations
+        List<Forums> forumsList = new ArrayList<>();
+
+        while(cursor.moveToNext()){
+
+            int cId = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseMaster.Forums.COLUMN_NAME_ID));
+            String cUserName = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Forums.COLUMN_NAME_USERNAME));
+            String cRole = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Forums.COLUMN_NAME_ROLE));
+            String cComment = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseMaster.Forums.COLUMN_NAME_COMMENT));
+
+            //add the retrieved stocks information into the product class using the overloaded constructor
+            Forums forums = new Forums(cId, cUserName, cRole, cComment);
+
+            forumsList.add(forums);
+        }
+
+        cursor.close();
+
+        return forumsList;
+
     }
 
     //updateForum() method to update the forum
