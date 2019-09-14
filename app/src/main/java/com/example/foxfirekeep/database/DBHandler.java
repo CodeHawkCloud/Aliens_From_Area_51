@@ -517,9 +517,38 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //updateForum() method to update the forum
-    public void updateForum(){
+    public boolean updateForum(int fid, String fusername, String frole, String fcomment){
 
+        //get readable mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        //creation of a map of values to have the new values
+        ContentValues values = new ContentValues();
+
+
+        values.put(DatabaseMaster.Forums.COLUMN_NAME_USERNAME,fusername);
+        values.put(DatabaseMaster.Forums.COLUMN_NAME_ROLE,frole);
+        values.put(DatabaseMaster.Forums.COLUMN_NAME_COMMENT,fcomment);
+
+        //selection
+        String selection = DatabaseMaster.Forums.COLUMN_NAME_ID+ " LIKE ?";
+        String[] selectionArg = new String[] {String.valueOf(fid)};
+
+        //db query to update
+        int success = db.update(DatabaseMaster.Forums.TABLE_NAME,
+                values,
+                selection,
+                selectionArg
+        );
+
+        if(success == 0){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
+
 
     //deleteForum() method to delete the forum message and content
 

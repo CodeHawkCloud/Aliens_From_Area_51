@@ -116,4 +116,31 @@ public class Forum_IUD extends AppCompatActivity {
 
 
 
+    public void onClickUpdete(View view){
+
+        int onForumsInsertid= Integer.parseInt(eForumsInsertId.getText().toString());
+        String onForumsInsertUsername =  eForumsInsertUsername.getText().toString();
+        String onForumsInsertRole = eForumsInsertRole.getText().toString();
+        String onForumsInserComment = eForumsInsertRole.getText().toString();
+        //DBHandler object created
+        DBHandler dbhandler = new DBHandler(this);
+
+        //Toast creation
+        Toast t;
+
+        //check if the insertion was successful
+        if(dbhandler.updateForum(onForumsInsertid,onForumsInsertUsername,onForumsInsertRole,onForumsInserComment)){
+            //Toast message if insertion is successful
+            t = Toast.makeText(getApplicationContext(),"Forum has been updated successfully!", Toast.LENGTH_LONG);
+            t.show();
+        }
+        else{
+            //Toast message if insertion fails
+            t = Toast.makeText(getApplicationContext(),"Forum failed to be updated!", Toast.LENGTH_LONG);
+            t.show();
+        }
+    }
+
+
+
 }
