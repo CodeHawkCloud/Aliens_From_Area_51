@@ -6,8 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Expenses;
+
+import java.util.List;
 
 public class ExpensesCrudMenu extends AppCompatActivity {
     private ImageView home1;
@@ -15,6 +20,10 @@ public class ExpensesCrudMenu extends AppCompatActivity {
     private ImageView up;
     private ImageView del;
     private ImageView vi;
+
+    DBHandler dbHandler;
+    List<Expenses> expenseList;
+    Toast t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +68,21 @@ public class ExpensesCrudMenu extends AppCompatActivity {
             }
         });
 
+        dbHandler = new DBHandler(this);
+
         vi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it5 = new Intent(ExpensesCrudMenu.this,ExpensesView.class);
-                startActivity(it5);
+
+                expenseList = dbHandler.readAllExpenditure();
+
+                if(expenseList.size()!=0){
+                    Intent it5 = new Intent(ExpensesCrudMenu.this,ExpensesView.class);
+                    startActivity(it5);
+                }else{
+                    t = Toast.makeText(getApplicationContext(),"No expenses to be viewed!", Toast.LENGTH_LONG);
+                    t.show();
+                }
             }
         });
     }

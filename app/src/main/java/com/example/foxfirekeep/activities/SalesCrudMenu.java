@@ -84,7 +84,7 @@ public class SalesCrudMenu extends AppCompatActivity {
                     startActivity(it5);
                 }
                 else{
-                    t = Toast.makeText(getApplicationContext(),"No sales to  viewed!", Toast.LENGTH_LONG);
+                    t = Toast.makeText(getApplicationContext(),"No sales to be viewed!", Toast.LENGTH_LONG);
                     t.show();
                 }
 

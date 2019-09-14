@@ -127,8 +127,8 @@
 
             <TextView
                 android:id="@+id/text_forum_iud_comment"
-                android:layout_width="119dp"
-                android:layout_height="47dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="22dp"
                 android:layout_marginTop="44dp"
                 android:contentDescription="@string/comment"
@@ -142,7 +142,7 @@
             <EditText
                 android:id="@+id/edit_forum_iud_comment"
                 android:layout_width="216dp"
-                android:layout_height="53dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="38dp"
                 android:layout_marginEnd="20dp"
                 android:ems="10"
@@ -155,8 +155,8 @@
 
             <ImageButton
                 android:id="@+id/btnFrmSub"
-                android:layout_width="70dp"
-                android:layout_height="63dp"
+                android:layout_width="65dp"
+                android:layout_height="61dp"
                 android:layout_marginBottom="64dp"
                 android:background="@android:color/holo_blue_dark"
                 android:onClick="onClickInsert"
@@ -168,9 +168,9 @@
 
             <ImageButton
                 android:id="@+id/btnFrmEdit"
-                android:layout_width="71dp"
-                android:layout_height="60dp"
-                android:layout_marginBottom="68dp"
+                android:layout_width="65dp"
+                android:layout_height="61dp"
+                android:layout_marginBottom="64dp"
                 android:background="@android:color/holo_purple"
                 android:onClick="onClickUpdete"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -181,8 +181,8 @@
 
             <ImageButton
                 android:id="@+id/btnFrmdel"
-                android:layout_width="75dp"
-                android:layout_height="62dp"
+                android:layout_width="65dp"
+                android:layout_height="61dp"
 
                 android:layout_marginBottom="64dp"
                 android:background="@android:color/holo_red_dark"
@@ -197,8 +197,9 @@
                 android:id="@+id/btnFrmViw"
                 android:layout_width="65dp"
                 android:layout_height="61dp"
-                android:layout_marginBottom="68dp"
+                android:layout_marginBottom="64dp"
                 android:background="@android:color/holo_orange_light"
+                android:onClick="onClickView"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

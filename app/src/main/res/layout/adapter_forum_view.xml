@@ -14,9 +14,9 @@
             android:id="@+id/adapter_forum_view_id"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_weight="0.33"
-            android:textSize="24sp" />
+            android:gravity="center"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/adapter_forum_view_name"
@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.33"
             android:gravity="center"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/adapter_forum_view_role"
@@ -32,7 +32,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.33"
             android:gravity="center"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 

@@ -6,8 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Forums;
+
+import java.util.List;
 
 public class ForumCrudMenu extends AppCompatActivity {
 
@@ -16,6 +21,10 @@ public class ForumCrudMenu extends AppCompatActivity {
     private ImageView up;
     private ImageView del;
     private ImageView vi;
+
+    DBHandler dbHandler;
+    List<Forums> forumsList;
+    Toast t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +69,21 @@ public class ForumCrudMenu extends AppCompatActivity {
             }
         });
 
+        dbHandler = new DBHandler(this);
+
         vi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it5 = new Intent(ForumCrudMenu.this,Forum_View.class);
-                startActivity(it5);
+
+                forumsList = dbHandler.readForum();
+
+                if(forumsList.size()!=0){
+                    Intent it5 = new Intent(ForumCrudMenu.this, Forum_View.class);
+                    startActivity(it5);
+                }else{
+                    t = Toast.makeText(getApplicationContext(),"No one has used the forum yet!", Toast.LENGTH_LONG);
+                    t.show();
+                }
             }
         });
 

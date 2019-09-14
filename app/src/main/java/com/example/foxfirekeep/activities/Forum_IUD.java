@@ -13,11 +13,17 @@ import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
 import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Forums;
+
+import java.util.List;
 
 public class Forum_IUD extends AppCompatActivity {
     private ImageView back;
     EditText eForumsInsertId, eForumsInsertUsername,eForumsInsertRole,eForumsInserComment; //variables for the edit text
-    ImageButton forumsInsertButton,forumsDeletebutton;
+    ImageButton forumsInsertButton,forumsDeleteButton,forumsEditButton;
+    List<Forums> forumsList;
+    Toast t;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +40,6 @@ public class Forum_IUD extends AppCompatActivity {
         });
 
 
-
-
-        /*---------------insert crud operation 1st part [START]---------------*/
-
         //assigning values to the variables using the ids of the EditText
         eForumsInsertId = findViewById(R.id.edit_forum_iud_id);
         eForumsInsertUsername= findViewById(R.id.edit_forum_iud_username);
@@ -46,18 +48,10 @@ public class Forum_IUD extends AppCompatActivity {
 
         //assigning submit button
         forumsInsertButton = (ImageButton)findViewById(R.id.btnFrmSub);
-        forumsDeletebutton= (ImageButton)findViewById(R.id.btnFrmdel);
-
-
-
-
-        /*---------------insert crud operation 1st part [END]-----------------*/
+        forumsEditButton = (ImageButton)findViewById(R.id.btnFrmEdit);
 
     }
 
-
-
-    /*---------------insert crud operation 2nd part [START]---------------*/
 
     public void onClickInsert(View view){
 
@@ -86,9 +80,6 @@ public class Forum_IUD extends AppCompatActivity {
         }
 
     }
-
-    /*---------------insert crud operation 2nd part [END]-----------------*/
-
 
 
     public void onClickDelete(View view){
@@ -121,7 +112,7 @@ public class Forum_IUD extends AppCompatActivity {
         int onForumsInsertid= Integer.parseInt(eForumsInsertId.getText().toString());
         String onForumsInsertUsername =  eForumsInsertUsername.getText().toString();
         String onForumsInsertRole = eForumsInsertRole.getText().toString();
-        String onForumsInserComment = eForumsInsertRole.getText().toString();
+        String onForumsInserComment = eForumsInserComment.getText().toString();
         //DBHandler object created
         DBHandler dbhandler = new DBHandler(this);
 
@@ -139,6 +130,23 @@ public class Forum_IUD extends AppCompatActivity {
             t = Toast.makeText(getApplicationContext(),"Forum failed to be updated!", Toast.LENGTH_LONG);
             t.show();
         }
+    }
+
+    public void onClickView(View view){
+
+        DBHandler dbHandler = new DBHandler(this);
+
+        forumsList = dbHandler.readForum();
+
+        if(forumsList.size()!=0){
+            Intent it1 = new Intent(Forum_IUD.this, Forum_View.class);
+            startActivity(it1);
+        }else{
+            t = Toast.makeText(getApplicationContext(),"No one has used the forum yet!", Toast.LENGTH_LONG);
+            t.show();
+        }
+
+
     }
 
 
