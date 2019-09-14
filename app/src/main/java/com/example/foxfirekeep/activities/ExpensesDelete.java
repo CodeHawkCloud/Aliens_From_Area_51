@@ -53,9 +53,12 @@ public class ExpensesDelete extends AppCompatActivity {
         if(dbHandler.deleteExpenditure(eId)){
             toast = Toast.makeText(getApplicationContext(),"Expense has been deleted from FoxFire!", Toast.LENGTH_LONG);
             toast.show();
+
+            Intent complete = new Intent(ExpensesDelete.this,ExpensesCrudMenu.class);
+            startActivity(complete);
         }
         else {
-            toast = Toast.makeText(getApplicationContext(),"Expense has not been deleted from FoxFire!", Toast.LENGTH_LONG);
+            toast = Toast.makeText(getApplicationContext(),"No such Expense has been made", Toast.LENGTH_LONG);
             toast.show();
         }
     }

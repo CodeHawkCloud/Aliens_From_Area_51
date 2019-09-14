@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.sql.SQLData;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -283,7 +284,27 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //updateExpenditure() method to update the expenditure
+    public boolean updateExpenses(int eId,String type,String month, int amount){
+        SQLiteDatabase db = getReadableDatabase();
 
+        ContentValues value = new ContentValues();
+        value.put(DatabaseMaster.Expenses.COLUMN_NAME_TYPE,type);
+        value.put(DatabaseMaster.Expenses.COLUMN_NAME_MONTH,month);
+        value.put(DatabaseMaster.Expenses.COLUMN_NAME_AMOUNT,amount);
+
+        String selection = DatabaseMaster.Expenses._ID + " LIKE ?";
+        String [] selectionArg = new String[]{String.valueOf(eId)};
+
+        int success = db.update(DatabaseMaster.Expenses.TABLE_NAME,
+                                value,
+                                selection,
+                                selectionArg);
+
+        if (success == 0)
+            return false;
+        else
+            return true;
+    }
 
     //deleteExpenditure() method to delete the expenditure
     public boolean deleteExpenditure(int eId){

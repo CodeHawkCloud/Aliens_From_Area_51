@@ -70,6 +70,9 @@ public class ExpensesAdd extends AppCompatActivity {
         if (dbHandler.addExpenditure(type,month,amount)){
             toast = Toast.makeText(getApplicationContext(),"New Expenditure Added", Toast.LENGTH_LONG);
             toast.show();
+
+            Intent complete = new Intent(ExpensesAdd.this,ExpensesAdd.class);
+            startActivity(complete);
         }
         else{
             toast = Toast.makeText(getApplicationContext(),"Expenditure has not been Added", Toast.LENGTH_LONG);
