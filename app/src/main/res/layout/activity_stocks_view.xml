@@ -89,7 +89,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.2"
             android:gravity="center"
-            android:text="@string/reorder_quantity"
+            android:text="@string/reorder_col"
             android:textSize="18sp" />
 
         <TextView
@@ -107,7 +107,7 @@
         android:id="@+id/stocks_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.13"
+        android:layout_weight="0.20"
         android:background="@drawable/crud_operation_background" />
 
 

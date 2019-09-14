@@ -4,46 +4,49 @@
     android:layout_height="match_parent">
 
 
-
-
     <TextView
         android:id="@+id/adapter_stocks_view_id"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
         android:text=""
+        android:textAlignment="center"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/adapter_stocks_view_item"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
         android:text=""
+        android:textAlignment="center"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/adapter_stocks_view_supplier"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
         android:text=""
+        android:textAlignment="center"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/adapter_stocks_view_reorder_quantity"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
         android:text=""
+        android:textAlignment="center"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/adapter_sales_view_quantity"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
         android:text=""
+        android:textAlignment="center"
         android:textSize="18sp" />
 
 </LinearLayout>
