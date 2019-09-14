@@ -55,7 +55,7 @@ public class Forum_IUD extends AppCompatActivity {
 
     public void onClickInsert(View view){
 
-        int onForumsInsertid= Integer.parseInt(eForumsInsertId.getText().toString());
+        String onForumsInsertid= eForumsInsertId.getText().toString();
         String onForumsInsertUsername =  eForumsInsertUsername.getText().toString();
         String onForumsInsertRole = eForumsInsertRole.getText().toString();
         String onForumsInserComment = eForumsInserComment.getText().toString();
@@ -66,9 +66,11 @@ public class Forum_IUD extends AppCompatActivity {
         //Toast creation
         Toast t;
 
-        if(onForumsInsertid > 0 && !onForumsInserComment.isEmpty() && !onForumsInsertUsername.isEmpty() && !onForumsInserComment.isEmpty()) {
+        if(!onForumsInsertid.isEmpty() && !onForumsInserComment.isEmpty() && !onForumsInsertUsername.isEmpty() && !onForumsInserComment.isEmpty()) {
             //check if the insertion was successful
-            if (dbhandler.addForum(onForumsInsertid, onForumsInsertUsername, onForumsInsertRole, onForumsInserComment)) {
+            int insertId = Integer.parseInt(onForumsInsertid);
+
+            if (dbhandler.addForum(insertId, onForumsInsertUsername, onForumsInsertRole, onForumsInserComment)) {
                 //Toast message if insertion is successful
                 t = Toast.makeText(getApplicationContext(), "Record has been added to FoxFire!", Toast.LENGTH_LONG);
                 t.show();

@@ -50,7 +50,6 @@ public class MyBusiness extends AppCompatActivity {
 
     //variables to be used to get the comments in the forum
     List<Forums> forums;
-    Forums forumModel;
     int commentCount = 0;
     TextView forumTv;
 
@@ -133,8 +132,8 @@ public class MyBusiness extends AppCompatActivity {
         /*------------------ Displaying the total stock quantity [end] ------------------*/
 
         /*------------------ Displaying the total comments [start] ----------------------*/
-        /*
-        forums = dbHandler.readAllStocks();
+
+        forums = dbHandler.readForum();
 
         if(forums.size() != 0){
             commentCount = forums.size();
@@ -144,7 +143,7 @@ public class MyBusiness extends AppCompatActivity {
 
         forumTv = (TextView)findViewById(R.id.text_mybusiness_res_totcoms);
         forumTv.setText(String.valueOf(commentCount));
-        */
+
         /*------------------ Displaying the total comments [end] ------------------------*/
 
     }
