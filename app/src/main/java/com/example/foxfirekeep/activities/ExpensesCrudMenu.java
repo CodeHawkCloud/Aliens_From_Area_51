@@ -46,7 +46,7 @@ public class ExpensesCrudMenu extends AppCompatActivity {
         up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it3 = new Intent(ExpensesCrudMenu.this,ExpensesUpdate.class);
+               Intent it3 = new Intent(ExpensesCrudMenu.this,ExpensesUpdate.class);
                 startActivity(it3);
             }
         });

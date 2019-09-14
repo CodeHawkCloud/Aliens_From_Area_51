@@ -42,6 +42,8 @@ public class ExpensesUpdate extends AppCompatActivity {
 
         expensesUpdateButton = findViewById(R.id.button_expenses_update_update);
 
+        expensesUpdateButton.setEnabled(true);
+
         updateID.addTextChangedListener(updateExpensesTextWatcher);
         updateType.addTextChangedListener(updateExpensesTextWatcher);
         updateMonth.addTextChangedListener(updateExpensesTextWatcher);
@@ -50,6 +52,7 @@ public class ExpensesUpdate extends AppCompatActivity {
     }
 
     public void onClick(View view){
+
         int exp_ID = Integer.parseInt(updateID.getText().toString());
         String exp_Type = updateType.toString();
         String exp_Month = updateMonth.toString();
@@ -69,7 +72,7 @@ public class ExpensesUpdate extends AppCompatActivity {
         }
     }
 
-    private TextWatcher updateExpensesTextWatcher = new TextWatcher() {
+   private TextWatcher updateExpensesTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 

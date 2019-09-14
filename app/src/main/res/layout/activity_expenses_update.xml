@@ -99,6 +99,7 @@
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/edit_expenses_update_month"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_expenses_update_type" />
 
@@ -140,7 +141,7 @@
                 android:layout_marginStart="37dp"
                 android:layout_marginEnd="37dp"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 app:layout_constraintBottom_toTopOf="@+id/text_expenses_update_type"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -166,7 +167,7 @@
                 android:layout_marginStart="37dp"
                 android:layout_marginEnd="37dp"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 app:layout_constraintBottom_toTopOf="@+id/text_expenses_update_amount"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

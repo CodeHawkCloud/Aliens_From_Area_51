@@ -298,7 +298,8 @@ public class DBHandler extends SQLiteOpenHelper {
         int success = db.update(DatabaseMaster.Expenses.TABLE_NAME,
                                 value,
                                 selection,
-                                selectionArg);
+                                selectionArg
+            );
 
         if (success == 0)
             return false;
