@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
@@ -71,19 +72,6 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/edit_forum_iud_id"
-                android:layout_width="220dp"
-                android:layout_height="51dp"
-                android:layout_marginTop="33dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:fontFamily="@font/brawler"
-                android:inputType="textPersonName"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -171,7 +159,7 @@
                 android:layout_height="63dp"
                 android:layout_marginBottom="64dp"
                 android:background="@android:color/holo_blue_dark"
-                android:onClick="onClick"
+                android:onClick="onClickInsert"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btnFrmEdit"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -214,6 +202,21 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/btnFrmdel"
                 app:srcCompat="@android:drawable/ic_menu_view" />
+
+            <EditText
+                android:id="@+id/edit_forum_iud_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:fontFamily="@font/brawler"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/edit_forum_iud_username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.17" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 

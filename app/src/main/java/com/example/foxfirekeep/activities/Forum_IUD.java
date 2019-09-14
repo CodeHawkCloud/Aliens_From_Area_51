@@ -57,7 +57,7 @@ public class Forum_IUD extends AppCompatActivity {
 
     /*---------------insert crud operation 2nd part [START]---------------*/
 
-    public void onClick(View view){
+    public void onClickInsert(View view){
 
 
         int onForumsInsertid= Integer.parseInt(eForumsInsertId.getText().toString());
