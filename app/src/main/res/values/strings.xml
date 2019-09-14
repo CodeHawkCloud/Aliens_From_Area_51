@@ -60,6 +60,7 @@
     <string name="item">Item</string>
     <string name="brand_view">Brand</string>
     <string name="reorder_col">Reorder</string>
+    <string name="type_col">Type</string>
 
 
 </resources>
