@@ -3,6 +3,8 @@ package com.example.foxfirekeep.database;
 import com.example.foxfirekeep.models.Expenses;
 import com.example.foxfirekeep.models.Sales;
 import com.example.foxfirekeep.models.Stocks;
+import com.example.foxfirekeep.models.Forums;
+
 
 
 import android.content.ContentValues;
@@ -71,9 +73,17 @@ public class DBHandler extends SQLiteOpenHelper {
 
         /*-----------------------------------------------------------------------------------------*/
 
-        //Forum table creation [START]
 
-        //Forum table creation [END]
+
+        //Forums table creation [START]
+        String Forums_TABLE_CREATE = "CREATE TABLE " + DatabaseMaster.Forums.TABLE_NAME + " (" +
+                DatabaseMaster.Forums.COLUMN_NAME_ID + "  INTEGER PRIMARY KEY," +
+                DatabaseMaster.Forums.COLUMN_NAME_USERNAME + " TEXT," +
+                DatabaseMaster.Forums.COLUMN_NAME_ROLE + " TEXT," +
+                DatabaseMaster.Forums.COLUMN_NAME_COMMENT + " TEXT)";
+        //execution of the sql statement
+        db.execSQL(Forums_TABLE_CREATE);
+        //Formus table creation [END]
 
         /*-----------------------------------------------------------------------------------------*/
 
@@ -474,8 +484,28 @@ public class DBHandler extends SQLiteOpenHelper {
     /*Sql methods of the forum component [START]*/
 
     //addForum() method to add a content into the forum
-    public void addForum(){
+    public boolean addForum(int fid, String fusername, String frole, String fcomment){
 
+        //get write mode
+        SQLiteDatabase db = getWritableDatabase();
+
+        //creation of a map of values
+        ContentValues values = new ContentValues();
+
+        values.put(DatabaseMaster.Forums.COLUMN_NAME_ID,fid);
+        values.put(DatabaseMaster.Forums.COLUMN_NAME_USERNAME,fusername);
+        values.put(DatabaseMaster.Forums.COLUMN_NAME_ROLE,frole);
+        values.put(DatabaseMaster.Forums.COLUMN_NAME_COMMENT,fcomment);
+
+        //returns the primary key after a successful insertion
+        long newID = db.insert(DatabaseMaster.Forums.TABLE_NAME,null,values);
+
+        if(newID == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     //readForum() method to get all the forum content

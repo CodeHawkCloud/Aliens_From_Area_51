@@ -171,6 +171,7 @@
                 android:layout_height="63dp"
                 android:layout_marginBottom="64dp"
                 android:background="@android:color/holo_blue_dark"
+                android:onClick="onClick"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btnFrmEdit"
                 app:layout_constraintHorizontal_bias="0.5"

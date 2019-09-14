@@ -32,4 +32,12 @@ public class DatabaseMaster {
         public static final String COLUMN_NAME_MONTH = "month";
         public static final String COLUMN_NAME_AMOUNT = "amount";
     }
+    //inner class-Forums table
+    public static class Forums implements BaseColumns{
+        public static final String TABLE_NAME = "forums";
+        public static final String COLUMN_NAME_ID = "id";
+        public static final String COLUMN_NAME_USERNAME = "username";
+        public static final String COLUMN_NAME_ROLE = "role";
+        public static final String COLUMN_NAME_COMMENT = "comment";
+    }
 }
