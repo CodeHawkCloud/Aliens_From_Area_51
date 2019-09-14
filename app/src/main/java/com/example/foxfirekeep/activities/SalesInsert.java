@@ -81,6 +81,9 @@ public class SalesInsert extends AppCompatActivity {
             //Toast message if insertion is successful
             t = Toast.makeText(getApplicationContext(),"Sale has been added to FoxFire!", Toast.LENGTH_LONG);
             t.show();
+
+            Intent crudIntent  = new Intent(SalesInsert.this, SalesCrudMenu.class);
+            startActivity(crudIntent);
         }
         else{
             //Toast message if insertion fails

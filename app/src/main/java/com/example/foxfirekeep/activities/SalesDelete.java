@@ -69,6 +69,9 @@ public class SalesDelete extends AppCompatActivity {
             //Toast message if deletion is successful
             t = Toast.makeText(getApplicationContext(),"Sale has been deleted from FoxFire!", Toast.LENGTH_LONG);
             t.show();
+
+            Intent crudIntent  = new Intent(SalesDelete.this, SalesCrudMenu.class);
+            startActivity(crudIntent);
         }
         else{
             //Toast message if insertion fails

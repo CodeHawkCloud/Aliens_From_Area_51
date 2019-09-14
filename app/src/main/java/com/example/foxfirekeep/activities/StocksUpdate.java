@@ -81,6 +81,9 @@ public class StocksUpdate extends AppCompatActivity {
             //Toast message if insertion is successful
             t = Toast.makeText(getApplicationContext(),"Stocks has been updated successfully!", Toast.LENGTH_LONG);
             t.show();
+
+            Intent success  = new Intent(StocksUpdate.this, inventoryCrudMenu.class);
+            startActivity(success);
         }
         else{
             //Toast message if insertion fails

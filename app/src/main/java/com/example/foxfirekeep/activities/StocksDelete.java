@@ -69,6 +69,9 @@ public class StocksDelete extends AppCompatActivity {
             //Toast message if deletion is successful
             t = Toast.makeText(getApplicationContext(),"Stock has been deleted from FoxFire!", Toast.LENGTH_LONG);
             t.show();
+
+            Intent success  = new Intent(StocksDelete.this, inventoryCrudMenu.class);
+            startActivity(success);
         }
         else{
             //Toast message if insertion fails

@@ -2,15 +2,57 @@ package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.foxfirekeep.activities.R;
+import com.example.foxfirekeep.database.DBHandler;
+import com.example.foxfirekeep.models.Expenses;
+import com.example.foxfirekeep.models.Forums;
+import com.example.foxfirekeep.models.Sales;
+import com.example.foxfirekeep.models.Stocks;
+
+import java.util.List;
 
 public class MyBusiness extends AppCompatActivity {
-     ImageView home1;
+    ImageView home1;
+    DBHandler dbHandler;
+    boolean clearRes;
+    Toast toast;
+
+    //variables to be used to get the total sales
+    List<Sales> sales;
+    Sales saleModel;
+    int tempSalesPrice;
+    int tempSalesQuantity;
+    int tempSalesMultiply;
+    int totSaleValue = 0;
+    TextView salesTv;
+
+    //variables to be used to get the total expenditure
+    List<Expenses> expenses;
+    Expenses expenseModel;
+    int tempExpense;
+    int totExpenses = 0;
+    TextView expensesTv;
+
+    //variables to be used to get the total quantity
+    List<Stocks> stocks;
+    Stocks stockModel;
+    int tempInventoryQuantity;
+    int totStocks = 0;
+    TextView stocksTv;
+
+    //variables to be used to get the comments in the forum
+    List<Forums> forums;
+    Forums forumModel;
+    int commentCount = 0;
+    TextView forumTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +68,90 @@ public class MyBusiness extends AppCompatActivity {
                 startActivity(it1);
             }
         });
+
+        dbHandler = new DBHandler(this);
+
+        /*------------------ Displaying the total sale value [start] ------------------------*/
+
+        sales = dbHandler.readAllSales();
+
+        if(sales.size() != 0) {
+            for (int i = 0; i < sales.size(); i++) {
+                saleModel = sales.get(i);
+                tempSalesPrice = saleModel.getSalesPrice();
+                tempSalesQuantity = saleModel.getSalesQuantity();
+
+                tempSalesMultiply = tempSalesPrice * tempSalesQuantity;
+                totSaleValue = totSaleValue + tempSalesMultiply;
+            }
+        }else{
+            totSaleValue = 0;
+        }
+
+        salesTv = (TextView)findViewById(R.id.text_mybusiness_res_totsales);
+        salesTv.setText(String.valueOf(totSaleValue));
+
+        /*------------------ Displaying the total sale value [end] ------------------------*/
+
+        /*------------------ Displaying the total expenditure [start] ---------------------*/
+
+        expenses = dbHandler.readAllExpenditure();
+
+        if(expenses.size() != 0){
+            for(int i = 0; i < expenses.size(); i++){
+                expenseModel = expenses.get(i);
+                tempExpense = expenseModel.getAmount();
+
+                totExpenses = totExpenses + tempExpense;
+            }
+        }else{
+            totExpenses = 0;
+        }
+
+        expensesTv = (TextView) findViewById(R.id.text_mybusiness_res_totexpen);
+        expensesTv.setText(String.valueOf(totExpenses));
+
+        /*------------------ Displaying the total expenditure [end] -----------------------*/
+
+        /*------------------ Displaying the total stock quantity [start] ------------------*/
+
+        stocks = dbHandler.readAllStocks();
+
+        if(stocks.size() != 0){
+            for(int i = 0; i < stocks.size(); i++){
+                stockModel = stocks.get(i);
+                tempInventoryQuantity = stockModel.getStocksQuantity();
+                totStocks = totStocks + tempInventoryQuantity;
+            }
+        }else{
+            totStocks = 0;
+        }
+
+        stocksTv = (TextView)findViewById(R.id.text_mybusiness_res_totstocks);
+        stocksTv.setText(String.valueOf(totStocks));
+
+        /*------------------ Displaying the total stock quantity [end] ------------------*/
+
+        /*------------------ Displaying the total comments [start] ----------------------*/
+        /*
+        forums = dbHandler.readAllStocks();
+
+        if(forums.size() != 0){
+            commentCount = forums.size();
+        }else{
+            commentCount = 0;
+        }
+
+        forumTv = (TextView)findViewById(R.id.text_mybusiness_res_totcoms);
+        forumTv.setText(String.valueOf(commentCount));
+        */
+        /*------------------ Displaying the total comments [end] ------------------------*/
+
+    }
+
+    public void onClick(View view){
+
+        clearRes = ((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
+
     }
 }

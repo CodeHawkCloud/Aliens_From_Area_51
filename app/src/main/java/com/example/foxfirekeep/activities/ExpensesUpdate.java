@@ -64,6 +64,9 @@ public class ExpensesUpdate extends AppCompatActivity {
         if(dbHandler.updateExpenses(exp_ID,exp_Type,exp_Month,exp_Amount)){
             toast = Toast.makeText(getApplicationContext(),"Expense Updated!",Toast.LENGTH_LONG);
             toast.show();
+
+            Intent complete  = new Intent(ExpensesUpdate.this, ExpensesCrudMenu.class);
+            startActivity(complete);
         }
         else {
             toast = Toast.makeText(getApplicationContext(),"Expense NOT Updated!",Toast.LENGTH_LONG);

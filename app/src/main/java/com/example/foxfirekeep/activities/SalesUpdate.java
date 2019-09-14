@@ -80,6 +80,9 @@ public class SalesUpdate extends AppCompatActivity {
             //Toast message if insertion is successful
             t = Toast.makeText(getApplicationContext(),"Sale has been updated successfully!", Toast.LENGTH_LONG);
             t.show();
+
+            Intent crudIntent  = new Intent(SalesUpdate.this, SalesCrudMenu.class);
+            startActivity(crudIntent);
         }
         else{
             //Toast message if insertion fails
