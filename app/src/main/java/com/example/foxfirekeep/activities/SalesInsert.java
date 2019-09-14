@@ -115,7 +115,6 @@ public class SalesInsert extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable editable) {
-
         }
     };
 }

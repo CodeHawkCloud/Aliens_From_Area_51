@@ -55,7 +55,6 @@ public class Forum_IUD extends AppCompatActivity {
 
     public void onClickInsert(View view){
 
-
         int onForumsInsertid= Integer.parseInt(eForumsInsertId.getText().toString());
         String onForumsInsertUsername =  eForumsInsertUsername.getText().toString();
         String onForumsInsertRole = eForumsInsertRole.getText().toString();
@@ -67,15 +66,19 @@ public class Forum_IUD extends AppCompatActivity {
         //Toast creation
         Toast t;
 
-        //check if the insertion was successful
-        if(dbhandler.addForum(onForumsInsertid,onForumsInsertUsername,onForumsInsertRole,onForumsInserComment)){
-            //Toast message if insertion is successful
-            t = Toast.makeText(getApplicationContext(),"Recode has been added to FoxFire!", Toast.LENGTH_LONG);
-            t.show();
-        }
-        else{
-            //Toast message if insertion fails
-            t = Toast.makeText(getApplicationContext(),"Recode has not been added to FoxFire!", Toast.LENGTH_LONG);
+        if(onForumsInsertid > 0 && !onForumsInserComment.isEmpty() && !onForumsInsertUsername.isEmpty() && !onForumsInserComment.isEmpty()) {
+            //check if the insertion was successful
+            if (dbhandler.addForum(onForumsInsertid, onForumsInsertUsername, onForumsInsertRole, onForumsInserComment)) {
+                //Toast message if insertion is successful
+                t = Toast.makeText(getApplicationContext(), "Record has been added to FoxFire!", Toast.LENGTH_LONG);
+                t.show();
+            } else {
+                //Toast message if insertion fails
+                t = Toast.makeText(getApplicationContext(), "Record has not been added to FoxFire!", Toast.LENGTH_LONG);
+                t.show();
+            }
+        }else{
+            t = Toast.makeText(getApplicationContext(), "Please fill in all the fields!", Toast.LENGTH_LONG);
             t.show();
         }
 
@@ -84,7 +87,7 @@ public class Forum_IUD extends AppCompatActivity {
 
     public void onClickDelete(View view){
 
-        int onForumsInsertid = Integer.parseInt(eForumsInsertId.getText().toString());
+        String onForumsDeleteId = eForumsInsertId.getText().toString();
 
         //DBHandler object created
         DBHandler dbhandler = new DBHandler(this);
@@ -92,15 +95,21 @@ public class Forum_IUD extends AppCompatActivity {
         //Toast creation
         Toast t;
 
-        //check if the insertion was successful
-        if(dbhandler.deleteForms(onForumsInsertid)){
-            //Toast message if deletion is successful
-            t = Toast.makeText(getApplicationContext(),"Delete from FoxFire!", Toast.LENGTH_LONG);
-            t.show();
-        }
-        else{
-            //Toast message if insertion fails
-            t = Toast.makeText(getApplicationContext(),"Deletion failed!", Toast.LENGTH_LONG);
+        if(!onForumsDeleteId.isEmpty()) {
+            //check if the insertion was successful
+            int deleteID = Integer.parseInt(onForumsDeleteId);
+
+            if (dbhandler.deleteForms(deleteID)) {
+                //Toast message if deletion is successful
+                t = Toast.makeText(getApplicationContext(), "Record deleted from FoxFire!", Toast.LENGTH_LONG);
+                t.show();
+            } else {
+                //Toast message if insertion fails
+                t = Toast.makeText(getApplicationContext(), "Record deletion failed!", Toast.LENGTH_LONG);
+                t.show();
+            }
+        }else{
+            t = Toast.makeText(getApplicationContext(), "Please fill in the id to be deleted!", Toast.LENGTH_LONG);
             t.show();
         }
     }
@@ -109,25 +118,31 @@ public class Forum_IUD extends AppCompatActivity {
 
     public void onClickUpdete(View view){
 
-        int onForumsInsertid= Integer.parseInt(eForumsInsertId.getText().toString());
-        String onForumsInsertUsername =  eForumsInsertUsername.getText().toString();
-        String onForumsInsertRole = eForumsInsertRole.getText().toString();
-        String onForumsInserComment = eForumsInserComment.getText().toString();
+        String onForumsUpdateId= eForumsInsertId.getText().toString();
+        String onForumsUpdatetUsername =  eForumsInsertUsername.getText().toString();
+        String onForumsUpdateRole = eForumsInsertRole.getText().toString();
+        String onForumsUpdateComment = eForumsInserComment.getText().toString();
         //DBHandler object created
         DBHandler dbhandler = new DBHandler(this);
 
         //Toast creation
         Toast t;
 
-        //check if the insertion was successful
-        if(dbhandler.updateForum(onForumsInsertid,onForumsInsertUsername,onForumsInsertRole,onForumsInserComment)){
-            //Toast message if insertion is successful
-            t = Toast.makeText(getApplicationContext(),"Forum has been updated successfully!", Toast.LENGTH_LONG);
-            t.show();
-        }
-        else{
-            //Toast message if insertion fails
-            t = Toast.makeText(getApplicationContext(),"Forum failed to be updated!", Toast.LENGTH_LONG);
+        if(!onForumsUpdateId.isEmpty() && !onForumsUpdatetUsername.isEmpty() && !onForumsUpdateRole.isEmpty() && !onForumsUpdateComment.isEmpty()) {
+            //check if the insertion was successful
+            int onForumId = Integer.parseInt(onForumsUpdateId);
+
+            if (dbhandler.updateForum(onForumId, onForumsUpdatetUsername, onForumsUpdateRole, onForumsUpdateComment)) {
+                //Toast message if insertion is successful
+                t = Toast.makeText(getApplicationContext(), "Forum has been updated successfully!", Toast.LENGTH_LONG);
+                t.show();
+            } else {
+                //Toast message if insertion fails
+                t = Toast.makeText(getApplicationContext(), "Forum failed to be updated!", Toast.LENGTH_LONG);
+                t.show();
+            }
+        }else{
+            t = Toast.makeText(getApplicationContext(), "Please fill in all the fields!", Toast.LENGTH_LONG);
             t.show();
         }
     }
