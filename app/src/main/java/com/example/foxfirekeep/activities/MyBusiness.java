@@ -1,9 +1,15 @@
 package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.ActivityManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -52,6 +58,10 @@ public class MyBusiness extends AppCompatActivity {
     List<Forums> forums;
     int commentCount = 0;
     TextView forumTv;
+
+    //Notification variables
+    private final String CHANNEL_ID = "data_reset_notification";
+    private final int NOTIFICATION_ID = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,11 +156,43 @@ public class MyBusiness extends AppCompatActivity {
 
         /*------------------ Displaying the total comments [end] ------------------------*/
 
+        createNotificationChannel();
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
+        builder.setSmallIcon(R.drawable.ic_event_note_black_24dp);
+        builder.setContentTitle("My Business");
+        builder.setContentText("To reset all data on FoxFire click on the RESET button!");
+        builder.setVibrate(new long[]{0,100,200,300,400});
+        builder.setLights(Color.RED, 1000, 1000);
+        builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+        notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
     }
+
+
 
     public void onClick(View view){
 
         clearRes = ((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
 
+    }
+
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "data_reset_notification";
+            String description = "Notification for data reset";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, importance);
+            notificationChannel.setDescription(description);
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setVibrationPattern(new long[]{0,100,200,300,400});
+
+            NotificationManager notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
     }
 }
