@@ -39,10 +39,9 @@ public class ExpensesUpdate extends AppCompatActivity {
         updateID = findViewById(R.id.edit_expenses_update_id);
         updateType = findViewById(R.id.edit_expenses_update_type);
         updateMonth = findViewById(R.id.edit_expenses_update_month);
+        updateAmount = findViewById(R.id.edit_expenses_update_amount);
 
         expensesUpdateButton = findViewById(R.id.button_expenses_update_update);
-
-        expensesUpdateButton.setEnabled(true);
 
         updateID.addTextChangedListener(updateExpensesTextWatcher);
         updateType.addTextChangedListener(updateExpensesTextWatcher);
@@ -54,8 +53,8 @@ public class ExpensesUpdate extends AppCompatActivity {
     public void onClick(View view){
 
         int exp_ID = Integer.parseInt(updateID.getText().toString());
-        String exp_Type = updateType.toString();
-        String exp_Month = updateMonth.toString();
+        String exp_Type = updateType.getText().toString();
+        String exp_Month = updateMonth.getText().toString();
         int exp_Amount = Integer.parseInt(updateAmount.getText().toString());
 
         DBHandler dbHandler = new DBHandler(this);
