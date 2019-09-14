@@ -185,6 +185,7 @@
 
                 android:layout_marginBottom="64dp"
                 android:background="@android:color/holo_red_dark"
+                android:onClick="onClickDelete"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btnFrmViw"
                 app:layout_constraintHorizontal_bias="0.5"

@@ -522,8 +522,31 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //deleteForum() method to delete the forum message and content
-    public void deleteForum(){
 
+
+    public boolean deleteForms(int fId){
+
+        //get readable mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        //selection
+        String selection = DatabaseMaster.Forums.COLUMN_NAME_ID + " LIKE ?";
+
+        //Argument
+        String[] selectionArg = new String[]{String.valueOf(fId)};
+
+        //query to delete a sale
+        int success = db.delete(DatabaseMaster.Forums.TABLE_NAME,
+                selection,
+                selectionArg
+        );
+
+        if(success == 0){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     /*Sql methods of the forum component [END]*/

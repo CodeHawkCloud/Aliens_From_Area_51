@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -16,7 +17,7 @@ import com.example.foxfirekeep.database.DBHandler;
 public class Forum_IUD extends AppCompatActivity {
     private ImageView back;
     EditText eForumsInsertId, eForumsInsertUsername,eForumsInsertRole,eForumsInserComment; //variables for the edit text
-    Button forumsInsertButton;
+    ImageButton forumsInsertButton,forumsDeletebutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +45,8 @@ public class Forum_IUD extends AppCompatActivity {
         eForumsInserComment = findViewById(R.id.edit_forum_iud_comment);
 
         //assigning submit button
-        forumsInsertButton = (Button)findViewById(R.id.button_sales_insert_submit);
+        forumsInsertButton = (ImageButton)findViewById(R.id.btnFrmSub);
+        forumsDeletebutton= (ImageButton)findViewById(R.id.btnFrmdel);
 
 
 
@@ -86,6 +88,31 @@ public class Forum_IUD extends AppCompatActivity {
     }
 
     /*---------------insert crud operation 2nd part [END]-----------------*/
+
+
+
+    public void onClickDelete(View view){
+
+        int onForumsInsertid = Integer.parseInt(eForumsInsertId.getText().toString());
+
+        //DBHandler object created
+        DBHandler dbhandler = new DBHandler(this);
+
+        //Toast creation
+        Toast t;
+
+        //check if the insertion was successful
+        if(dbhandler.deleteForms(onForumsInsertid)){
+            //Toast message if deletion is successful
+            t = Toast.makeText(getApplicationContext(),"Delete from FoxFire!", Toast.LENGTH_LONG);
+            t.show();
+        }
+        else{
+            //Toast message if insertion fails
+            t = Toast.makeText(getApplicationContext(),"Deletion failed!", Toast.LENGTH_LONG);
+            t.show();
+        }
+    }
 
 
 
