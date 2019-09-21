@@ -2,6 +2,8 @@ package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,6 +21,11 @@ public class SalesDelete extends AppCompatActivity {
     ImageView back; //variable for the back button
     EditText eSalesDeleteId; //variable for the edit text
     Button salesDeleteButton;
+
+    DBHandler dbhandler;//DBHandler object
+    AlertDialog.Builder alertBuilderSaleDelete;
+    AlertDialog alertSaleDelete;
+    Toast t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,28 +63,54 @@ public class SalesDelete extends AppCompatActivity {
         /*---------------insert crud operation 2nd part [START]---------------*/
     public void onClick(View view){
 
-        int onSalesDeleteId = Integer.parseInt(eSalesDeleteId.getText().toString());
+        dbhandler = new DBHandler(this);
 
-        //DBHandler object created
-        DBHandler dbhandler = new DBHandler(this);
+        //alert to make sure that the user does not accidently reset all data
+        alertBuilderSaleDelete = new AlertDialog.Builder(this);
 
-        //Toast creation
-        Toast t;
+        //setting the title of the alert and message
+        alertBuilderSaleDelete.setTitle("Delete Sale!");
+        alertBuilderSaleDelete.setMessage("Are you sure you want to delete sale " + eSalesDeleteId.getText().toString() + " ?");
 
-        //check if the insertion was successful
-        if(dbhandler.deleteSale(onSalesDeleteId)){
-            //Toast message if deletion is successful
-            t = Toast.makeText(getApplicationContext(),"Sale has been deleted from FoxFire!", Toast.LENGTH_LONG);
-            t.show();
+        //if user presses yes
+        alertBuilderSaleDelete.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
-            Intent crudIntent  = new Intent(SalesDelete.this, SalesCrudMenu.class);
-            startActivity(crudIntent);
-        }
-        else{
-            //Toast message if insertion fails
-            t = Toast.makeText(getApplicationContext(),"Sale deletion failed!", Toast.LENGTH_LONG);
-            t.show();
-        }
+            public void onClick(DialogInterface dialog, int which) {
+
+                int onSalesDeleteId = Integer.parseInt(eSalesDeleteId.getText().toString());
+
+                //check if the insertion was successful
+                if(dbhandler.deleteSale(onSalesDeleteId)){
+                    //Toast message if deletion is successful
+                    t = Toast.makeText(getApplicationContext(),"Sale has been deleted from FoxFire!", Toast.LENGTH_LONG);
+                    t.show();
+
+                    Intent crudIntent  = new Intent(SalesDelete.this, SalesCrudMenu.class);
+                    startActivity(crudIntent);
+                }
+                else{
+                    //Toast message if insertion fails
+                    t = Toast.makeText(getApplicationContext(),"Sale deletion failed!", Toast.LENGTH_LONG);
+                    t.show();
+                }
+
+            }
+        });
+
+        //if user presses no - do nothing
+        alertBuilderSaleDelete.setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+
+        alertSaleDelete = alertBuilderSaleDelete.create();
+        alertSaleDelete.show();
+
+
     }
 
         /*---------------insert crud operation 2nd part [END]-----------------*/

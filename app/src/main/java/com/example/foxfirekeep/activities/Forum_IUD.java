@@ -2,6 +2,8 @@ package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,10 @@ public class Forum_IUD extends AppCompatActivity {
     ImageButton forumsInsertButton,forumsDeleteButton,forumsEditButton;
     List<Forums> forumsList;
     Toast t;
+    AlertDialog.Builder alertBuilderForumDelete;
+    AlertDialog alertForumDelete;
+    DBHandler dbhandler;
+    String onForumsDeleteId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +67,7 @@ public class Forum_IUD extends AppCompatActivity {
         String onForumsInserComment = eForumsInserComment.getText().toString();
 
         //DBHandler object created
-        DBHandler dbhandler = new DBHandler(this);
+        dbhandler = new DBHandler(this);
 
         //Toast creation
         Toast t;
@@ -89,31 +95,59 @@ public class Forum_IUD extends AppCompatActivity {
 
     public void onClickDelete(View view){
 
-        String onForumsDeleteId = eForumsInsertId.getText().toString();
-
-        //DBHandler object created
-        DBHandler dbhandler = new DBHandler(this);
-
-        //Toast creation
-        Toast t;
+        onForumsDeleteId = eForumsInsertId.getText().toString();
 
         if(!onForumsDeleteId.isEmpty()) {
-            //check if the insertion was successful
-            int deleteID = Integer.parseInt(onForumsDeleteId);
 
-            if (dbhandler.deleteForms(deleteID)) {
-                //Toast message if deletion is successful
-                t = Toast.makeText(getApplicationContext(), "Record deleted from FoxFire!", Toast.LENGTH_LONG);
-                t.show();
-            } else {
-                //Toast message if insertion fails
-                t = Toast.makeText(getApplicationContext(), "Record deletion failed!", Toast.LENGTH_LONG);
-                t.show();
+        dbhandler = new DBHandler(this);
+
+        //alert to make sure that the user does not accidently reset all data
+        alertBuilderForumDelete = new AlertDialog.Builder(this);
+
+        //setting the title of the alert and message
+        alertBuilderForumDelete.setTitle("Delete Comment!");
+        alertBuilderForumDelete.setMessage("Are you sure you want to delete comment " + eForumsInsertId.getText().toString() + " ?");
+
+        //if user presses yes
+        alertBuilderForumDelete.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+
+                //check if the insertion was successful
+                int deleteID = Integer.parseInt(onForumsDeleteId);
+
+                if (dbhandler.deleteForms(deleteID)) {
+                    //Toast message if deletion is successful
+                    t = Toast.makeText(getApplicationContext(), "Record deleted from FoxFire!", Toast.LENGTH_LONG);
+                    t.show();
+                } else {
+                    //Toast message if insertion fails
+                    t = Toast.makeText(getApplicationContext(), "Record deletion failed!", Toast.LENGTH_LONG);
+                    t.show();
+                }
             }
-        }else{
+
+        });
+
+        //if user presses no - do nothing
+        alertBuilderForumDelete.setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+
+        alertForumDelete = alertBuilderForumDelete.create();
+        alertForumDelete.show();
+
+    }else{
             t = Toast.makeText(getApplicationContext(), "Please fill in the id to be deleted!", Toast.LENGTH_LONG);
             t.show();
         }
+
+
     }
 
 
@@ -125,10 +159,7 @@ public class Forum_IUD extends AppCompatActivity {
         String onForumsUpdateRole = eForumsInsertRole.getText().toString();
         String onForumsUpdateComment = eForumsInserComment.getText().toString();
         //DBHandler object created
-        DBHandler dbhandler = new DBHandler(this);
-
-        //Toast creation
-        Toast t;
+        dbhandler = new DBHandler(this);
 
         if(!onForumsUpdateId.isEmpty() && !onForumsUpdatetUsername.isEmpty() && !onForumsUpdateRole.isEmpty() && !onForumsUpdateComment.isEmpty()) {
             //check if the insertion was successful
@@ -151,9 +182,9 @@ public class Forum_IUD extends AppCompatActivity {
 
     public void onClickView(View view){
 
-        DBHandler dbHandler = new DBHandler(this);
+        dbhandler = new DBHandler(this);
 
-        forumsList = dbHandler.readForum();
+        forumsList = dbhandler.readForum();
 
         if(forumsList.size()!=0){
             Intent it1 = new Intent(Forum_IUD.this, Forum_View.class);

@@ -2,6 +2,8 @@ package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,6 +21,10 @@ public class ExpensesDelete extends AppCompatActivity {
     private ImageView back;
     EditText eIdInput;
     Button deleteButton;
+    AlertDialog.Builder alertBuilderExpenseDelete;
+    AlertDialog alertExpenseDelete;
+    Toast toast;
+    DBHandler dbHandler;
 
 
     @Override
@@ -44,23 +50,51 @@ public class ExpensesDelete extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        int eId = Integer.parseInt(eIdInput.getText().toString());
 
-        Toast toast;
+        dbHandler = new DBHandler(this);
 
-        DBHandler dbHandler = new DBHandler(this);
+        //alert to make sure that the user does not accidently reset all data
+        alertBuilderExpenseDelete = new AlertDialog.Builder(this);
 
-        if(dbHandler.deleteExpenditure(eId)){
-            toast = Toast.makeText(getApplicationContext(),"Expense has been deleted from FoxFire!", Toast.LENGTH_LONG);
-            toast.show();
+        //setting the title of the alert and message
+        alertBuilderExpenseDelete.setTitle("Delete Expenditure!");
+        alertBuilderExpenseDelete.setMessage("Are you sure you want to delete expenditure " + eIdInput.getText().toString() + " ?");
 
-            Intent complete = new Intent(ExpensesDelete.this,ExpensesCrudMenu.class);
-            startActivity(complete);
-        }
-        else {
-            toast = Toast.makeText(getApplicationContext(),"No such Expense has been made", Toast.LENGTH_LONG);
-            toast.show();
-        }
+        //if user presses yes
+        alertBuilderExpenseDelete.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+
+                int eId = Integer.parseInt(eIdInput.getText().toString());
+
+                if(dbHandler.deleteExpenditure(eId)){
+                    toast = Toast.makeText(getApplicationContext(),"Expense has been deleted from FoxFire!", Toast.LENGTH_LONG);
+                    toast.show();
+
+                    Intent complete = new Intent(ExpensesDelete.this,ExpensesCrudMenu.class);
+                    startActivity(complete);
+                }
+                else {
+                    toast = Toast.makeText(getApplicationContext(),"No such Expense has been made", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+            }
+        });
+
+        //if user presses no - do nothing
+        alertBuilderExpenseDelete.setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+
+        alertExpenseDelete = alertBuilderExpenseDelete.create();
+        alertExpenseDelete.show();
+
     }
 
     //Text watcher method implementation

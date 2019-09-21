@@ -13,9 +13,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.sql.SQLData;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class DBHandler extends SQLiteOpenHelper {
@@ -73,9 +71,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
         /*-----------------------------------------------------------------------------------------*/
 
-
-
         //Forums table creation [START]
+
         String Forums_TABLE_CREATE = "CREATE TABLE " + DatabaseMaster.Forums.TABLE_NAME + " (" +
                 DatabaseMaster.Forums.COLUMN_NAME_ID + "  INTEGER PRIMARY KEY," +
                 DatabaseMaster.Forums.COLUMN_NAME_USERNAME + " TEXT," +
@@ -83,7 +80,8 @@ public class DBHandler extends SQLiteOpenHelper {
                 DatabaseMaster.Forums.COLUMN_NAME_COMMENT + " TEXT)";
         //execution of the sql statement
         db.execSQL(Forums_TABLE_CREATE);
-        //Formus table creation [END]
+
+        //Forums table creation [END]
 
         /*-----------------------------------------------------------------------------------------*/
 
@@ -470,7 +468,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 selectionArg
         );
 
-        if(success == -1){
+        if(success == 0){
             return false;
         }
         else{
@@ -618,12 +616,6 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     /*Sql methods of the forum component [END]*/
-
-    /*-----------------------------------------------------------------------------------------*/
-
-    /*Sql methods of the business component [START]*/
-    
-    /*Sql methods of the business component [END]*/
 
     /*-----------------------------------------------------------------------------------------*/
 

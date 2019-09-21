@@ -5,8 +5,10 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -30,6 +32,9 @@ public class MyBusiness extends AppCompatActivity {
     DBHandler dbHandler;
     boolean clearRes;
     Toast toast;
+    AlertDialog.Builder alertBuilder;
+    AlertDialog alertMyBusiness;
+    int totProfit;
 
     //variables to be used to get the total sales
     List<Sales> sales;
@@ -156,12 +161,16 @@ public class MyBusiness extends AppCompatActivity {
 
         /*------------------ Displaying the total comments [end] ------------------------*/
 
+        //calculation of the total profit
+        totProfit = totSaleValue - totExpenses;
+
+        //creation of a notification
         createNotificationChannel();
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         builder.setSmallIcon(R.drawable.ic_event_note_black_24dp);
         builder.setContentTitle("My Business");
-        builder.setContentText("To reset all data on FoxFire click on the RESET button!");
+        builder.setContentText("You have an approximate profit of "+ String.valueOf(totProfit) +"!");
         builder.setVibrate(new long[]{0,100,200,300,400});
         builder.setLights(Color.RED, 1000, 1000);
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
@@ -174,10 +183,37 @@ public class MyBusiness extends AppCompatActivity {
 
     public void onClick(View view){
 
-        clearRes = ((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
+        //alert to make sure that the user does not accidently reset all data
+        alertBuilder = new AlertDialog.Builder(this);
+
+        //setting the title of the alert and message
+        alertBuilder.setTitle("Reset all data!");
+        alertBuilder.setMessage("Are you sure you want to reset FoxFireKeep?");
+
+        //if user presses yes
+        alertBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                clearRes = ((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
+            }
+        });
+
+        //if user presses no - do nothing
+        alertBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+
+        alertMyBusiness = alertBuilder.create();
+        alertMyBusiness.show();
 
     }
 
+    //notification if the api is greater than or equal to O
     private void createNotificationChannel(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence name = "data_reset_notification";

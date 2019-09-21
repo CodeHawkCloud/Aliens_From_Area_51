@@ -2,6 +2,8 @@ package com.example.foxfirekeep.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,9 +18,13 @@ import com.example.foxfirekeep.activities.R;
 import com.example.foxfirekeep.database.DBHandler;
 
 public class StocksDelete extends AppCompatActivity {
-    ImageView back; //variable for the back button
-    EditText eStocksDeleteId; //variable for the edit text
+    ImageView back;
+    EditText eStocksDeleteId;
     Button stocksDeleteButton;
+    DBHandler dbHandler;
+    AlertDialog.Builder alertBuilderStockDelete;
+    AlertDialog alertStockDelete;
+    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,28 +62,52 @@ public class StocksDelete extends AppCompatActivity {
     /*---------------insert crud operation 2nd part [START]---------------*/
     public void onClick(View view){
 
-        int onStocksDeleteId = Integer.parseInt(eStocksDeleteId.getText().toString());
+        dbHandler = new DBHandler(this);
 
-        //DBHandler object created
-        DBHandler dbhandler = new DBHandler(this);
+        //alert to make sure that the user does not accidently reset all data
+        alertBuilderStockDelete = new AlertDialog.Builder(this);
 
-        //Toast creation
-        Toast t;
+        //setting the title of the alert and message
+        alertBuilderStockDelete.setTitle("Delete Inventory!");
+        alertBuilderStockDelete.setMessage("Are you sure you want to delete stock " + eStocksDeleteId.getText().toString() + " ?");
 
-        //check if the insertion was successful
-        if(dbhandler.deleteStocks(onStocksDeleteId)){
-            //Toast message if deletion is successful
-            t = Toast.makeText(getApplicationContext(),"Stock has been deleted from FoxFire!", Toast.LENGTH_LONG);
-            t.show();
+        //if user presses yes
+        alertBuilderStockDelete.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
-            Intent success  = new Intent(StocksDelete.this, inventoryCrudMenu.class);
-            startActivity(success);
-        }
-        else{
-            //Toast message if insertion fails
-            t = Toast.makeText(getApplicationContext(),"Stock deletion failed!", Toast.LENGTH_LONG);
-            t.show();
-        }
+            public void onClick(DialogInterface dialog, int which) {
+
+                int onStocksDeleteId = Integer.parseInt(eStocksDeleteId.getText().toString());
+
+                //check if the insertion was successful
+                if(dbHandler.deleteStocks(onStocksDeleteId)){
+                    //Toast message if deletion is successful
+                    toast = Toast.makeText(getApplicationContext(),"Stock has been deleted from FoxFire!", Toast.LENGTH_LONG);
+                    toast.show();
+
+                    Intent success  = new Intent(StocksDelete.this, inventoryCrudMenu.class);
+                    startActivity(success);
+                }
+                else{
+                    //Toast message if insertion fails
+                    toast = Toast.makeText(getApplicationContext(),"Stock deletion failed!", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+            }
+        });
+
+        //if user presses no - do nothing
+        alertBuilderStockDelete.setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+
+        alertStockDelete = alertBuilderStockDelete.create();
+        alertStockDelete.show();
     }
 
     /*---------------insert crud operation 2nd part [END]-----------------*/
