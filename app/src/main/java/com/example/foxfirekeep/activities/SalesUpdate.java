@@ -20,6 +20,8 @@ public class SalesUpdate extends AppCompatActivity {
     ImageView back;//variable for the back button
     EditText eSalesUpdateId, eSalesUpdateItem, eSalesUpdateBrand, eSalesUpdatePrice, eSalesUpdateQuantity; //variables for the edit text
     Button salesUpdateButton;
+    Toast t;//Toast
+    DBHandler dbhandler;//DBHandler
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +72,7 @@ public class SalesUpdate extends AppCompatActivity {
         int onSalesUpdateQuantity = Integer.parseInt(eSalesUpdateQuantity.getText().toString());
 
         //DBHandler object created
-        DBHandler dbhandler = new DBHandler(this);
-
-        //Toast creation
-        Toast t;
+        dbhandler = new DBHandler(this);
 
         //check if the insertion was successful
         if(dbhandler.updateSales(onSalesUpdateId,onSalesUpdatetItem,onSalesUpdateBrand,onSalesUpdatePrice,onSalesUpdateQuantity)){

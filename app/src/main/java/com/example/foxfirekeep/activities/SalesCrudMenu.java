@@ -23,6 +23,7 @@ public class SalesCrudMenu extends AppCompatActivity {
     ImageView vi;
     DBHandler dbhandler;
     List<Sales> list;
+    Toast t; //Toast creation
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +75,6 @@ public class SalesCrudMenu extends AppCompatActivity {
             public void onClick(View view) {
 
                 list = dbhandler.readAllSales();
-
-                //Toast creation
-                Toast t;
 
                 //check if there  is data to be viewed, if yes go to the view activity else display toast
                 if(!list.isEmpty()){

@@ -23,9 +23,9 @@ public class SalesDelete extends AppCompatActivity {
     Button salesDeleteButton;
 
     DBHandler dbhandler;//DBHandler object
-    AlertDialog.Builder alertBuilderSaleDelete;
-    AlertDialog alertSaleDelete;
-    Toast t;
+    AlertDialog.Builder alertBuilderSaleDelete;//Alert builder object
+    AlertDialog alertSaleDelete;//alertDialog object
+    Toast t;//Toast
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
