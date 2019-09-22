@@ -82,7 +82,7 @@ public class StocksAdd extends AppCompatActivity {
             t = Toast.makeText(getApplicationContext(),"Stocks has been added to FoxFire!", Toast.LENGTH_LONG);
             t.show();
 
-            Intent success  = new Intent(StocksAdd.this,inventoryCrudMenu.class);
+            Intent success  = new Intent(StocksAdd.this,StocksAdd.class);
             startActivity(success);
         }
         else{

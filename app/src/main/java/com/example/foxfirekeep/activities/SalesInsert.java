@@ -81,7 +81,7 @@ public class SalesInsert extends AppCompatActivity {
             t = Toast.makeText(getApplicationContext(),"Sale has been added to FoxFire!", Toast.LENGTH_LONG);
             t.show();
 
-            Intent crudIntent  = new Intent(SalesInsert.this, SalesCrudMenu.class);
+            Intent crudIntent  = new Intent(SalesInsert.this, SalesInsert.class);
             startActivity(crudIntent);
         }
         else{
